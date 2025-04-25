@@ -34,20 +34,29 @@ enum EXPERIENCE_YEARS {
 // Modelos
 
 model Beach {
-  id            Int          @id @default(autoincrement())
-  name          String
-  beachType     BEACH_TYPE
-  city          String
-  state         String
-  country       String
-  coordinates   String
-  evaluations   Evaluation[]
+  id          String       @id @default(uuid())
+  name        String
+  beachType   BEACH_TYPE
+  city        String
+  state       String
+  country     String
+  coordinates String
+  evaluations Evaluation[]
+
+  //Tipo de playa
+  residencialOcupattion Int
+  rigidization          Int
+  principalUse          Int
+  enviromentUse         Int
+  legalProtection       Int
+  services              Int
+  paisaje               Int
+  accesoVehicular       Int
 }
 
 model Expert {
-  id                  Int                          @id @default(autoincrement())
+  id                  String                       @id @default(uuid())
   name                String
-  email               String                       @unique
   institution         String
   codeNode            String
   studyLevel          STUDY_LEVEL
@@ -55,62 +64,80 @@ model Expert {
   graduatedDate       String
   specializationAreas SpecializationAreaOnExpert[]
   evaluations         Evaluation[]
+
+  //user-auth
+  email     String   @unique
+  username  String   @unique
+  password  String
+  image     String?
+  status    Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Evaluation {
-  id              Int               @id @default(autoincrement())
-  expert          Expert            @relation(fields: [expertId], references: [id])
-  expertId        Int
-  beach           Beach             @relation(fields: [beachId], references: [id])
-  beachId         Int
-  year            Int
-  finalEvaluation Float
-  description     String
-  images          EvaluationImage[]
-  indicatorScores IndicatorScore[]
+  id               String            @id @default(uuid())
+  expert           Expert            @relation(fields: [expertId], references: [id])
+  expertId         String
+  ExperienceTypes  ExperienceTypes[]
+  expertLastVisit  String
+  evaluationYear   Int
+  beach            Beach             @relation(fields: [beachId], references: [id])
+  beachId          String
+  finalEvaluation  Float
+  beachDescription String
+  beachImages      EvaluationImage[]
+  indicatorScores  IndicatorScore[]
 }
 
 model Category {
-  id          Int         @id @default(autoincrement())
-  name        String      @unique
-  indicators  Indicator[]
+  id         String      @id @default(uuid())
+  name       String      @unique
+  indicators Indicator[]
 }
 
 model Indicator {
-  id          Int         @id @default(autoincrement())
-  categoryId  Int
-  category    Category    @relation(fields: [categoryId], references: [id])
-  name        String
-  scores      IndicatorScore[]
+  id         String           @id @default(uuid())
+  categoryId String
+  category   Category         @relation(fields: [categoryId], references: [id])
+  name       String
+  scores     IndicatorScore[]
 }
 
 model IndicatorScore {
-  id           Int        @id @default(autoincrement())
+  id           String     @id @default(uuid())
   evaluation   Evaluation @relation(fields: [evaluationId], references: [id])
-  evaluationId Int
+  evaluationId String
   indicator    Indicator  @relation(fields: [indicatorId], references: [id])
-  indicatorId  Int
+  indicatorId  String
   score        Float
 }
 
 model EvaluationImage {
-  id           Int        @id @default(autoincrement())
+  id           String     @id @default(uuid())
   evaluation   Evaluation @relation(fields: [evaluationId], references: [id])
-  evaluationId Int
+  evaluationId String
   url          String
   author       String
 }
 
 model SpecializationArea {
-  id      Int                          @id @default(autoincrement())
+  id      String                       @id @default(uuid())
   name    String                       @unique
   experts SpecializationAreaOnExpert[]
 }
 
 model SpecializationAreaOnExpert {
-  id                   Int        @id @default(autoincrement()) // Nuevo campo de ID único
-  expertId             Int
-  specializationAreaId Int
+  id                   String             @id @default(uuid())
+  expertId             String
+  specializationAreaId String
   expert               Expert             @relation(fields: [expertId], references: [id])
   specializationArea   SpecializationArea @relation(fields: [specializationAreaId], references: [id])
+}
+
+model ExperienceTypes {
+  id           String     @id @default(uuid())
+  name         String
+  evaluationId String
+  evaluation   Evaluation @relation(fields: [evaluationId], references: [id])
 }
