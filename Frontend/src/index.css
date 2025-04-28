@@ -2,18 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: sans-serif;
-}
-
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari y Opera */
 }
 
-.hide-scrollbar {
-  scrollbar-width: none; /* Firefox */
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari y Opera */
+.shadowimg {
+  filter: drop-shadow(10px 10px 10px #0d5b61a6);
 }

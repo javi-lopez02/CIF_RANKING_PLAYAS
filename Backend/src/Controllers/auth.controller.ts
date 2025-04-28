@@ -79,7 +79,7 @@ export const login = async (req: Request, res: Response) => {
     if (!username || !password) {
       return res
         .status(401)
-        .json(["Nesecita user name y contraseña para logearce"]);
+        .json(["Necesita username y contraseña para logearce"]);
     }
 
     const user = await prisma.expert.findFirst({
