@@ -31,6 +31,18 @@ enum EXPERIENCE_YEARS {
   MORE_THAN_20
 }
 
+enum SPECIALITATION_AREA {
+  BIOLOGIA_ECOLOGIA
+  GEOGRAFIA
+  GEOLOGIA
+  GESTION_COSTERA
+  INGENIERIA
+  OCEANOGRAFIA
+  QUIMICA
+  TURISMO
+  OTROS
+}
+
 // Modelos
 
 model Beach {
@@ -44,25 +56,25 @@ model Beach {
   evaluations Evaluation[]
 
   //Tipo de playa
-  residencialOcupattion Int
-  rigidization          Int
-  principalUse          Int
-  enviromentUse         Int
+  residentialOccupation Int
+  stiffening            Int
+  mainUse               Int
+  environmentalUse      Int
   legalProtection       Int
   services              Int
-  paisaje               Int
-  accesoVehicular       Int
+  landscape             Int
+  vehicularAccess       Int
 }
 
 model Expert {
-  id                  String                       @id @default(uuid())
+  id                  String               @id @default(uuid())
   name                String
   institution         String
   codeNode            String
   studyLevel          STUDY_LEVEL
   experienceYears     EXPERIENCE_YEARS
   graduatedDate       String
-  specializationAreas SpecializationAreaOnExpert[]
+  specializationAreas SPECIALITATION_AREA[]
   evaluations         Evaluation[]
 
   //user-auth
@@ -119,20 +131,6 @@ model EvaluationImage {
   evaluationId String
   url          String
   author       String
-}
-
-model SpecializationArea {
-  id      String                       @id @default(uuid())
-  name    String                       @unique
-  experts SpecializationAreaOnExpert[]
-}
-
-model SpecializationAreaOnExpert {
-  id                   String             @id @default(uuid())
-  expertId             String
-  specializationAreaId String
-  expert               Expert             @relation(fields: [expertId], references: [id])
-  specializationArea   SpecializationArea @relation(fields: [specializationAreaId], references: [id])
 }
 
 model ExperienceTypes {

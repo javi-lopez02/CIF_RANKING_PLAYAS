@@ -74,9 +74,9 @@ export const register = async (req: Request, res: Response) => {
 
 export const login = async (req: Request, res: Response) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !password) {
+    if (!email || !password) {
       return res
         .status(401)
         .json(["Necesita username y contraseña para logearce"]);
@@ -84,7 +84,7 @@ export const login = async (req: Request, res: Response) => {
 
     const user = await prisma.expert.findFirst({
       where: {
-        username: username,
+        email: email,
       },
       select: {
         id: true,
@@ -95,9 +95,9 @@ export const login = async (req: Request, res: Response) => {
       },
     });
 
-    if (user?.status === false) {
-      return res.status(401).json(["Usuario no verificado"]);
-    }
+    // if (user?.status === false) {
+    //   return res.status(401).json(["Usuario no verificado"]);
+    // }
 
     if (!user) {
       return res.status(401).json(["Usuario no encontrado"]);

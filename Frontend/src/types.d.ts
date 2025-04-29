@@ -8,7 +8,7 @@ export type User= {
   graduatedDate: string;
   studyLevel: Study_Level | undefined;
   experienceYears: Experience_Years | undefined;
-  specializationAreas: string[];
+  specializationAreas: SpecializationAreas[] | string[];
 }
 
 type Study_Level = {
@@ -25,6 +25,18 @@ type Experience_Years = {
   BETWEEN_11_15
   BETWEEN_16_20
   MORE_THAN_20
+}
+
+type SpecializationAreas = {
+  BIOLOGIA_ECOLOGIA
+  GEOGRAFIA
+  GEOLOGIA
+  GESTION_COSTERA
+  INGENIERIA
+  OCEANOGRAFIA
+  QUIMICA
+  TURISMO
+  OTROS
 }
 
 type UserLogin = {

@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth.context";
-import { Experience_Years, Study_Level } from "../../types";
-
-interface SpecializationArea {
-  id: string;
-  name: string;
-}
+import { Experience_Years, SpecializationAreas, Study_Level } from "../../types";
 
 interface FormData {
   name: string;
@@ -19,21 +14,11 @@ interface FormData {
   graduatedDate: string;
   studyLevel: Study_Level | undefined;
   experienceYears: Experience_Years | undefined;
-  specializationAreas: string[];
+  specializationAreas: SpecializationAreas[] | string[];
 }
 
-export default function BeachRegisterForm({
-  specializationAreas = [
-    { id: "area1", name: "Ecología Costera" },
-    { id: "area2", name: "Conservación Marina" },
-    { id: "area3", name: "Turismo Sostenible" },
-    { id: "area4", name: "Calidad del Agua" },
-    { id: "area5", name: "Gestión de Playas" },
-    { id: "area6", name: "Biodiversidad" },
-  ],
-}: {
-  specializationAreas?: SpecializationArea[];
-}) {
+export default function BeachRegisterForm() {
+
   // Estado para manejar los datos del formulario a través de los pasos
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -95,6 +80,38 @@ export default function BeachRegisterForm({
     "MORE_THAN_20",
   ];
 
+  const specializationAreasOptions = [
+    {
+      id: "BIOLOGIA_ECOLOGIA",
+      value: "BIOLOGIA_ECOLOGIA",
+      name: "BIOLOGIA ECOLOGIA",
+    },
+    {
+      id: "GEOGRAFIA",
+      value: "GEOGRAFIA",
+      name: "GEOGRAFIA",
+    },
+    { id: "GEOLOGIA", value: "GEOLOGIA", name: "GEOLOGIA" },
+    {
+      id: "GESTION_COSTERA",
+      value: "GESTION_COSTERA",
+      name: "GESTION COSTERA",
+    },
+    {
+      id: "INGENIERIA",
+      value: "INGENIERIA",
+      name: "INGENIERIA",
+    },
+    {
+      id: "OCEANOGRAFIA",
+      value: "OCEANOGRAFIA",
+      name: "OCEANOGRAFIA",
+    },
+    { id: "QUIMICA", value: "QUIMICA", name: "QUIMICA" },
+    { id: "TURISMO", value: "TURISMO", name: "TURISMO" },
+    { id: "OTROS", value: "OTROS", name: "OTROS" },
+  ];
+
   // Manejar cambios en cualquier input
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -106,18 +123,12 @@ export default function BeachRegisterForm({
     }));
   };
 
-  // Manejar cambios en checkboxes
-  const handleCheckboxChange = (id: string) => {
-    setFormData((prev) => {
-      const updatedAreas = prev.specializationAreas.includes(id)
-        ? prev.specializationAreas.filter((areaId) => areaId !== id)
-        : [...prev.specializationAreas, id];
-
-      return {
-        ...prev,
-        specializationAreas: updatedAreas,
-      };
-    });
+  const handleMultiSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+    setFormData((prev) => ({
+      ...prev,
+      specializationAreas: selectedOptions,
+    }));
   };
 
   const validateStep = (currentStep: number): boolean => {
@@ -137,7 +148,9 @@ export default function BeachRegisterForm({
       if (!formData.username.trim()) {
         newErrors.push("Nombre de usuario es requerido");
       } else if (!/^[a-zA-Z0-9_]+$/.test(formData.username)) {
-        newErrors.push("El nombre de usuario solo puede contener letras, números y guiones bajos");
+        newErrors.push(
+          "El nombre de usuario solo puede contener letras, números y guiones bajos"
+        );
       }
 
       if (!formData.password) {
@@ -552,29 +565,23 @@ export default function BeachRegisterForm({
                   <label className="block text-sm font-medium text-gray-700 mb-3">
                     Áreas de especialización
                   </label>
-                  <div className="grid grid-cols-2 gap-3">
-                    {specializationAreas.map((area) => (
-                      <div key={area.id} className="flex items-center">
-                        <input
-                          id={area.id}
-                          type="checkbox"
-                          name="specializationArea"
-                          value={area.id}
-                          checked={formData.specializationAreas.includes(
-                            area.id
-                          )}
-                          onChange={() => handleCheckboxChange(area.id)}
-                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                        />
-                        <label
-                          htmlFor={area.id}
-                          className="ml-2 block text-sm text-gray-700"
-                        >
-                          {area.name}
-                        </label>
-                      </div>
+                  <select
+                    id="specializationAreas"
+                    name="specializationAreas"
+                    multiple
+                    onChange={handleMultiSelectChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    size={5}
+                  >
+                    {specializationAreasOptions.map((area) => (
+                      <option key={area.id} value={area.value}>
+                        {area.name}
+                      </option>
                     ))}
-                  </div>
+                  </select>
+                  <p className="text-sm text-gray-500 mt-2">
+                    Mantén presionada la tecla Ctrl (o Cmd en Mac) para seleccionar múltiples opciones
+                  </p>
                 </div>
 
                 <div className="mt-6">

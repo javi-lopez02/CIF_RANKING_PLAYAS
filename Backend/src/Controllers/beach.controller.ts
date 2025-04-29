@@ -16,8 +16,8 @@ export const getBeaches = async (req: Request, res: Response) => {
         evaluations: {
           select: {
             finalEvaluation: true,
-            description: true,
-            images: true,
+            beachDescription: true,
+            beachImages: true,
           },
         },
       },
@@ -50,8 +50,8 @@ export const getBeachId = async (req: Request, res: Response) => {
         evaluations: {
           select: {
             finalEvaluation: true,
-            description: true,
-            images: true,
+            beachDescription: true,
+            beachImages: true,
           },
         },
       },
@@ -75,14 +75,14 @@ export const createBeach = async (req: Request, res: Response) => {
     state,
     country,
     coordinates,
-    residencialOcupattion,
-    rigidization,
-    principalUse,
-    enviromentUse,
+    residentialOccupation,
+    stiffening,
+    mainUse,
+    environmentalUse,
     legalProtection,
     services,
-    paisaje,
-    accesoVehicular,
+    landscape,
+    vehicularAccess,
   } = req.body;
 
   try {
@@ -95,14 +95,14 @@ export const createBeach = async (req: Request, res: Response) => {
         state,
         country,
         coordinates,
-        residencialOcupattion,
-        rigidization,
-        principalUse,
-        enviromentUse,
+        residentialOccupation,
+        stiffening,
+        mainUse,
+        environmentalUse,
         legalProtection,
         services,
-        paisaje,
-        accesoVehicular,
+        landscape,
+        vehicularAccess,
         beachType,
       },
     });
