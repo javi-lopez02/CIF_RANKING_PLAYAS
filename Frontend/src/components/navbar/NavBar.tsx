@@ -1,149 +1,68 @@
 import { Link, Outlet } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
-import { FaBowlFood } from "react-icons/fa6";
-import { GiTicket } from "react-icons/gi";
-import { TiShoppingCart } from "react-icons/ti";
-import { PiBowlFoodFill } from "react-icons/pi";
-import { RiGalleryFill } from "react-icons/ri";
-import { BiSolidDrink } from "react-icons/bi";
-import { GrGallery } from "react-icons/gr";
-import { IoFastFoodSharp } from "react-icons/io5";
 import { useAuth } from "../../context/auth.context";
-import { MdContacts } from "react-icons/md";
 import Avatar from "./Avatar";
+import { useState } from "react";
 
 const Navbar = () => {
   const { isAuth } = useAuth();
+  const [searchText, setSearchText] = useState('');
 
   return (
     <>
-      <nav className="bg-white pl-3 h-16 w-full shadow flex items-center justify-between fixed top-0 z-50 border-b">
-        <div className="flex items-center space-x-3 w-60">
-          <Link to="/" className="flex items-center">
-            <img src="Logo.png" alt="logo" className="w-12 h-12" />
-            <div className="flex flex-col">
-              <h1 className="text-xl ml-2 sm:text-2xl font-bold">Hostal Y&E</h1>
-              <span className="text-small ml-2 sm:text-small font-semibold">
-                Tu oasis privado
-              </span>
-            </div>
-          </Link>
+      <div className="w-full">
+      {/* Navbar Principal */}
+      <div className="flex items-center justify-between bg-white border-b border-gray-200 px-4 h-14">
+        <div className="flex items-center space-x-8">
+          <Link to={"/"} className="text-teal-700 font-medium hover:text-teal-800">Inicio</Link>
+          <Link to={"/"} className="text-teal-700 font-medium hover:text-teal-800">Ranking</Link>
+          <Link to={"/"} className="text-teal-700 font-medium hover:text-teal-800">Evaluadores</Link>
+          <Link to={"/"} className="text-teal-700 font-medium hover:text-teal-800">Top</Link>
+          <Link to={"/"} className="text-teal-700 font-medium hover:text-teal-800">Playas</Link>
         </div>
-
-        <div className="hidden xl:flex justify-end items-center space-x-1 w-6/12">
-          <div className="hidden lg:flex font-semibold text-lg pr-6">
-            <ul className="flex items-center space-x-2">
-              <Link to="/">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <FaHome />
-                  Home
-                </li>
-              </Link>
-              <Link to="/oferts">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <GiTicket />
-                  Oferts
-                </li>
-              </Link>
-              <Link to="/gastronomics">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <FaBowlFood />
-                  Gastronomics
-                </li>
-              </Link>
-              <Link to="/drinks">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <BiSolidDrink />
-                  Drinks
-                </li>
-              </Link>
-              <Link to="/snacks">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <IoFastFoodSharp />
-                  Snacks
-                </li>
-              </Link>
-              <Link to="/desserts">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <PiBowlFoodFill />
-                  Desserts
-                </li>
-              </Link>
-              <Link to="/gallery">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <RiGalleryFill />
-                  Gallery
-                </li>
-              </Link>
-              <Link to="/events">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <GrGallery />
-                  Events
-                </li>
-              </Link>
-              <Link to="/contact">
-                <li className="p-1 flex items-center gap-1 hover:text-blue-500 duration-200 cursor-pointer">
-                  <MdContacts />
-                  ContactUs
-                </li>
-              </Link>
-            </ul>
-          </div>
-
-          <div className="flex w-auto gap-1">
-            {isAuth && (
-              <div className="hidden lg:flex font-semibold text-lg">
-                <Link
-                  to="/carShop"
-                  className="sm:p-3 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-500 duration-200 cursor-pointer"
-                >
-                  <TiShoppingCart className="min-h-6 min-w-6" />
-                </Link>
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Buscar playa..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="pl-2 pr-8 py-1 border border-gray-300 rounded-md text-sm"
+          />
+          <Search className="absolute right-2 top-1.5 h-4 w-4 text-gray-500" />
+        </div>
+      </div>
+      
+      {/* Banner con imagen de fondo y texto */}
+      <div className="relative h-64 bg-cover bg-center" style={{backgroundImage: "url('/api/placeholder/800/300')"}}>
+        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div className="absolute top-1/4 left-12 text-white">
+          <h1 className="text-3xl font-bold tracking-wide">DESCUBRE LAS</h1>
+          <h1 className="text-3xl font-bold tracking-wide">MEJORES PLAYAS</h1>
+          <h1 className="text-3xl font-bold tracking-wide">SEGÚN LA CIENCIA</h1>
+        </div>
+        <div className="absolute right-12 top-1/2 transform -translate-y-1/2">
+          <div className="rounded-full h-32 w-32 bg-white bg-opacity-80 flex items-center justify-center p-2">
+            <div className="rounded-full h-28 w-28 border-4 border-yellow-200 flex items-center justify-center relative">
+              <div className="absolute inset-0 rounded-full overflow-hidden">
+                <div className="absolute h-full w-1/2 left-0 bg-blue-300"></div>
+                <div className="absolute h-full w-1/2 right-0 bg-yellow-200"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center">
+                    <div className="h-16 w-16 rounded-full bg-teal-100 flex items-center justify-center overflow-hidden">
+                      <div className="w-12 h-6 bg-blue-400 rounded-t-full absolute top-6"></div>
+                      <div className="w-8 h-2 bg-yellow-400 absolute top-8 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            )}
-            <div className="hidden xl:flex lg:items-center font-semibold text-lg">
-              {isAuth && <Avatar />}
-              {!isAuth && (
-                <button
-                  className="mr-5 ml-5 px-3 rounded-md bg-slate-900 text-white font-bold"
-                >
-                  {" "}
-                  SingIn
-                </button>
-              )}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-xs font-bold text-gray-600 text-center rotate-12 absolute top-0 right-0 transform -translate-x-2 translate-y-2">MEJORES</div>
+                <div className="text-xs font-bold text-gray-600 text-center -rotate-12 absolute bottom-0 left-0 transform translate-x-2 -translate-y-2">PLAYAS</div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Boton Menu */}
-        <div className="xl:hidden flex items-center">
-          <ul className="mr-2 flex items-center">
-            {isAuth && (
-              <>
-                <Link
-                  to="/carShop"
-                  className="sm:p-3  hover:border-opacity-100 hover:text-blue-500 duration-200 cursor-pointer"
-                >
-                  <li className="p-2 text-gray-900 rounded-lg outline-none hover:text-blue-500">
-                    <TiShoppingCart className="min-h-6 min-w-6" />
-                  </li>
-                </Link>
-                
-              </>
-            )}
-            {!isAuth && (
-              <button
-                className="mr-5 ml-5 px-3 rounded-md bg-slate-900 text-white font-bold"
-              >
-                {" "}
-                SingIn
-              </button>
-            )}
-            
-          </ul>
-        </div>
-        
-      </nav>
+      </div>
+    </div>
       <Outlet />
     </>
   );
