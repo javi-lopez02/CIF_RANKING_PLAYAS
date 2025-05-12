@@ -1,6 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch, BiMenu, BiX } from "react-icons/bi";
 import { Autocomplete, AutocompleteItem, Avatar, Button } from "@heroui/react";
+import { useState, useEffect } from "react";
 
 export const animals = [
   {
@@ -61,167 +62,240 @@ export const animals = [
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const handleSelect = (item: Beach) => {
-    navigate(`/search/${item.id}`);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // Detectar el tamaño de la pantalla para aplicar cambios responsivos
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+        setIsSearchOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleSelect = (item) => {
+    navigate(`/search/${item.key}`);
+    setIsSearchOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (isSearchOpen) setIsSearchOpen(false);
   };
 
   return (
     <>
       <div className="w-full">
         {/* Navbar Principal */}
-        <div className="flex items-center justify-between bg-white border-b border-gray-200 px-4 h-14">
-          <div className="flex items-center space-x-8">
+        <div className="flex items-center justify-between bg-white border-b border-gray-200 py-3 px-4 h-auto">
+          {/* Enlaces de navegación - visibles en desktop, ocultos en móvil */}
+          <div className="hidden md:flex items-center space-x-6">
             <Link
-              to={"/"}
-              className="text-teal-700 font-medium hover:text-teal-800"
+              to="/"
+              className="text-dark font-medium font-lato text-xl"
             >
               Inicio
             </Link>
             <Link
-              to={"/"}
-              className="text-teal-700 font-medium hover:text-teal-800"
+              to="/"
+              className="text-dark font-medium font-lato text-xl"
             >
               Ranking
             </Link>
             <Link
-              to={"/"}
-              className="text-teal-700 font-medium hover:text-teal-800"
+              to="/"
+              className="text-dark font-medium font-lato text-xl"
             >
               Evaluadores
             </Link>
             <Link
-              to={"/"}
-              className="text-teal-700 font-medium hover:text-teal-800"
+              to="/"
+              className="text-dark font-medium font-lato text-xl"
             >
               Top
             </Link>
             <Link
-              to={"/"}
-              className="text-teal-700 font-medium hover:text-teal-800"
+              to="/"
+              className="text-dark font-medium font-lato text-xl"
             >
               Playas
             </Link>
           </div>
-          <div className="relative">
-            <Autocomplete
-              aria-label="Select a beach"
-              classNames={{
-                base: "max-w-xs",
-                listboxWrapper: "max-h-[320px]",
-                selectorButton: "text-default-500",
-              }}
-              defaultItems={animals}
-              inputProps={{
-                classNames: {
-                  input: "ml-1",
-                  inputWrapper: "h-[48px]",
-                },
-              }}
-              listboxProps={{
-                hideSelectedIcon: true,
-                itemClasses: {
-                  base: [
-                    "rounded-medium",
-                    "text-default-500",
-                    "transition-opacity",
-                    "data-[hover=true]:text-foreground",
-                    "dark:data-[hover=true]:bg-default-50",
-                    "data-[pressed=true]:opacity-70",
-                    "data-[hover=true]:bg-default-200",
-                    "data-[selectable=true]:focus:bg-default-100",
-                    "data-[focus-visible=true]:ring-default-500",
-                  ],
-                },
-              }}
-              placeholder="Search your favorite beach"
-              onSelectionChange={handleSelect}
-              popoverProps={{
-                offset: 10,
-                classNames: {
-                  base: "rounded-large",
-                  content: "p-1 border-small border-default-100 bg-background",
-                },
-              }}
-              radius="full"
-              startContent={
-                <BiSearch
-                  className="text-default-400"
-                  size={20}
-                  strokeWidth={2.5}
-                />
-              }
-              variant="bordered"
-            >
-              {(item) => (
-                <AutocompleteItem key={item.key} textValue={item.label}>
-                  <div className="flex justify-between items-center">
-                    <div className="flex gap-2 items-center">
-                      <Avatar
-                        alt={item.label}
-                        className="flex-shrink-0"
-                        size="sm"
-                        src={item.label}
-                      />
-                      <div className="flex flex-col">
-                        <span className="text-small">{item.label}</span>
-                        <span className="text-tiny text-default-400">
-                          {item.description}
-                        </span>
+
+          {/* Búsqueda y botones móviles */}
+          <div className="flex items-center space-x-2">
+            {/* Búsqueda en versión desktop */}
+            <div className="block">
+              <Autocomplete
+                aria-label="Select a beach"
+                classNames={{
+                  base: "min-w-[300px] w-[400px]",
+                  listboxWrapper: "max-h-[320px]",
+                  selectorButton: "text-default-500",
+                }}
+                defaultItems={animals}
+                inputProps={{
+                  classNames: {
+                    input: "ml-1 text-dark",
+                    inputWrapper: "h-[48px]",
+                  },
+                }}
+                listboxProps={{
+                  hideSelectedIcon: true,
+                  itemClasses: {
+                    base: [
+                      "rounded-medium",
+                      "text-default-500",
+                      "transition-opacity",
+                      "data-[hover=true]:text-foreground",
+                      "dark:data-[hover=true]:bg-default-50",
+                      "data-[pressed=true]:opacity-70",
+                      "data-[hover=true]:bg-default-200",
+                      "data-[selectable=true]:focus:bg-default-100",
+                      "data-[focus-visible=true]:ring-default-500",
+                    ],
+                  },
+                }}
+                placeholder="Search your favorite beach"
+                onSelectionChange={handleSelect}
+                popoverProps={{
+                  offset: 10,
+                  classNames: {
+                    base: "rounded-large",
+                    content:
+                      "p-1 border-small border-default-100 bg-background",
+                  },
+                }}
+                radius="full"
+                startContent={
+                  <BiSearch
+                    className="text-default-400"
+                    size={20}
+                    strokeWidth={2.5}
+                  />
+                }
+                variant="faded"
+                color="primary"
+                
+              >
+                {(item) => (
+                  <AutocompleteItem key={item.key} textValue={item.label}>
+                    <div className="flex justify-between items-center">
+                      <div className="flex gap-2 items-center">
+                        <Avatar
+                          alt={item.label}
+                          className="flex-shrink-0"
+                          size="sm"
+                          src={item.label}
+                        />
+                        <div className="flex flex-col">
+                          <span className="text-small">{item.label}</span>
+                          <span className="text-tiny text-default-400">
+                            {item.description}
+                          </span>
+                        </div>
                       </div>
+                      <Button
+                        className="border-small mr-0.5 font-medium shadow-small"
+                        radius="full"
+                        size="sm"
+                        variant="bordered"
+                      >
+                        Go to
+                      </Button>
                     </div>
-                    <Button
-                      className="border-small mr-0.5 font-medium shadow-small"
-                      radius="full"
-                      size="sm"
-                      variant="bordered"
-                    >
-                      Go to
-                    </Button>
-                  </div>
-                </AutocompleteItem>
-              )}
-            </Autocomplete>
+                  </AutocompleteItem>
+                )}
+              </Autocomplete>
+            </div>
           </div>
+          {/* Botón de menú hamburguesa */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-teal-600 hover:bg-gold rounded-full"
+          >
+            {isMenuOpen ? <BiX size={24} /> : <BiMenu size={24} />}
+          </button>
         </div>
 
-        {/* Banner con imagen de fondo y texto */}
+        {/* Menú móvil */}
+        {isMenuOpen && (
+          <div className="md:hidden w-full bg-white border-b border-gray-200">
+            <div className="flex flex-col">
+              <Link
+                to="/"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                onClick={toggleMenu}
+              >
+                Inicio
+              </Link>
+              <Link
+                to="/"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                onClick={toggleMenu}
+              >
+                Ranking
+              </Link>
+              <Link
+                to="/"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                onClick={toggleMenu}
+              >
+                Evaluadores
+              </Link>
+              <Link
+                to="/"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                onClick={toggleMenu}
+              >
+                Top
+              </Link>
+              <Link
+                to="/"
+                className="py-4 px-6 text-dark font-medium font-lato hover:bg-gold"
+                onClick={toggleMenu}
+              >
+                Playas
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {/* Banner con imagen de fondo y texto - responsivo */}
         <div
-          className="relative h-64 bg-cover bg-center"
-          style={{ backgroundImage: "url('/api/placeholder/800/300')" }}
+          className="relative bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/banner.png')",
+            height: windowWidth < 640 ? "200px" : "256px",
+          }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-          <div className="absolute top-1/4 left-12 text-white">
-            <h1 className="text-3xl font-bold tracking-wide">DESCUBRE LAS</h1>
-            <h1 className="text-3xl font-bold tracking-wide">MEJORES PLAYAS</h1>
-            <h1 className="text-3xl font-bold tracking-wide">
+          <div className="absolute top-1/4 left-4 md:left-12 text-white">
+            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sunbone tracking-wide">
+              DESCUBRE LAS
+            </h1>
+            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sunbone tracking-wide">
+              MEJORES PLAYAS
+            </h1>
+            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sunbone tracking-wide">
               SEGÚN LA CIENCIA
             </h1>
           </div>
-          <div className="absolute right-12 top-1/2 transform -translate-y-1/2">
-            <div className="rounded-full h-32 w-32 bg-white bg-opacity-80 flex items-center justify-center p-2">
-              <div className="rounded-full h-28 w-28 border-4 border-yellow-200 flex items-center justify-center relative">
-                <div className="absolute inset-0 rounded-full overflow-hidden">
-                  <div className="absolute h-full w-1/2 left-0 bg-blue-300"></div>
-                  <div className="absolute h-full w-1/2 right-0 bg-yellow-200"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center">
-                      <div className="h-16 w-16 rounded-full bg-teal-100 flex items-center justify-center overflow-hidden">
-                        <div className="w-12 h-6 bg-blue-400 rounded-t-full absolute top-6"></div>
-                        <div className="w-8 h-2 bg-yellow-400 absolute top-8 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-xs font-bold text-gray-600 text-center rotate-12 absolute top-0 right-0 transform -translate-x-2 translate-y-2">
-                    MEJORES
-                  </div>
-                  <div className="text-xs font-bold text-gray-600 text-center -rotate-12 absolute bottom-0 left-0 transform translate-x-2 -translate-y-2">
-                    PLAYAS
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          {/* Logo circular responsivo */}
+          <div className="absolute top-8 right-4 md:right-12">
+            <img
+              src="/Ranking_logo.png"
+              alt="Logo"
+              className="w-32 h-32 sm:w-48 sm:h-48 rounded-full border-2 border-white bg-white shadow-lg"
+            />
           </div>
         </div>
       </div>
@@ -229,4 +303,5 @@ const Navbar = () => {
     </>
   );
 };
+
 export default Navbar;

@@ -4,6 +4,7 @@ import { HeroUIProvider } from "@heroui/react";
 import Page404 from "./pages/404Page";
 import { Toaster } from "sonner";
 import Home from "./pages/Home";
+import Beach from "./pages/Beach";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/*" element={<Page404 />} />
             <Route element={<Navbar />}>
               <Route path="/" element={<Home/>} />
+              <Route path="/beach" element={<Beach />} />
               
               
             </Route>

@@ -9,3 +9,10 @@ body::-webkit-scrollbar {
 .shadowimg {
   filter: drop-shadow(10px 10px 10px #0d5b61a6);
 }
+
+@font-face {
+  font-family: 'Sunbone Sans One';
+  src: url('/fonts/Sunbone.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
