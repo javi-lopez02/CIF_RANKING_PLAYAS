@@ -99,31 +99,31 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/"
-              className="text-dark font-medium font-lato text-xl"
+              className="text-dark font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl"
             >
               Inicio
             </Link>
             <Link
               to="/"
-              className="text-dark font-medium font-lato text-xl"
+              className="text-dark font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl"
             >
               Ranking
             </Link>
             <Link
               to="/"
-              className="text-dark font-medium font-lato text-xl"
+              className="text-dark font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl"
             >
               Evaluadores
             </Link>
             <Link
               to="/"
-              className="text-dark font-medium font-lato text-xl"
+              className="text-dark font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl"
             >
               Top
             </Link>
             <Link
               to="/"
-              className="text-dark font-medium font-lato text-xl"
+              className="text-dark font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl"
             >
               Playas
             </Link>
@@ -143,7 +143,7 @@ const Navbar = () => {
                 defaultItems={animals}
                 inputProps={{
                   classNames: {
-                    input: "ml-1 text-dark",
+                    input: "ml-1 text-dark font-sans",
                     inputWrapper: "h-[48px]",
                   },
                 }}
@@ -153,6 +153,7 @@ const Navbar = () => {
                     base: [
                       "rounded-medium",
                       "text-default-500",
+                      "font-sans",
                       "transition-opacity",
                       "data-[hover=true]:text-foreground",
                       "dark:data-[hover=true]:bg-default-50",
@@ -203,7 +204,7 @@ const Navbar = () => {
                         </div>
                       </div>
                       <Button
-                        className="border-small mr-0.5 font-medium shadow-small"
+                        className="border-small mr-0.5 font-medium font-sans shadow-small"
                         radius="full"
                         size="sm"
                         variant="bordered"
@@ -231,35 +232,35 @@ const Navbar = () => {
             <div className="flex flex-col">
               <Link
                 to="/"
-                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-sans hover:bg-gold"
                 onClick={toggleMenu}
               >
                 Inicio
               </Link>
               <Link
                 to="/"
-                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-sans hover:bg-gold"
                 onClick={toggleMenu}
               >
                 Ranking
               </Link>
               <Link
                 to="/"
-                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-sans hover:bg-gold"
                 onClick={toggleMenu}
               >
                 Evaluadores
               </Link>
               <Link
                 to="/"
-                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-lato hover:bg-gold"
+                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-sans hover:bg-gold"
                 onClick={toggleMenu}
               >
                 Top
               </Link>
               <Link
                 to="/"
-                className="py-4 px-6 text-dark font-medium font-lato hover:bg-gold"
+                className="py-4 px-6 text-dark font-medium font-sans hover:bg-gold"
                 onClick={toggleMenu}
               >
                 Playas
@@ -278,13 +279,13 @@ const Navbar = () => {
         >
           <div className="absolute inset-0 bg-black bg-opacity-20"></div>
           <div className="absolute top-1/4 left-4 md:left-12 text-white">
-            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sunbone tracking-wide">
+            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sans tracking-wide">
               DESCUBRE LAS
             </h1>
-            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sunbone tracking-wide">
+            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sans tracking-wide">
               MEJORES PLAYAS
             </h1>
-            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sunbone tracking-wide">
+            <h1 className="text-2xl text-white sm:text-4xl font-bold font-sans tracking-wide">
               SEGÚN LA CIENCIA
             </h1>
           </div>

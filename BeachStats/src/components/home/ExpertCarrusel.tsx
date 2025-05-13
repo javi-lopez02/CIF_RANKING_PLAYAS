@@ -132,7 +132,7 @@ export default function ExpertCarrusel() {
                       <p className="text-sm font-lato text-center">
                         {evaluador.description}
                       </p>
-                      <button className="mt-4 px-4 py-2 bg-white text-black text-sm rounded-md hover:bg-gray-200 transition">
+                      <button className="mt-4 px-4 py-2 bg-white text-black text-sm rounded-md hover:bg-gold transition">
                         Conocer más
                       </button>
                     </div>

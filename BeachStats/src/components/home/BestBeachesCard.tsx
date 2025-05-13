@@ -21,7 +21,7 @@ export default function BestBeachesCard({
         {/* Overlay effect on hover */}
         {isHovered && (
           <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-            <span className="text-white font-bold font-lato px-3 py-1 rounded-full bg-sky text-sm">
+            <span className="text-white font-bold font-lato px-3 py-1 rounded-full bg-sky hover:bg-gold hover:text-dark text-sm">
               Ver más
             </span>
           </div>

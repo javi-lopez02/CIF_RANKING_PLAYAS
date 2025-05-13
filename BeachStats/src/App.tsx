@@ -5,6 +5,7 @@ import Page404 from "./pages/404Page";
 import { Toaster } from "sonner";
 import Home from "./pages/Home";
 import Beach from "./pages/Beach";
+import Category from "./pages/Category";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route element={<Navbar />}>
               <Route path="/" element={<Home/>} />
               <Route path="/beach" element={<Beach />} />
+              <Route path="/category" element={<Category />} />
               
               
             </Route>

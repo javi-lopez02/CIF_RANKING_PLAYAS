@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SectionTitle } from "./SectionTitle";
-import { BiCamera, BiLeftArrow, BiRightArrow, BiSearch } from "react-icons/bi";
+import { BiCamera, BiLeftArrowAlt, BiRightArrowAlt, BiSearch } from "react-icons/bi";
 
 interface BeachPictureProps {
   images: string[];
@@ -80,13 +80,13 @@ export function BeachPicture({ images }: BeachPictureProps) {
               onClick={prevImage}
               className="bg-black/30 hover:bg-black/50 p-1 rounded-full text-white"
             >
-              <BiLeftArrow size={20} />
+              <BiLeftArrowAlt size={20} />
             </button>
             <button
               onClick={nextImage}
               className="bg-black/30 hover:bg-black/50 p-1 rounded-full text-white"
             >
-              <BiRightArrow size={20} />
+              <BiRightArrowAlt size={20} />
             </button>
           </div>
         </div>
@@ -126,9 +126,9 @@ export function BeachPicture({ images }: BeachPictureProps) {
         <div className="hidden md:flex justify-center items-center mt-2 text-sm text-gray-600">
           <button
             onClick={prevImage}
-            className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded-l flex items-center"
+            className="bg-gray-200 hover:bg-gold px-2 py-1 rounded-l flex items-center"
           >
-            <BiLeftArrow size={16} />
+            <BiLeftArrowAlt size={16} />
           </button>
 
           <span className="px-2 flex items-center">
@@ -137,9 +137,9 @@ export function BeachPicture({ images }: BeachPictureProps) {
 
           <button
             onClick={nextImage}
-            className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded-r flex items-center"
+            className="bg-gray-200 hover:bg-gold px-2 py-1 rounded-r flex items-center"
           >
-            <BiRightArrow size={16} />
+            <BiRightArrowAlt size={16} />
           </button>
         </div>
 
