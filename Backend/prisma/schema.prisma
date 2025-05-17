@@ -67,7 +67,7 @@ model Beach {
 }
 
 model Expert {
-  id                  String               @id @default(uuid())
+  id                  String                @id @default(uuid())
   name                String
   institution         String
   codeNode            String
@@ -138,4 +138,12 @@ model ExperienceTypes {
   name         String
   evaluationId String
   evaluation   Evaluation @relation(fields: [evaluationId], references: [id])
+}
+
+model MediaCoverage {
+  id    String @id @default(uuid())
+  name  String
+  url   String
+  image String
+  year  Int
 }

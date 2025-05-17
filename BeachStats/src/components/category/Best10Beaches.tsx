@@ -224,46 +224,6 @@ export default function Best10Beaches() {
           ))}
         </div>
       </div>
-      <div className="max-w-3xl mx-auto my-4">
-        <div className="bg-gray-200 p-4 rounded-md border border-gray-300">
-          <div className="flex items-center mb-2">
-            <h2 className="text-gray-700 font-bold uppercase tracking-wide">
-              METODOLOGÍA:
-            </h2>
-            <BiInfoCircle size={16} className="ml-2 text-gray-500" />
-          </div>
-
-          <div className="text-sm text-gray-700 space-y-2">
-            <p>
-              El análisis de la calidad de las playas se basa en 4 dimensiones y
-              20 categorías. Cada categoría se mide mediante indicadores, que se
-              puntúan en una escala de 1 a 5, teniendo en cuenta la gestión y la
-              sostenibilidad. Las playas tienen puntuaciones para diferenciar
-              entre tipos de playas (urbana, rural o de pueblo).
-            </p>
-
-            <p>
-              La inclusión de playas en el ranking depende de la disponibilidad
-              de un evaluador con conocimiento de la región. Si su playa
-              favorita aún no está incluida, es porque todavía no disponemos de
-              un evaluador cualificado para evaluarla.
-            </p>
-
-            <p className="font-medium">
-              <span className="text-red-600">
-                *Los números en rojo representan el Índice de Calidad de la
-                Playa
-              </span>{" "}
-              obtenido para cada playa evaluada, que oscila entre 0 y 1, donde
-              los valores más próximos a 1 indican que la playa evaluada era de
-              mayor calidad teniendo en cuenta las cuatro dimensiones:
-              recreación (amarillo), protección (rosa), conservación (verde) y
-              saneamiento (azul). El borde hace referencia al tipo de playa:
-              gris para la urbana, naranja para poblado y verde para la rural.
-            </p>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

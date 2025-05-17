@@ -13,7 +13,7 @@ export const beachType = [
   },
   {
     id: 2,
-    title: "Mejores Playas de Pueblo",
+    title: "Mejores Playas de Poblado",
     image:
       "https://a.travel-assets.com/findyours-php/viewfinder/images/res40/200000/200422.jpg",
   },

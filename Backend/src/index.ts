@@ -6,6 +6,7 @@ import * as dotenv from "dotenv";
 import path from "path";
 
 import auth from "./Routes/auth.routes";
+import media from "./Routes/media.routes";
 
 dotenv.config();
 const port = 4000;
@@ -29,6 +30,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 app.use("/api/auth", auth);
+app.use("/api", media)
 
 app.use("/public", express.static(path.join(__dirname, "/Upload")));
 

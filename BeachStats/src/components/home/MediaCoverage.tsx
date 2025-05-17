@@ -1,88 +1,12 @@
 import { useState, useEffect } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import useMedia from "../../customHooks/useMedia";
+import { toast } from "sonner";
 
 export default function MediaCoverage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
-
-  // Lista de medios
-  const mediaLogos = [
-    {
-      name: "Bloomberg",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5aXBsJyscFsMrbJ6avAxQtt5av7jP3HsFw&s",
-    },
-    {
-      name: "Miami Herald",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6DbjzDrD1wiAUQA9GivdG_nQYGBFpSSMeNw&s",
-    },
-    {
-      name: "Daily Mail",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_m-Erns4Bt-V7qH6HyjwpDAna_xn6_iVFjw&s",
-    },
-    {
-      name: "CNN",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQj-qNvZ2PIe_XaU4rZV4RLm5OWsqgGft6Lw&s",
-    },
-    {
-      name: "The Australian",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1jVA77bCBgDhHwQ-HfmiwVUibOwCpOlSWo5LgabW2lPgEv250Pu_x8W4dWqiCT-6kuWE&usqp=CAU",
-    },
-    {
-      name: "The Sun",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr62NfauVytsJbv5GOmR3bpafjssRs1Qvuvg&s",
-    },
-    {
-      name: "Cosmopolitan",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIEaRjlIP1hlFQkvNw_UEXh2YRCJ6IKa0u2g&s",
-    },
-    {
-      name: "Thrillist",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP5QrK5ByomyZaQGss5oCZe9mD4E5d3pwPPw&s",
-    },
-    {
-      name: "Chicago Tribune",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwJruyj0HqIRzl9QAjSmT9X1rS-73X07GvA&s",
-    },
-    {
-      name: "MSN",
-      image:
-        "https://logos-world.net/wp-content/uploads/2022/05/MSN-Emblem.png",
-    },
-    {
-      name: "Newsweek",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlecYtY4Ucm2TTYYQ9kjtcWi51Bxh8fl18kQ&s",
-    },
-    {
-      name: "Canada.com",
-      image:
-        "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0002/2114/brand.gif?itok=HTBcMhGJ",
-    },
-    {
-      name: "Sydney Morning Herald",
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5b24b18bcc8fedb17f91d9ac/1597578347038-1Z51UFA8JRD42WANEBSO/Sydney-Morning-Herald-logo-final.jpg",
-    },
-    {
-      name: "Independent",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCajtN_cU4wnWO6Yfj01_C_-tUev9t12C2uQ&s",
-    },
-    {
-      name: "Time Out",
-      image:
-        "https://www.visit-goodplace.com/wp-content/uploads/2022/05/timeout-logo-moder.png",
-    },
-  ];
+  const {media, error} = useMedia();
 
   // Número de logos a mostrar a la vez (responsive)
   const getLogosToShow = () => {
@@ -97,11 +21,11 @@ export default function MediaCoverage() {
     }
     if (window.innerWidth < 1280) {
       return 4;
-    } else return 5;
+    } else return 4;
   };
 
   const logosPerSlide = getLogosToShow();
-  const totalSlides = Math.ceil(mediaLogos.length / logosPerSlide);
+  const totalSlides = Math.ceil(media.length / logosPerSlide);
 
   // Autoplay
   useEffect(() => {
@@ -136,8 +60,8 @@ export default function MediaCoverage() {
   const visibleLogos = [];
   for (let i = 0; i < logosPerSlide; i++) {
     const index = activeSlide * logosPerSlide + i;
-    if (index < mediaLogos.length) {
-      visibleLogos.push(mediaLogos[index]);
+    if (index < media.length) {
+      visibleLogos.push(media[index]);
     }
   }
 
@@ -173,6 +97,9 @@ export default function MediaCoverage() {
                       src={media.image}
                       alt={`${media.name} logo`}
                       className="h-20 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                      onClick={() => {
+                        window.open(media.url, "_blank");
+                      }}
                     />
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                       <span className="text-xs font-light text-gray-500">
@@ -211,6 +138,8 @@ export default function MediaCoverage() {
           ))}
         </div>
       </div>
+      {error && toast.error("Error al cargar los logos de los medios.")}
     </div>
+    
   );
 }
