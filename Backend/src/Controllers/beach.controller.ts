@@ -13,11 +13,15 @@ export const getBeaches = async (req: Request, res: Response) => {
         country: true,
         coordinates: true,
         beachType: true,
+        BQV: true,
+        region: true,
+        id: true,
         evaluations: {
           select: {
-            finalEvaluation: true,
+            creditibilyIndex: true,
             beachDescription: true,
             beachImages: true,
+            expert: true,
           },
         },
       },
@@ -35,7 +39,8 @@ export const getBeaches = async (req: Request, res: Response) => {
 };
 
 export const getBeachId = async (req: Request, res: Response) => {
-  const { beachID } = req.body;
+
+  const beachID = (req.query.p || "") as string;
 
   try {
     const beach = await prisma.beach.findUnique({
@@ -45,11 +50,13 @@ export const getBeachId = async (req: Request, res: Response) => {
         city: true,
         state: true,
         country: true,
+        region: true,
+        BQV: true,
         coordinates: true,
         beachType: true,
         evaluations: {
           select: {
-            finalEvaluation: true,
+            creditibilyIndex: true,
             beachDescription: true,
             beachImages: true,
           },
@@ -68,53 +75,59 @@ export const getBeachId = async (req: Request, res: Response) => {
   }
 };
 
-export const createBeach = async (req: Request, res: Response) => {
-  const {
-    name,
-    city,
-    state,
-    country,
-    coordinates,
-    residentialOccupation,
-    stiffening,
-    mainUse,
-    environmentalUse,
-    legalProtection,
-    services,
-    landscape,
-    vehicularAccess,
-  } = req.body;
+// export const createBeach = async (req: Request, res: Response) => {
+//   const {
+//     name,
+//     city,
+//     state,
+//     country,
+//     coordinates,
+//     residentialOccupation,
+//     stiffening,
+//     mainUse,
+//     environmentalUse,
+//     legalProtection,
+//     services,
+//     landscape,
+//     vehicularAccess,
+//   } = req.body;
 
-  try {
-    const beachType = "POPULATED";
+//   try {
+//     const beachType = "DE_POBLADO";
 
-    const beach = await prisma.beach.create({
-      data: {
-        name,
-        city,
-        state,
-        country,
-        coordinates,
-        residentialOccupation,
-        stiffening,
-        mainUse,
-        environmentalUse,
-        legalProtection,
-        services,
-        landscape,
-        vehicularAccess,
-        beachType,
-      },
-    });
+//     const beach = await prisma.beach.create({
+//       data: {
+//         name,
+//         city,
+//         state,
+//         country,
+//         coordinates,
+//         residentialOccupation,
+//         stiffening,
+//         mainUse,
+//         environmentalUse,
+//         legalProtection,
+//         services,
+//         landscape,
+//         vehicularAccess,
+//         beachType,
+//         region: "DE_POBLADO",
+//         BQV: 24,
+//       },
+//     });
 
-    if (!beach) {
-      res.status(401).json({ message: "No se encuentra la playa que busca" });
-    }
+//     if (!beach) {
+//       res.status(401).json({ message: "No se encuentra la playa que busca" });
+//     }
 
-    res.status(200).json({ data: beach, message: "Datos de la playa guardados correctamente" });
-
-  } catch (error) {
-    console.log("Error:", error);
-    res.status(500).send({message: "Internal Server Error"})
-  }
-};
+//     res
+//       .status(200)
+//       .json({
+//         data: beach,
+//         message: "Datos de la playa guardados correctamente",
+//       });
+//   } catch (error) {
+//     console.log("Error:", error);
+//     res.status(500).send({ message: "Internal Server Error" });
+//   }
+// };

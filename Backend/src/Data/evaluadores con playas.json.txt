@@ -1,0 +1,836 @@
+{
+  "evaluadores": [
+    {
+      "nombre": "Aída Carolina Martínez Correa",
+      "playas": [
+        {
+          "nombre": "La Primavera",
+          "indice_credibilidad": 0.6
+        }
+      ]
+    },
+    {
+      "nombre": "Alba Mercadé",
+      "playas": [
+        {
+          "nombre": "Playa de la Barceloneta",
+          "indice_credibilidad": 0.5
+        },
+        {
+          "nombre": "Playa La Paella",
+          "indice_credibilidad": 0.5
+        },
+        {
+          "nombre": "Playa del Canyadell",
+          "indice_credibilidad": 0.5
+        }
+      ]
+    },
+    {
+      "nombre": "Alfredo Jaramillo Velez",
+      "playas": [
+        {
+          "nombre": "Makara",
+          "indice_credibilidad": 0.65
+        }
+      ]
+    },
+    {
+      "nombre": "Ana Maria Faggi",
+      "playas": [
+        {
+          "nombre": "Balneario Botavara, Pinamar Norte",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Villa Gesell",
+          "indice_credibilidad": 1.0
+        }
+      ]
+    },
+    {
+      "nombre": "Camilo M. Botero",
+      "playas": [
+        {
+          "nombre": "Black Duck Cove",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Inverness",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Rainbow Heaven",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Stoney Island",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Bello Horizonte (Sector Zuana)",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "El Rodadero",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Playa del Caimán",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "Playa Grande",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Pozos Colorados - Santamar",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "Pozos Colorados - Sierra Laguna",
+          "indice_credibilidad": 0.9
+        }
+      ]
+    },
+    {
+      "nombre": "CARLOS ENRIQUE ROJAS GUTIERREZ",
+      "playas": [
+        {
+          "nombre": "EL PESCADOR",
+          "indice_credibilidad": 0.6
+        }
+      ]
+    },
+    {
+      "nombre": "Chadit serrano vergara",
+      "playas": [
+        {
+          "nombre": "Playa el malecón de las americas",
+          "indice_credibilidad": 0.5
+        }
+      ]
+    },
+    {
+      "nombre": "Danilo Souza Santana",
+      "playas": [
+        {
+          "nombre": "Praia do Farol de Itapuã",
+          "indice_credibilidad": 0.5
+        },
+        {
+          "nombre": "Praia de Placaford",
+          "indice_credibilidad": 0.55
+        }
+      ]
+    },
+    {
+      "nombre": "Darlin serrano vergara",
+      "playas": [
+        {
+          "nombre": "El turista",
+          "indice_credibilidad": 0.5
+        }
+      ]
+    },
+    {
+      "nombre": "Dayana García Ortríz",
+      "playas": [
+        {
+          "nombre": "Playa Piscina Natural Costa Sur",
+          "indice_credibilidad": 0.6
+        }
+      ]
+    },
+    {
+      "nombre": "DICK ACUÑA",
+      "playas": [
+        {
+          "nombre": "Playas del Country Sabanilla",
+          "indice_credibilidad": 0.65
+        }
+      ]
+    },
+    {
+      "nombre": "Dick All Acuña Hereira",
+      "playas": [
+        {
+          "nombre": "Alcatraz",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Punta Astilleros",
+          "indice_credibilidad": 0.65
+        }
+      ]
+    },
+    {
+      "nombre": "Dolores Astudillo",
+      "playas": [
+        {
+          "nombre": "Chulluype",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Malecón de Ballenita",
+          "indice_credibilidad": 0.65
+        }
+      ]
+    },
+    {
+      "nombre": "Duván Esteban Cárdenas Sepúlveda",
+      "playas": [
+        {
+          "nombre": "Playa Blanca",
+          "indice_credibilidad": 0.45
+        },
+        {
+          "nombre": "Playa Dulce",
+          "indice_credibilidad": 0.5
+        },
+        {
+          "nombre": "Simona del Mar",
+          "indice_credibilidad": 0.3
+        }
+      ]
+    },
+    {
+      "nombre": "Edelkis Rodríguez Moya",
+      "playas": [
+        {
+          "nombre": "La Estrella, Hotel Playa Santa Maria.",
+          "indice_credibilidad": 0.9
+        }
+      ]
+    },
+    {
+      "nombre": "Elier Alexander Córdova García",
+      "playas": [
+        {
+          "nombre": "Caletones",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "El Cristo",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "El Faro",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "El Peñón",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Guardalavaca",
+          "indice_credibilidad": 0.7
+        }
+      ]
+    },
+    {
+      "nombre": "Félix A. Correa Álvarez",
+      "playas": [
+        {
+          "nombre": "Piedra Movida. Sector Hotel Gran Muthu Cayo Santa María",
+          "indice_credibilidad": 0.8
+        }
+      ]
+    },
+    {
+      "nombre": "Flavia Lins de Barros",
+      "playas": [
+        {
+          "nombre": "Copacabana",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Praia do Peró",
+          "indice_credibilidad": 0.7
+        }
+      ]
+    },
+    {
+      "nombre": "Francisco Alcocer y Lozano",
+      "playas": [
+        {
+          "nombre": "LAS VIUDAS",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "Santa María",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "Acapulquito",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "CHILENO",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "Palmilla",
+          "indice_credibilidad": 0.7
+        }
+      ]
+    },
+    {
+      "nombre": "Frank Huerta López",
+      "playas": [
+        {
+          "nombre": "Frente de playa del Hotel Iberostar Tainos",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "Hotel Meliá Internacional",
+          "indice_credibilidad": 0.9
+        }
+      ]
+    },
+    {
+      "nombre": "GLADYS PEREZ DE LA FUENTE",
+      "playas": [
+        {
+          "nombre": "DELFINES",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "PUNTA ESMERALDA",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "SANTA FE",
+          "indice_credibilidad": 0.95
+        }
+      ]
+    },
+    {
+      "nombre": "Gleini Gallardo",
+      "playas": [
+        {
+          "nombre": "Playa al frente del Faro de Puerto Colombia",
+          "indice_credibilidad": 0.8
+        },
+        {
+          "nombre": "Playa Mendoza",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Puerto Colombia (muelle-malecón)",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Sabanilla",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Turipana",
+          "indice_credibilidad": 0.65
+        }
+      ]
+    },
+    {
+      "nombre": "GUSTAVO EUGENIO ECHEVERRI JARAMILLO",
+      "playas": [
+        {
+          "nombre": "PLAYA BOCAGRANDE (SECTOR HOTELES DORADO, INTERCONTINENTAL, ALMIRANTE Y CARTAGENA PLAZA)",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "PLAYA MARBELLA SECTOR HOTIL IBIS",
+          "indice_credibilidad": 0.7
+        }
+      ]
+    },
+    {
+      "nombre": "Hugo Diniz Brandão",
+      "playas": [
+        {
+          "nombre": "Praia de Grumari",
+          "indice_credibilidad": 0.35
+        },
+        {
+          "nombre": "Praia de Ipanema",
+          "indice_credibilidad": 0.5
+        },
+        {
+          "nombre": "Praia do Arpoador",
+          "indice_credibilidad": 0.35
+        },
+        {
+          "nombre": "Prainha",
+          "indice_credibilidad": 0.4
+        },
+        {
+          "nombre": "Praia de Itacoatiara",
+          "indice_credibilidad": 0.45
+        },
+        {
+          "nombre": "Praia do Leblon",
+          "indice_credibilidad": 0.55
+        }
+      ]
+    },
+    {
+      "nombre": "Hugo Hidalgo Colindres",
+      "playas": [
+        {
+          "nombre": "Playa Coca Cola",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Punta de Palma",
+          "indice_credibilidad": 0.85
+        }
+      ]
+    },
+    {
+      "nombre": "Idania Hernández Ramos",
+      "playas": [
+        {
+          "nombre": "Playa Ancón",
+          "indice_credibilidad": 0.9
+        }
+      ]
+    },
+    {
+      "nombre": "JAISER CARDONA",
+      "playas": [
+        {
+          "nombre": "PLAYA BELLA VISTA",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "PLAYA GUACUCO",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "PLAYA LA PARED",
+          "indice_credibilidad": 0.55
+        }
+      ]
+    },
+    {
+      "nombre": "John Edison Usuga Jaramillo",
+      "playas": [
+        {
+          "nombre": "Playa Dulce",
+          "indice_credibilidad": 0.6
+        }
+      ]
+    },
+    {
+      "nombre": "John Usuga",
+      "playas": [
+        {
+          "nombre": "Playa Del Pescador",
+          "indice_credibilidad": 0.6
+        },
+        {
+          "nombre": "Playa el Turista",
+          "indice_credibilidad": 0.6
+        },
+        {
+          "nombre": "Playa Primavera",
+          "indice_credibilidad": 0.5
+        }
+      ]
+    },
+    {
+      "nombre": "José Ricardo Cornejo Zúñiga",
+      "playas": [
+        {
+          "nombre": "Los Yuyos",
+          "indice_credibilidad": 0.55
+        }
+      ]
+    },
+    {
+      "nombre": "José Rodrigues de Souza Filho",
+      "playas": [
+        {
+          "nombre": "Boipeba (Boca da Barra)",
+          "indice_credibilidad": 0.8
+        },
+        {
+          "nombre": "Costa do Sauípe (Oca)",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Farol de Itapuã",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Morro de São Paulo (Segunda Praia)",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Ponta de Nossa Senhora de Guadalupe",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Porto da Barra",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Praia do Forte (Porto)",
+          "indice_credibilidad": 1.0
+        },
+        {
+          "nombre": "Ribeira (Penha)",
+          "indice_credibilidad": 0.95
+        }
+      ]
+    },
+    {
+      "nombre": "Juan Alfredo Cabrera Hernández",
+      "playas": [
+        {
+          "nombre": "Playa Buey Vaca",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Playa de Faro de Maya",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Playa El Mamey",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Playa El Morrillo",
+          "indice_credibilidad": 0.95
+        },
+        {
+          "nombre": "Playa Hotel Internacional",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "Playa Hotel Meliá Antillas",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "Varadero Histórico",
+          "indice_credibilidad": 0.95
+        }
+      ]
+    },
+    {
+      "nombre": "Júlia Macêdo",
+      "playas": [
+        {
+          "nombre": "PORTO DA BARRA",
+          "indice_credibilidad": 0.65
+        }
+      ]
+    },
+    {
+      "nombre": "Junia Kacenelenbogen Guimarães",
+      "playas": [
+        {
+          "nombre": "Porto da Barra",
+          "indice_credibilidad": 0.8
+        },
+        {
+          "nombre": "Ribeira (Bogary-Penha)",
+          "indice_credibilidad": 0.8
+        },
+        {
+          "nombre": "Farol de Itapuã",
+          "indice_credibilidad": 0.8
+        }
+      ]
+    },
+    {
+      "nombre": "Liliam Rojas López",
+      "playas": [
+        {
+          "nombre": "Playa El Descanso",
+          "indice_credibilidad": 0.8
+        },
+        {
+          "nombre": "Playa Larga",
+          "indice_credibilidad": 0.8
+        },
+        {
+          "nombre": "Playa Máquina",
+          "indice_credibilidad": 0.8
+        }
+      ]
+    },
+    {
+      "nombre": "Lívia Garcia Prado",
+      "playas": [
+        {
+          "nombre": "Praia Central",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Praia de Taquaras",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "Praia de Taquarinhas",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Praia do Estaleirinho",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "Praia do Estaleiro",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Praia Brava",
+          "indice_credibilidad": 0.7
+        }
+      ]
+    },
+    {
+      "nombre": "Luis Cesar Herrera",
+      "playas": [
+        {
+          "nombre": "Playa Guacuco",
+          "indice_credibilidad": 0.6
+        },
+        {
+          "nombre": "Playa Guayacán",
+          "indice_credibilidad": 0.5
+        },
+        {
+          "nombre": "Playa Juventud",
+          "indice_credibilidad": 0.55
+        }
+      ]
+    },
+    {
+      "nombre": "Manuel García Castro",
+      "playas": [
+        {
+          "nombre": "Perla Blanca. Hotel Paradissus",
+          "indice_credibilidad": 0.9
+        }
+      ]
+    },
+    {
+      "nombre": "Manuela Rendón Osorio",
+      "playas": [
+        {
+          "nombre": "Playa Dulce",
+          "indice_credibilidad": 0.45
+        },
+        {
+          "nombre": "Playa La Martina",
+          "indice_credibilidad": 0.35
+        }
+      ]
+    },
+    {
+      "nombre": "Mario Alberto Palacios Moreno",
+      "playas": [
+        {
+          "nombre": "Ayangue",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Ballenita",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Malecón Playas",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "San Pablo",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Varadero",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Chabelita",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Paraísos Engabao",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Puerto Engabao",
+          "indice_credibilidad": 0.85
+        }
+      ]
+    },
+    {
+      "nombre": "Maritza Barreto",
+      "playas": [
+        {
+          "nombre": "Playa Flamenco",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Playa Sardinera",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Playa Escambron",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "Playa Playuela",
+          "indice_credibilidad": 0.95
+        }
+      ]
+    },
+    {
+      "nombre": "Maritza Barreto Orta",
+      "playas": [
+        {
+          "nombre": "Culebrita",
+          "indice_credibilidad": 0.95
+        }
+      ]
+    },
+    {
+      "nombre": "PALOMA ARIAS ORDIALES",
+      "playas": [
+        {
+          "nombre": "ITAUNA",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "PONTA DA FARINHA",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "PONTAL DO PERÓ",
+          "indice_credibilidad": 0.8
+        },
+        {
+          "nombre": "PRAIA AZEDA",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "PRAIA DE UBÁS",
+          "indice_credibilidad": 0.9
+        },
+        {
+          "nombre": "PRAIA DO FORNO",
+          "indice_credibilidad": 0.85
+        }
+      ]
+    },
+    {
+      "nombre": "Patricia Guadarrama",
+      "playas": [
+        {
+          "nombre": "Celestun",
+          "indice_credibilidad": 0.85
+        },
+        {
+          "nombre": "Sisal",
+          "indice_credibilidad": 1.0
+        }
+      ]
+    },
+    {
+      "nombre": "Sofia Torres",
+      "playas": [
+        {
+          "nombre": "Bahia de Santa Marta",
+          "indice_credibilidad": 0.45
+        },
+        {
+          "nombre": "Playa Taganga",
+          "indice_credibilidad": 0.45
+        },
+        {
+          "nombre": "Rodadero",
+          "indice_credibilidad": 0.45
+        }
+      ]
+    },
+    {
+      "nombre": "Teresa Vera San Martín",
+      "playas": [
+        {
+          "nombre": "Ayangue",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Ballenita",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Chabelita",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Malecón de Playas",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Puerto Engabao",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "San Pablo",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Varadero",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "Paraíso de Engabao",
+          "indice_credibilidad": 0.75
+        }
+      ]
+    },
+    {
+      "nombre": "Yunior Ramón Velázquez Labrada",
+      "playas": [
+        {
+          "nombre": "Cazonal",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Chivirico",
+          "indice_credibilidad": 0.7
+        },
+        {
+          "nombre": "La Estrella",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Sevilla",
+          "indice_credibilidad": 0.75
+        },
+        {
+          "nombre": "Siboney",
+          "indice_credibilidad": 0.8
+        }
+      ]
+    },
+    {
+      "nombre": "Zulema Mir Frutos",
+      "playas": [
+        {
+          "nombre": "Caletones",
+          "indice_credibilidad": 0.45
+        },
+        {
+          "nombre": "Guardalavaca",
+          "indice_credibilidad": 0.65
+        },
+        {
+          "nombre": "Playa Blanca",
+          "indice_credibilidad": 0.45
+        }
+      ]
+    }
+  ]
+}

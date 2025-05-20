@@ -9,7 +9,8 @@
     "init": "npx prisma generate && npx prisma migrate dev",
     "studio": "npx prisma studio",
     "add-indicators": "ts-node-dev src/Data/addCategoryIndicators.ts",
-    "add-media": "ts-node-dev src/Data/addMediaLogos.ts"
+    "add-media": "ts-node-dev src/Data/addMediaLogos.ts",
+    "add-playas": "ts-node-dev src/Data/addPlayas.ts"
   },
   "keywords": [],
   "author": "",

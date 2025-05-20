@@ -11,24 +11,24 @@ datasource db {
 enum BEACH_TYPE {
   RURAL
   NATURAL
-  POPULATED
-  URBAN
+  DE_POBLADO
+  URBANA
 }
 
 enum STUDY_LEVEL {
-  SECONDARY_UNIVERSITY
-  GRADUATE_UNIVERSITY
-  SPECIALIZATION
+  SECONDARIA_O_UNIVERSIDAD
+  GRADUADO_UNIVERSITARIO
+  ESPECIALIZACION
   MASTER
-  DOCTORATE
+  DOCTORADO
 }
 
 enum EXPERIENCE_YEARS {
-  LESS_5
-  BETWEEN_5_10
-  BETWEEN_11_15
-  BETWEEN_16_20
-  MORE_THAN_20
+  MENOS_5
+  ENTRE_5_10
+  ENTRE_11_15
+  ENTRE_16_20
+  MAS_20
 }
 
 enum SPECIALITATION_AREA {
@@ -40,6 +40,7 @@ enum SPECIALITATION_AREA {
   OCEANOGRAFIA
   QUIMICA
   TURISMO
+  CIENCIAS_NATURALES
   OTROS
 }
 
@@ -52,18 +53,20 @@ model Beach {
   city        String
   state       String
   country     String
-  coordinates String
+  region      String
+  coordinates String?
+  BQV         Float
   evaluations Evaluation[]
 
   //Tipo de playa
-  residentialOccupation Int
-  stiffening            Int
-  mainUse               Int
-  environmentalUse      Int
-  legalProtection       Int
-  services              Int
-  landscape             Int
-  vehicularAccess       Int
+  residentialOccupation Int?
+  stiffening            Int?
+  mainUse               Int?
+  environmentalUse      Int?
+  legalProtection       Int?
+  services              Int?
+  landscape             Int?
+  vehicularAccess       Int?
 }
 
 model Expert {
@@ -73,16 +76,16 @@ model Expert {
   codeNode            String
   studyLevel          STUDY_LEVEL
   experienceYears     EXPERIENCE_YEARS
-  graduatedDate       String
+  graduatedDate       String?
   specializationAreas SPECIALITATION_AREA[]
   evaluations         Evaluation[]
 
   //user-auth
   email     String   @unique
-  username  String   @unique
-  password  String
+  username  String?  @unique
+  password  String?
   image     String?
-  status    Boolean
+  status    Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -96,7 +99,7 @@ model Evaluation {
   evaluationYear   Int
   beach            Beach             @relation(fields: [beachId], references: [id])
   beachId          String
-  finalEvaluation  Float
+  creditibilyIndex Float
   beachDescription String
   beachImages      EvaluationImage[]
   indicatorScores  IndicatorScore[]

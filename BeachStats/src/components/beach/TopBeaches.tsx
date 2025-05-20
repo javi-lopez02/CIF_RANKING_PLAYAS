@@ -1,123 +1,30 @@
 import { useState } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt, BiSearch } from "react-icons/bi";
+import useBeach from "../../customHooks/useBeach";
+import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 export default function TopBeaches() {
   // Estado para las playas
-  const [beaches, setBeaches] = useState([
-    {
-      id: 1,
-      name: "Varadero Internacional",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxmFxhIXNxE3v_Z51Bi_PfGB_Rop4-8ORf7g&s",
-      location: "Cuba",
-      rating: 98,
-      category: "Internacional",
-    },
-    {
-      id: 2,
-      name: "Varadero Histórico",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWzMmMXHq066RciOgMHfX3dOwvTO8NS3ocYA&s",
-      location: "Cuba",
-      rating: 97,
-      category: "Histórico",
-    },
-    {
-      id: 3,
-      name: "Varadero (Meliá Antillas)",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7efC2ezqswTymCnTpH9xMiYeFX66HDmDXdg&s",
-      location: "Cuba",
-      rating: 95,
-      category: "Resort",
-    },
-    {
-      id: 4,
-      name: "Varadero (Hotel Internacional)",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxmFxhIXNxE3v_Z51Bi_PfGB_Rop4-8ORf7g&s",
-      location: "Cuba",
-      rating: 93,
-      category: "Hotel",
-    },
-    {
-      id: 5,
-      name: "La Estrella (Santa María)",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfX6hJqX4QDJew1mGvHv3ybdN6oFvYJGgQw&s",
-      location: "Cuba",
-      rating: 91,
-      category: "Familiar",
-    },
-    {
-      id: 6,
-      name: "Perla Blanca (Sector Paradissus)",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBjb_DTSMnS_c5abMJmm8jCBQgKLXv7UBtMg&s",
-      location: "Cuba",
-      rating: 90,
-      category: "Exclusivo",
-    },
-    {
-      id: 7,
-      name: "Playa del Carmen",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp3w5VdZP_WP1i8uzTQ7fTL2U4jluPyarsnw&s",
-      location: "México",
-      rating: 96,
-      category: "Turístico",
-    },
-    {
-      id: 8,
-      name: "Punta Cana",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvKTMJY8ocOoBXS5vnmDMoCTVO8MOJGCMPXA&s",
-      location: "República Dominicana",
-      rating: 94,
-      category: "Resort",
-    },
-    {
-      id: 9,
-      name: "Samaná",
-      image: "https://images.prismic.io/prismic-rd-2/Z-bCkHdAxsiBwEDn_Samana.jpg?auto=format%2Ccompress&fit=max&w=3840",
-      location: "República Dominicana",
-      rating: 92,
-      category: "Natural",
-    },
-    {
-      id: 10,
-      name: "Seven Mile Beach",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpsODtP_yyyZZILKXr2r-NNGt2kkCoLXkXBQ&s",
-      location: "Jamaica",
-      rating: 95,
-      category: "Familiar",
-    },
-    {
-      id: 11,
-      name: "Eagle Beach",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY0sVPuzq07ydk_7lrSvCqVfumaAmOj_NCYw&s",
-      location: "Aruba",
-      rating: 96,
-      category: "Romántico",
-    },
-    {
-      id: 12,
-      name: "Isla Mujeres",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLA7058PMzknNhp4T-pNMAzc5ohn2evofmsQ&s",
-      location: "México",
-      rating: 93,
-      category: "Aventura",
-    },
-  ]);
+  const { beaches, error } = useBeach();
+  const navigate = useNavigate();
 
   // Estado para filtros y paginación
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("rating-desc");
+  const [sortBy, setSortBy] = useState("BQV-Descendente");
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedLocation, setSelectedLocation] = useState("Todos");
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
-  const beachesPerPage = 6;
+  const [selectedRegion, setSelectedRegion] = useState("Todos");
+  const [selectedType, setSelectedType] = useState("Todos");
+  const beachesPerPage = 12;
 
   // Obtener ubicaciones y categorías únicas para los filtros
-  const locations = [
+  const regions = [
     "Todos",
-    ...new Set(beaches.map((beach) => beach.location)),
+    ...new Set(beaches.map((beach) => beach.region)),
   ];
-  const categories = [
+  const types = [
     "Todos",
-    ...new Set(beaches.map((beach) => beach.category)),
+    ...new Set(beaches.map((beach) => beach.beachType)),
   ];
 
   // Filtrar y ordenar playas
@@ -126,19 +33,19 @@ export default function TopBeaches() {
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
     const matchesLocation =
-      selectedLocation === "Todos" || beach.location === selectedLocation;
+      selectedRegion === "Todos" || beach.region === selectedRegion;
     const matchesCategory =
-      selectedCategory === "Todos" || beach.category === selectedCategory;
+      selectedType === "Todos" || beach.beachType === selectedType;
     return matchesSearch && matchesLocation && matchesCategory;
   });
 
   // Ordenar playas
   const sortedBeaches = [...filteredBeaches].sort((a, b) => {
-    if (sortBy === "rating-desc") {
-      return b.rating - a.rating;
-    } else if (sortBy === "rating-asc") {
-      return a.rating - b.rating;
-    } else if (sortBy === "name-asc") {
+    if (sortBy === "BQV-Descendente") {
+      return b.BQV - a.BQV;
+    } else if (sortBy === "BQV-Ascendente") {
+      return a.BQV - b.BQV;
+    } else if (sortBy === "Nombre-Ascendente") {
       return a.name.localeCompare(b.name);
     } else {
       return b.name.localeCompare(a.name);
@@ -162,7 +69,7 @@ export default function TopBeaches() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
+    <div className="min-w-full max-w-full mx-auto p-4">
       <h1 className="text-5xl font-sans font-bold text-center mb-6 text-dark">
         Explora las Playas del Mundo
       </h1>
@@ -189,14 +96,14 @@ export default function TopBeaches() {
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
-              <option value="rating-desc">
-                Ordenar: De mayor a menor puntuación
+              <option value="BQV-Descendente">
+                Ordenar: De mayor a menor BQV
               </option>
-              <option value="rating-asc">
-                Ordenar: De menor a mayor puntuación
+              <option value="BQV-Ascendente">
+                Ordenar: De menor a mayor BQV
               </option>
-              <option value="name-asc">Ordenar por: Nombre (A-Z)</option>
-              <option value="name-desc">Ordenar por: Nombre (Z-A)</option>
+              <option value="Nombre-Ascendente">Ordenar por: Nombre (A-Z)</option>
+              <option value="Nombre-Descendente">Ordenar por: Nombre (Z-A)</option>
             </select>
           </div>
         </div>
@@ -206,15 +113,15 @@ export default function TopBeaches() {
           <div className="w-full md:w-1/2">
             <select
               className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={selectedLocation}
+              value={selectedRegion}
               onChange={(e) => {
-                setSelectedLocation(e.target.value);
+                setSelectedRegion(e.target.value);
                 setCurrentPage(1); // Reset a la primera página al filtrar
               }}
             >
-              {locations.map((location) => (
+              {regions.map((location) => (
                 <option key={location} value={location}>
-                  {location === "Todos" ? "Todas las ubicaciones" : location}
+                  {location === "Todos" ? "Todas las Regiones" : location}
                 </option>
               ))}
             </select>
@@ -224,15 +131,15 @@ export default function TopBeaches() {
           <div className="w-full md:w-1/2">
             <select
               className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={selectedCategory}
+              value={selectedType}
               onChange={(e) => {
-                setSelectedCategory(e.target.value);
+                setSelectedType(e.target.value);
                 setCurrentPage(1); // Reset a la primera página al filtrar
               }}
             >
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category === "Todos" ? "Todas las categorías" : category}
+              {types.map((type) => (
+                <option key={type} value={type}>
+                  {type === "Todos" ? "Todas los Tipos" : type}
                 </option>
               ))}
             </select>
@@ -256,10 +163,11 @@ export default function TopBeaches() {
             <div
               key={beach.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              onClick={()=>(navigate(`/details?p=${beach.id}`))}
             >
               <div className="h-48 overflow-hidden">
                 <img
-                  src={beach.image}
+                  src={""}
                   alt={beach.name}
                   className="w-full h-full object-cover"
                 />
@@ -269,11 +177,11 @@ export default function TopBeaches() {
                   {beach.name}
                 </h3>
                 <p className="text-sm text-gray-500 text-center mb-2">
-                  {beach.location} • {beach.category}
+                  {beach.region} • {beach.beachType}
                 </p>
                 <div className="flex justify-center items-center mb-2">
                   <span className="bg-blue-100 text-blue-800 font-medium px-2.5 py-0.5 rounded text-sm">
-                    BQV {beach.rating}
+                    BQV {beach.BQV}
                   </span>
                 </div>
               </div>
@@ -320,6 +228,7 @@ export default function TopBeaches() {
           <BiRightArrowAlt size={18} />
         </button>
       </div>
+      {error && (toast.error("Error al cargar las playas"))}
     </div>
   );
 }

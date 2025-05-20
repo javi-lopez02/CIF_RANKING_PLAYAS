@@ -16,7 +16,9 @@ export const getExperts = async (req: Request, res: Response) => {
         studyLevel: true,
         codeNode: true,
         image: true,
-        evaluations: true,
+        evaluations: {
+          select: { creditibilyIndex: true, beach: true },
+        },
         specializationAreas: true,
       },
     });

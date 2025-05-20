@@ -1,0 +1,407 @@
+[
+  {
+    "nombre": "Aída Carolina Martínez Correa",
+    "email": "aidacarolinam@gmail.com",
+    "vinculoInstitucional": "Alcaldía de Necoclí",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Turismo", "Otros"],
+    "nivelEstudios": "Especialización",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Alba Mercadé",
+    "email": "mercade.alba@gmail.com",
+    "vinculoInstitucional": "Beach Trotters",
+    "nodoProplayas": "E37 Beach Trotters",
+    "areaEspecializacion": ["Gestión costera", "Ingeniería", "Otros"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Alfredo Jaramillo Velez",
+    "email": "alfredojaramillovelez@gmail.com",
+    "vinculoInstitucional": "Massey University",
+    "nodoProplayas": "NA",
+    "areaEspecializacion": ["Oceanografía", "Gestión costera", "Ingeniería"],
+    "nivelEstudios": "Máster",
+    "experiencia": "11-15"
+  },
+  {
+    "nombre": "Ana Faggi",
+    "email": "afaggi2003@yahoo.com.ar",
+    "vinculoInstitucional": "Universidad de Flores",
+    "nodoProplayas": "C 22",
+    "areaEspecializacion": ["Ciencias naturales"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Camilo M. Botero",
+    "email": "playascol@gmail.com",
+    "vinculoInstitucional": "Grupo de Investigación en Sistemas Costeros",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Gestión costera", "Geografía", "Ingeniería", "Turismo"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "CARLOS ENRIQUE ROJAS GUTIERREZ",
+    "email": "carlosrojas138@gmail.com",
+    "vinculoInstitucional": "Alcaldia de Necocli",
+    "nodoProplayas": "E07 SISTEMAS COSTEROS",
+    "areaEspecializacion": ["Turismo"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Chadit serrano vergara",
+    "email": "chaditserranovergara@gmail.com",
+    "vinculoInstitucional": "Cif playas",
+    "nodoProplayas": "E 07sistemas costeros",
+    "areaEspecializacion": ["Gestión costera"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Cornejo Zúñiga José Ricardo",
+    "email": "jjosecornejo@gmail.com",
+    "vinculoInstitucional": "Eccos Ingeniería Sostenible",
+    "nodoProplayas": "A13 - Ecoplayas",
+    "areaEspecializacion": ["Ingeniería"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "5-10"
+  },
+  {
+    "nombre": "Darlin serrano vergara",
+    "email": "serranovergaradarlin24@gmail.com",
+    "vinculoInstitucional": "Cifplayas",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Gestión costera"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Dayana García Ortríz",
+    "email": "dayanagarciaortiz6@gmail.com",
+    "vinculoInstitucional": "Centro de Servicios Ambientales Sancti Spíritus, Agencia de Medioambiente, Cuba",
+    "nodoProplayas": "Nodo E 07",
+    "areaEspecializacion": ["Gestión costera", "Química", "Ingeniería", "Turismo"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Dick All Acuña Hereira",
+    "email": "DICK.3020@HOTMAIL.COM",
+    "vinculoInstitucional": "Clúster de Turismo del Atlántico",
+    "nodoProplayas": "EO7",
+    "areaEspecializacion": ["Turismo", "Otros"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Dolores Astudillo",
+    "email": "diastudillob@gmail.com",
+    "vinculoInstitucional": "Universidad del Pacífico",
+    "nodoProplayas": "G49 ECUPAC",
+    "areaEspecializacion": ["Ingeniería"],
+    "nivelEstudios": "Máster",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Duván Esteban Cárdenas Sepúlveda",
+    "email": "duvan.cardenass@udea.edu.co",
+    "vinculoInstitucional": "Cifplayas",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Oceanografía"],
+    "nivelEstudios": "Secundaria o estudiante universitario",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Edelkis Rodríguez Moya",
+    "email": "edelkisrm1971@gmail.com",
+    "vinculoInstitucional": "Centro de Estudios y Servicios Ambientales",
+    "nodoProplayas": "E-27",
+    "areaEspecializacion": ["Gestión costera"],
+    "nivelEstudios": "Máster",
+    "experiencia": "16-20"
+  },
+  {
+    "nombre": "Elier Alexander Córdova García",
+    "email": "cordovaelier7@gmail.com",
+    "vinculoInstitucional": "Centro de Investigaciones y Servicios Ambientales (Cisat-AMA-CITMA-Cuba)",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Gestión costera", "Geografía"],
+    "nivelEstudios": "Máster",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Félix A. Correa Álvarez",
+    "email": "felixacorrea93@gmail.com",
+    "vinculoInstitucional": "Centro de Estudios y Servicios Ambientales de Villa Clara (CESAMVC)",
+    "nodoProplayas": "E-27",
+    "areaEspecializacion": ["Gestión costera", "Geografía"],
+    "nivelEstudios": "Máster",
+    "experiencia": "5-10"
+  },
+  {
+    "nombre": "Francisco Alcocer y Lozano",
+    "email": "caboscoastkeeper2@gmail.com",
+    "vinculoInstitucional": "Los Cabos Coastkeeper, A.C.",
+    "nodoProplayas": "A30",
+    "areaEspecializacion": ["Gestión costera", "Turismo", "Otros"],
+    "nivelEstudios": "Graduado",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Frank Huerta López",
+    "email": "frankhl2014@gmail.com",
+    "vinculoInstitucional": "Formatur Varadero",
+    "nodoProplayas": "Costatenas",
+    "areaEspecializacion": ["Turismo"],
+    "nivelEstudios": "Máster",
+    "experiencia": "16-20"
+  },
+  {
+    "nombre": "Gladys Pérez de la Fuente",
+    "email": "gpfuente2@gmail.com",
+    "vinculoInstitucional": "PROPLAYAS Riviera Maya",
+    "nodoProplayas": "Nodo Local 02 PROPLAYAS Riviera Maya",
+    "areaEspecializacion": ["Otros"],
+    "nivelEstudios": "Máster",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Gleini Gallardo",
+    "email": "gleini@gmail.com",
+    "vinculoInstitucional": "Universidad Autónoma del Caribe",
+    "nodoProplayas": "Colombia",
+    "areaEspecializacion": ["Biología", "Turismo"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": "16-20"
+  },
+  {
+    "nombre": "GUSTAVO EUGENIO ECHEVERRI JARAMILLO",
+    "email": "gustavo.echeverri@gmail.com",
+    "vinculoInstitucional": "UNIVERSIDAD DE SAN BUENAVENTURA CARTAGENA",
+    "nodoProplayas": "GRUPO GIMA C 06",
+    "areaEspecializacion": ["Otros"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": "5-10"
+  },
+  {
+    "nombre": "Hugo Hidalgo Colindres",
+    "email": "integramar@yahoo.es",
+    "vinculoInstitucional": "IICI-Cunizab",
+    "nodoProplayas": "Cariguat46",
+    "areaEspecializacion": ["Gestión costera", "Química", "Ciencias naturales", "Turismo"],
+    "nivelEstudios": "Máster",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Idania Hernández Ramos",
+    "email": "idaniahr1972@gmail.com",
+    "vinculoInstitucional": "Centro de Servicios Ambientales, Sancti Spíritus, Agencia de Medioambiente Cuba",
+    "nodoProplayas": "Nodo E 07",
+    "areaEspecializacion": ["Gestión costera", "Química", "Ingeniería", "Turismo"],
+    "nivelEstudios": "Máster",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "JAISER CARDONA",
+    "email": "jaiser01@gmail.com",
+    "vinculoInstitucional": "PARTICULAR",
+    "nodoProplayas": "E67 ICONOPLAYA",
+    "areaEspecializacion": ["Otros"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "5-10"
+  },
+  {
+    "nombre": "John Edison Usuga Jaramillo",
+    "email": "edison.usuga@udea.edu.co",
+    "vinculoInstitucional": "Universidad De Antioquia",
+    "nodoProplayas": "E07 Sistemas Costeros",
+    "areaEspecializacion": ["Oceanografía", "Gestión costera", "Ingeniería", "Turismo"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Juan Alfredo Cabrera Hernández",
+    "email": "alfredojuan1956@gmail.com",
+    "vinculoInstitucional": "Universidad de Matanzas",
+    "nodoProplayas": "Nodo 14 COSTATENAS",
+    "areaEspecializacion": ["Geografía"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Liliam Rojas López",
+    "email": "meli.annily@gmail.com",
+    "vinculoInstitucional": "Centro de Servicios Ambientales de Matanzas (CSAM)",
+    "nodoProplayas": "Costatenas-ofiplaya (matanzas-cuba)",
+    "areaEspecializacion": ["Gestión costera", "Otros"],
+    "nivelEstudios": "Secundaria o estudiante universitario",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Luis Cesar Herrera",
+    "email": "iconoplaya.ne@gmail.com",
+    "vinculoInstitucional": "Particular",
+    "nodoProplayas": "E67 iconoplaya",
+    "areaEspecializacion": ["Gestión costera"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "5-10"
+  },
+  {
+    "nombre": "Manuel García Castro",
+    "email": "manuelgarciacastro84@gmail.com",
+    "vinculoInstitucional": "Centro de Estudios y Servicios Ambientales",
+    "nodoProplayas": "E-27",
+    "areaEspecializacion": ["Geografía"],
+    "nivelEstudios": "Especialización",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Manuela Rendón Osorio",
+    "email": "manuela.rendon2@udea.edu.co",
+    "vinculoInstitucional": "Universidad de Antioquia",
+    "nodoProplayas": "E-07",
+    "areaEspecializacion": ["Oceanografía"],
+    "nivelEstudios": "Secundaria o estudiante universitario",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Mario Alberto Palacios Moreno",
+    "email": "mario.palacios@upacifico.edu.ec",
+    "vinculoInstitucional": "Universidad Del Pacífico",
+    "nodoProplayas": "C49 ECUPAC",
+    "areaEspecializacion": ["Biología", "Gestión costera"],
+    "nivelEstudios": "Máster",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Maritza Barreto",
+    "email": "maritza.barreto@upr.edu",
+    "vinculoInstitucional": "Escuela Graduada de Planificación Universidad de Puerto Rico",
+    "nodoProplayas": "25",
+    "areaEspecializacion": ["Geología"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "PALOMA ARIAS ORDIALES",
+    "email": "palomaguaiano@gmail.com",
+    "vinculoInstitucional": "INSTITUTO ESCOLA DO MAR",
+    "nodoProplayas": "A61 IEMAR",
+    "areaEspecializacion": ["Gestión costera", "Turismo", "Otros"],
+    "nivelEstudios": "Especialización",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Patricia Guadarrama",
+    "email": "pguadarrama@ciencias.unam.mx",
+    "vinculoInstitucional": "UNAM",
+    "nodoProplayas": "A79 Reciclando Dunas",
+    "areaEspecializacion": ["Biología", "Ciencias naturales"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Sofia Torres",
+    "email": "sofiatorresid@unimagdalena.edu.co",
+    "vinculoInstitucional": "Sistemas Costeros",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Ciencias naturales", "Ingeniería"],
+    "nivelEstudios": "Estudiante universitario",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Teresa Vera San Martín",
+    "email": "teresa_vera@hotmail.com",
+    "vinculoInstitucional": "Universidad de la Costa",
+    "nodoProplayas": "C49 Ecupac",
+    "areaEspecializacion": ["Oceanografía", "Geografía"],
+    "nivelEstudios": "Máster",
+    "experiencia": "5-10"
+  },
+  {
+    "nombre": "Yunior Ramón Velázquez Labrada",
+    "email": "yvlabrada@gmail.com",
+    "vinculoInstitucional": "Centro de Estudios Multidisciplinarios de Zonas Costeras, Universidad de Oriente, Santiago de Cuba",
+    "nodoProplayas": "C44- CEMZOC-UO",
+    "areaEspecializacion": ["Biología"],
+    "nivelEstudios": "Doctorado",
+    "experiencia": "11-15"
+  },
+  {
+    "nombre": "Zulema Mir Frutos",
+    "email": "zulemir85@gmail.com",
+    "vinculoInstitucional": "Centro de Investigaciones y Servicios Ambientales (CISAT, AMA, CITMA, CUBA)",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Gestión costera", "Otros"],
+    "nivelEstudios": "Máster",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Danilo Souza Santana",
+    "email": "danilo130295@gmail.com",
+    "vinculoInstitucional": "UFBA",
+    "nodoProplayas": "Nodo C34 - Paranoá",
+    "areaEspecializacion": ["Geografia"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Flavia Lins de Barros",
+    "email": "flaviamlb@gmail.com",
+    "vinculoInstitucional": "UFRJ",
+    "nodoProplayas": "C33 Geografia Marinha",
+    "areaEspecializacion": ["Geografia"],
+    "nivelEstudios": "Doutorado",
+    "experiencia": "16-20"
+  },
+  {
+    "nombre": "Hugo Diniz Brandão",
+    "email": "hugodbo@gmail.com",
+    "vinculoInstitucional": "Avaliador",
+    "nodoProplayas": "C33 Geografia",
+    "areaEspecializacion": ["Geografia"],
+    "nivelEstudios": "Estudante",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "José Rodrigues de Souza Filho",
+    "email": "jrsouzageografia@gmail.com",
+    "vinculoInstitucional": "Instituto Federal Baiano - IF Baiano",
+    "nodoProplayas": "C34 - Paranoá",
+    "areaEspecializacion": ["Manejo Costero"],
+    "nivelEstudios": "Doutorado",
+    "experiencia": ">20"
+  },
+  {
+    "nombre": "Júlia Macêdo",
+    "email": "juliammc01@gmail.com",
+    "vinculoInstitucional": "IFBA",
+    "nodoProplayas": "Red Proplayas Nodo C34 - Paranoá",
+    "areaEspecializacion": ["Geografia"],
+    "nivelEstudios": "Graduado",
+    "experiencia": "<5"
+  },
+  {
+    "nombre": "Junia Kacenelenbogen Guimarães",
+    "email": "juniakg@gmail.com",
+    "vinculoInstitucional": "Universidade Federal da Bahia",
+    "nodoProplayas": "C34 - Paranoá",
+    "areaEspecializacion": ["Geologia"],
+    "nivelEstudios": "Doutorado",
+    "experiencia": "16-20"
+  },
+  {
+    "nombre": "Lívia Garcia Prado",
+    "email": "liviagarciaprado@gmail.com",
+    "vinculoInstitucional": "Universidade do Vale do Itajaí (UNIVALI)",
+    "nodoProplayas": "E07",
+    "areaEspecializacion": ["Manejo Costero"],
+    "nivelEstudios": "Doutorado",
+    "experiencia": "<5"
+  }
+]
