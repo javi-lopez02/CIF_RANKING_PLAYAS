@@ -7,6 +7,7 @@ import BeachEvaluation from "../components/beachdetails/BeachEvaluation";
 import { useState } from "react";
 import { useBeachDetails } from "../customHooks/useBeachDetails";
 import { toast } from "sonner";
+import { Spinner } from "@heroui/spinner";
 
 export default function BeachDetails() {
   const [query] = useState(() => {
@@ -18,37 +19,44 @@ export default function BeachDetails() {
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100 w-full">
-      <div className="w-full md:w-4/5 flex flex-col px-2 sm:px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-8 py-4">
-          {/* Sección izquierda con galería */}
-          {beach && (
-            <div className="flex flex-col w-full lg:w-3/5 gap-6">
-              <BeachPicture images={beach.evaluations.beachImages} />
-              <BeachDescription
-                description={beach.evaluations.beachDescription}
-                icon={BiPencil}
-              ></BeachDescription>
-            </div>
-          )}
-          {/* Sección derecha con ubicación */}
-          {beach && (
-            <div className="w-full lg:w-2/5 mt-4 lg:mt-0 flex flex-col gap-6">
-              <BeachInfo
-                type={beach.beachType}
-                city={beach.city}
-                country={beach.country}
-                region={beach.region}
-                coordinates={beach.coordinates}
-                // evaluators={beach.evaluations.expert}
-                icon={BiMapPin}
-              />
-              <BeachEvaluation></BeachEvaluation>
-            </div>
-          )}
+      {loading && (
+        <div className="flex py-8 min-w-full items-center justify-center">
+          <Spinner color="secondary" />
         </div>
-        <HowToBeExpert></HowToBeExpert>
-        {error && toast.error(error)}
-      </div>
+      )}
+      {!loading && (
+        <div className="w-full md:w-4/5 flex flex-col px-2 sm:px-4 md:px-6">
+          <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-8 py-4">
+            {/* Sección izquierda con galería */}
+            {beach && (
+              <div className="flex flex-col w-full lg:w-3/5 gap-6">
+                {/* <BeachPicture images={beach.evaluations.beachImages} /> */}
+                <BeachDescription
+                  description={beach.evaluations.beachDescription}
+                  icon={BiPencil}
+                ></BeachDescription>
+              </div>
+            )}
+            {/* Sección derecha con ubicación */}
+            {beach && (
+              <div className="w-full lg:w-2/5 mt-4 lg:mt-0 flex flex-col gap-6">
+                <BeachInfo
+                  type={beach.beachType}
+                  city={beach.city}
+                  country={beach.country}
+                  region={beach.region}
+                  coordinates={beach.coordinates}
+                  // evaluators={beach.evaluations.expert}
+                  icon={BiMapPin}
+                />
+                <BeachEvaluation></BeachEvaluation>
+              </div>
+            )}
+          </div>
+          <HowToBeExpert></HowToBeExpert>
+          {error && toast.error(error)}
+        </div>
+      )}
 
       {/* Sección de Google Anuncios */}
       <div className="w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 flex items-center justify-center">

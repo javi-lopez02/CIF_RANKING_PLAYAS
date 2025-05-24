@@ -28,12 +28,36 @@ export interface Beach {
   coordinates: string;
   beachType: "URBANA" | "DE_POBLADO" | "RURAL" | "NATURAL";
   BQV: number;
-  region: string;
+  region:
+    | "ATLANTICO_NORTE"
+    | "ATLANTICO_SUR"
+    | "PACIFICO_NORTE"
+    | "PACIFICO_SUR"
+    | "MEDITERRANEO"
+    | "CARIBE";
   evaluations: {
     beachDescription: string;
     beachImages: string[];
-    expert: Expert;
+    expert: Expert[];
   };
+}
+
+export interface BeachData {
+  id: string;
+  name: string;
+  city: string;
+  state: string;
+  country: string;
+  coordinates: string;
+  beachType: "URBANA" | "DE_POBLADO" | "RURAL" | "NATURAL";
+  BQV: number;
+  region:
+    | "ATLANTICO_NORTE"
+    | "ATLANTICO_SUR"
+    | "PACIFICO_NORTE"
+    | "PACIFICO_SUR"
+    | "MEDITERRANEO"
+    | "CARIBE";
 }
 
 export interface Expert {
@@ -43,8 +67,18 @@ export interface Expert {
   institution: string;
   image: string;
   codeNode: string;
-  studyLevel: "SECONDARIA_O_UNIVERSIDAD" | "GRADUADO_UNIVERSITARIO" | "ESPECIALIZACION" | "MASTER" | "DOCTORADO";
-  experienceYears: "MENOS_5" | "ENTRE_5_10" | "ENTRE_11_15" | "ENTRE_16_20" | "MAS_20";
+  studyLevel:
+    | "SECONDARIA_O_UNIVERSIDAD"
+    | "GRADUADO_UNIVERSITARIO"
+    | "ESPECIALIZACION"
+    | "MASTER"
+    | "DOCTORADO";
+  experienceYears:
+    | "MENOS_5"
+    | "ENTRE_5_10"
+    | "ENTRE_11_15"
+    | "ENTRE_16_20"
+    | "MAS_20";
   graduatedDate: string?;
   specializationAreas: SPECIALITATION_AREA[];
   evaluations: {

@@ -73,7 +73,7 @@ export default function EvaluatorCard({
       {/* Imagen de fondo con overlay gradiente */}
       <div className="absolute inset-0">
         <img src={image} alt={name} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-gray-700 to-white opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gold to-sky opacity-30"></div>
       </div>
 
       {/* Contenido visible inicialmente (siempre visible pero cambia en hover) */}

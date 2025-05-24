@@ -3,10 +3,11 @@ import { BiLeftArrowAlt, BiRightArrowAlt, BiSearch } from "react-icons/bi";
 import useBeach from "../../customHooks/useBeach";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { Spinner } from "@heroui/spinner";
 
 export default function TopBeaches() {
   // Estado para las playas
-  const { beaches, error } = useBeach();
+  const { beaches, error, loading } = useBeach();
   const navigate = useNavigate();
 
   // Estado para filtros y paginación
@@ -18,14 +19,8 @@ export default function TopBeaches() {
   const beachesPerPage = 12;
 
   // Obtener ubicaciones y categorías únicas para los filtros
-  const regions = [
-    "Todos",
-    ...new Set(beaches.map((beach) => beach.region)),
-  ];
-  const types = [
-    "Todos",
-    ...new Set(beaches.map((beach) => beach.beachType)),
-  ];
+  const regions = ["Todos", ...new Set(beaches.map((beach) => beach.region))];
+  const types = ["Todos", ...new Set(beaches.map((beach) => beach.beachType))];
 
   // Filtrar y ordenar playas
   const filteredBeaches = beaches.filter((beach) => {
@@ -102,8 +97,12 @@ export default function TopBeaches() {
               <option value="BQV-Ascendente">
                 Ordenar: De menor a mayor BQV
               </option>
-              <option value="Nombre-Ascendente">Ordenar por: Nombre (A-Z)</option>
-              <option value="Nombre-Descendente">Ordenar por: Nombre (Z-A)</option>
+              <option value="Nombre-Ascendente">
+                Ordenar por: Nombre (A-Z)
+              </option>
+              <option value="Nombre-Descendente">
+                Ordenar por: Nombre (Z-A)
+              </option>
             </select>
           </div>
         </div>
@@ -157,44 +156,50 @@ export default function TopBeaches() {
       </div>
 
       {/* Galería de playas */}
-      {currentBeaches.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentBeaches.map((beach) => (
-            <div
-              key={beach.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-              onClick={()=>(navigate(`/details?p=${beach.id}`))}
-            >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={""}
-                  alt={beach.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-center text-blue-500 mb-1">
-                  {beach.name}
-                </h3>
-                <p className="text-sm text-gray-500 text-center mb-2">
-                  {beach.region} • {beach.beachType}
-                </p>
-                <div className="flex justify-center items-center mb-2">
-                  <span className="bg-blue-100 text-blue-800 font-medium px-2.5 py-0.5 rounded text-sm">
-                    BQV {beach.BQV}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-10">
-          <p className="text-gray-500">
-            No se encontraron playas con los criterios seleccionados.
-          </p>
+      {loading && (
+        <div className="flex py-8 min-w-full items-center justify-center">
+          <Spinner color="secondary" />
         </div>
       )}
+      {!loading &&
+        (currentBeaches.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {currentBeaches.map((beach) => (
+              <div
+                key={beach.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                onClick={() => navigate(`/details?p=${beach.id}`)}
+              >
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={""}
+                    alt={beach.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-center text-blue-500 mb-1">
+                    {beach.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 text-center mb-2">
+                    {beach.region} • {beach.beachType}
+                  </p>
+                  <div className="flex justify-center items-center mb-2">
+                    <span className="bg-blue-100 text-blue-800 font-medium px-2.5 py-0.5 rounded text-sm">
+                      BQV {beach.BQV}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-10">
+            <p className="text-gray-500">
+              No se encontraron playas con los criterios seleccionados.
+            </p>
+          </div>
+        ))}
 
       {/* Paginación */}
       <div className="flex justify-center items-center mt-8">
@@ -228,7 +233,7 @@ export default function TopBeaches() {
           <BiRightArrowAlt size={18} />
         </button>
       </div>
-      {error && (toast.error("Error al cargar las playas"))}
+      {error && toast.error("Error al cargar las playas")}
     </div>
   );
 }

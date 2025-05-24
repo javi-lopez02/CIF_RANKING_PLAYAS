@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import BestBeachesCard from "../components/home/BestBeachesCard";
 import ExpertCarrusel from "../components/home/ExpertCarrusel";
 import HowToBeExpert from "../components/home/How_ToBe_Expert";
@@ -7,24 +8,28 @@ import RankingReport from "../components/home/RankingReport";
 export const beachType = [
   {
     id: 1,
+    link: "/urban",
     title: "Mejores Playas Urbanas",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_pcq9v3qkEgL4znwhDm7bILDVfIhAf8vHDQ&s",
   },
   {
     id: 2,
+    link: "/poblado",
     title: "Mejores Playas de Poblado",
     image:
       "https://a.travel-assets.com/findyours-php/viewfinder/images/res40/200000/200422.jpg",
   },
   {
     id: 3,
+    link: "/rural",
     title: "Mejores Playas Rurales",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHKhxSlHbV00fT8sZcj7Qq1lMnXmFjE92e1g&s",
   },
   {
     id: 4,
+    link: "/natural",
     title: "Mejores Playas Naturales",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYoNRIoZVYvvhtaJMUjuKEt7QUY9cSL1E9Q&s",
@@ -34,36 +39,42 @@ export const beachType = [
 export const beachZone = [
   {
     id: 1,
+    link: "/atlantic-south",
     title: "Mejores Playas Atlantico Sur",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4MRb3HnKgp4WNFVME1O9Jx94VWsrPtfKzsQ&s",
   },
   {
     id: 2,
+    link: "/atlantic-north",
     title: "Mejores Playas Atlantico Norte",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIkcnyKltHlzURpyV4fJcYFhY-vCPyqLDvQQ&s",
   },
   {
     id: 3,
+    link: "/pacific-south",
     title: "Mejores Playas Pacifico Sur",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7RhCipHj87axtfyBgStvA03Pfl2a_19TmjA&s",
   },
   {
     id: 4,
+    link: "/pacific-north",
     title: "Mejores Playas Pacifico Norte",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx4LGe9MRjoZpAMXT7zpd1EUtJ1-txOOlYzA&s",
   },
   {
     id: 5,
+    link: "/mediterraneo",
     title: "Mejores Playas Mediterraneo",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3xHmW-3Wp9Vd6Guo_hQPIdcmlIrKwWKMPcQ&s",
   },
   {
     id: 6,
+    link: "/caribean",
     title: "Mejores Playas Caribe",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgaQnvbiAIv9Ziw5cHO8_rCKGoAwWAwC-OZg&s",
@@ -71,6 +82,12 @@ export const beachZone = [
 ];
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const handleClick = (link: string) => {
+    navigate(link);
+  };
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
       {/* Contenido principal */}
@@ -87,7 +104,7 @@ export default function Home() {
                 key={type.id}
                 title={type.title}
                 image={type.image}
-                onClick={() => console.log(`Navigating to ${type.title}`)}
+                onClick={() => handleClick(type.link)}
               />
             ))}
           </div>
@@ -99,7 +116,7 @@ export default function Home() {
                 key={zone.id}
                 title={zone.title}
                 image={zone.image}
-                onClick={() => console.log(`Navigating to ${zone.title}`)}
+                onClick={() => handleClick(zone.link)}
               />
             ))}
           </div>

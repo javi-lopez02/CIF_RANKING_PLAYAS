@@ -9,6 +9,7 @@ import auth from "./Routes/auth.routes";
 import media from "./Routes/media.routes";
 import beach from "./Routes/beach.routes";
 import experts from "./Routes/expert.routes";
+import topTen from "./Routes/top_ten.routes";
 
 dotenv.config();
 const port = 4000;
@@ -32,7 +33,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 // app.use("/api/auth", auth);
-app.use("/api", media, beach, experts)
+app.use("/api", media, beach, experts, topTen);
 
 app.use("/public", express.static(path.join(__dirname, "/Upload")));
 

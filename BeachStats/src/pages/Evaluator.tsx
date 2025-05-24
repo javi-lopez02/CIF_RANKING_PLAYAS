@@ -2,9 +2,10 @@ import { toast } from "sonner";
 import EvaluatorCard from "../components/evaluator/EvaluatorCard";
 import useExpert from "../customHooks/useExperts";
 import { Expert } from "../types";
+import { Spinner } from "@heroui/spinner";
 
 export default function Evaluator() {
-  const { experts, error } = useExpert();
+  const { experts, error, loading } = useExpert();
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
@@ -14,24 +15,30 @@ export default function Evaluator() {
           <h2 className="py-4 text-center font-sans font-bold text-dark text-5xl">
             Nuestros Evaluadores
           </h2>
-          {/* Tipos de playa */}
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 justify-center w-full p-6">
-            {experts.map((expert: Expert) => (
-              <EvaluatorCard
-                key={expert.id}
-                name={expert.name}
-                email={expert.email}
-                codeNode={expert.codeNode}
-                institution={expert.institution}
-                studyLevel={expert.studyLevel} 
-                image={expert.image}
-                experienceYears={expert.experienceYears}
-                specializationAreas={expert.specializationAreas}
-              />
-            ))}
-          </div>{" "}
+          {loading && (
+            <div className="flex py-8 min-w-full items-center justify-center">
+              <Spinner color="success" />
+            </div>
+          )}{" "}
+          {!loading && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center w-full p-6">
+              {experts.map((expert: Expert) => (
+                <EvaluatorCard
+                  key={expert.id}
+                  name={expert.name}
+                  email={expert.email}
+                  codeNode={expert.codeNode}
+                  institution={expert.institution}
+                  studyLevel={expert.studyLevel}
+                  image="https://www.shutterstock.com/image-photo/young-pretty-caucasian-woman-face-260nw-1854611098.jpg"
+                  experienceYears={expert.experienceYears}
+                  specializationAreas={expert.specializationAreas}
+                />
+              ))}
+            </div>
+          )}
         </div>
-        {error && (toast.error("Error al cargar los expertos"))}
+        {error && toast.error("Error al cargar los expertos")}
       </div>
 
       {/* Sección de Google Anuncios */}

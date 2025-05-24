@@ -1,4 +1,4 @@
-export default function InfoZona() {
+export default function InfoNatural() {
   return (
     <div className="max-w-4xl mx-auto p-6 font-sans">
       {/* Título principal */}

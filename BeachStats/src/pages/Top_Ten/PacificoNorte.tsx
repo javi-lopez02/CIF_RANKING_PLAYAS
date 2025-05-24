@@ -1,15 +1,21 @@
-import Best10Beaches from "../components/category/Best10Beaches";
-import InfoZona from "../components/category/InfoZona";
-import HowToBeExpert from "../components/home/How_ToBe_Expert";
+import HowToBeExpert from "../../components/home/How_ToBe_Expert";
+import Best10Beaches from "../../components/top_ten/Best10Beaches";
+import InfoPacificoNorte from "../../components/top_ten/InfoPacificoNorte";
+import useTopRegion from "../../customHooks/useTopRegions";
 
-export default function Category() {
+export default function PacificoNorte() {
+  const { beaches, loading, error } = useTopRegion("PACIFICO_NORTE");
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100 w-full">
       <div className="w-full md:w-4/5 flex flex-col px-2 sm:px-4 md:px-6">
         <div className="flex flex-col w-full gap-4 lg:gap-8 py-4">
           {/* Sección izquierda con galería */}
-          <InfoZona></InfoZona>
-          <Best10Beaches></Best10Beaches>
+          <InfoPacificoNorte></InfoPacificoNorte>
+          <Best10Beaches
+            beach={beaches}
+            loading={loading}
+            error={error}
+          ></Best10Beaches>
         </div>
         <HowToBeExpert></HowToBeExpert>
       </div>

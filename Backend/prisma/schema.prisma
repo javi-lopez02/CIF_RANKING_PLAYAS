@@ -44,6 +44,15 @@ enum SPECIALITATION_AREA {
   OTROS
 }
 
+enum REGION {
+  ATLANTICO_NORTE
+  ATLANTICO_SUR
+  PACIFICO_NORTE
+  PACIFICO_SUR
+  MEDITERRANEO
+  CARIBE
+}
+
 // Modelos
 
 model Beach {
@@ -53,9 +62,8 @@ model Beach {
   city        String
   state       String
   country     String
-  region      String
+  region      REGION
   coordinates String?
-  BQV         Float
   evaluations Evaluation[]
 
   //Tipo de playa
@@ -67,6 +75,13 @@ model Beach {
   services              Int?
   landscape             Int?
   vehicularAccess       Int?
+
+  //Beach Quality Values
+  recreation   Float?
+  protection   Float?
+  conservation Float?
+  sanitary     Float?
+  BQV          Float
 }
 
 model Expert {

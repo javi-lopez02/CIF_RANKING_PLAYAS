@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { Beach } from "../types";
-import { getBeachRequest } from "../services/beach";
+import { BeachData } from "../types";
+import { getBeachTypeRequest } from "../services/topTen";
 
-function useBeach() {
-  const [beaches, setBeaches] = useState<Beach[] | []>([]);
+function useTopTypes(query: string) {
+  const [beaches, setBeaches] = useState<BeachData[] | []>([]);
   const [error, setError] = useState<Array<string>>();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    getBeachRequest()
+    console.log("Fetching beaches of type:", query);
+    getBeachTypeRequest(query)
       .then((res) => {
         setBeaches(res.data.data);
       })
@@ -18,7 +19,7 @@ function useBeach() {
         setError(["Error al cargar las playas."]);
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [query]);
 
   return {
     beaches,
@@ -28,4 +29,4 @@ function useBeach() {
   };
 }
 
-export default useBeach;
+export default useTopTypes;

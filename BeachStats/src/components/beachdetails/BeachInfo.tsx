@@ -1,3 +1,4 @@
+import { Expert } from "../../types";
 import { SectionTitle } from "./SectionTitle";
 
 interface BeachInfoProps {
@@ -50,10 +51,17 @@ export function BeachInfo({
             <span className="font-lato">{type}</span>
           </div>
 
-          {/* <div>
+          <div>
             <strong className="text-dark font-lato">Evaluador(es): </strong>
-            <span className="font-lato">{evaluators}</span>
-          </div> */}
+            <span className="font-lato">
+              {/* {evaluators.map((evaluator) => (
+                <li className="text-xs">
+                  {evaluator.name}
+                </li>
+              ))} */}
+              Aqui van los evaluadores
+            </span>
+          </div>
         </div>
       </div>
     </div>
