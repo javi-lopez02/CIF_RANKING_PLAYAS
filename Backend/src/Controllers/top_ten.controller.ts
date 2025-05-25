@@ -8,7 +8,7 @@ export const getRegionBeaches = async (req: Request, res: Response) => {
     | "ATLANTICO_SUR"
     | "PACIFICO_SUR"
     | "CARIBE"
-    | "ATLANTCO_NORTE"
+    | "ATLANTICO_NORTE"
     | "PACIFICO_NORTE"
     | "MEDITERRANEO";
 

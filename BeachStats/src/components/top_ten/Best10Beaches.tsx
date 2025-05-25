@@ -2,6 +2,7 @@ import { BiInfoCircle } from "react-icons/bi";
 import { BeachData } from "../../types";
 import { Spinner } from "@heroui/spinner";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   beach: BeachData[];
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function Best10Beaches({ beach, loading, error }: Props) {
+  const navigate = useNavigate();
   // Renderizado principal
   return (
     <>
@@ -76,7 +78,10 @@ export default function Best10Beaches({ beach, loading, error }: Props) {
                     </div>
                   </div>
 
-                  <button className="w-full  mt-2 text-dark hover:text-gold flex items-center justify-center py-1 px-2 rounded hover:bg-blue-50 transition-colors">
+                  <button
+                    onClick={() => navigate(`/details?p=${beach.id}`)}
+                    className="w-full  mt-2 text-dark hover:text-gold flex items-center justify-center py-1 px-2 rounded hover:bg-blue-50 transition-colors"
+                  >
                     <BiInfoCircle size={16} className="mr-1" />
                     <span className="text-sm">Ver detalles</span>
                   </button>

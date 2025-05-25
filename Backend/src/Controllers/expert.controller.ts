@@ -21,6 +21,9 @@ export const getExperts = async (req: Request, res: Response) => {
         },
         specializationAreas: true,
       },
+      orderBy:{
+        name: "asc",
+      }
     });
 
     if (!experts) {

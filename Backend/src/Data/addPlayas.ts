@@ -20,6 +20,7 @@ interface expertsType {
   institution: string;
   codeNode: string;
   specializationAreas: SpecializationAreas[] | string[];
+  image: string;
   studyLevel:
     | "SECONDARIA_O_UNIVERSIDAD"
     | "GRADUADO_UNIVERSITARIO"
@@ -45,6 +46,8 @@ async function main() {
       codeNode: "E07",
       specializationAreas: ["TURISMO", "OTROS"],
       studyLevel: "ESPECIALIZACION",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2023/06/Aida-Carolina-Martinez.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -54,6 +57,7 @@ async function main() {
       codeNode: "E37 Beach Trotters",
       specializationAreas: ["GESTION_COSTERA", "INGENIERIA", "OTROS"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image: "",
       experienceYears: "MENOS_5",
     },
     {
@@ -63,6 +67,8 @@ async function main() {
       codeNode: "NA",
       specializationAreas: ["OCEANOGRAFIA", "GESTION_COSTERA", "INGENIERIA"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Alfredo-Jaramillo-Velez.jpg",
       experienceYears: "ENTRE_11_15",
     },
     {
@@ -72,6 +78,8 @@ async function main() {
       codeNode: "C 22",
       specializationAreas: ["CIENCIAS_NATURALES"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Ana-Maria-Faggi.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -86,6 +94,8 @@ async function main() {
         "TURISMO",
       ],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2023/06/Camilo-M-Botero.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -95,6 +105,8 @@ async function main() {
       codeNode: "E07 SISTEMAS COSTEROS",
       specializationAreas: ["TURISMO"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Carlos-Enrique-Rojas-Gutierrez.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -104,6 +116,8 @@ async function main() {
       codeNode: "E 07sistemas costeros",
       specializationAreas: ["GESTION_COSTERA"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Chadit-Serrano-Vergara.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -113,6 +127,8 @@ async function main() {
       codeNode: "A13 - Ecoplayas",
       specializationAreas: ["INGENIERIA"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Jose-Ricardo-Cornejo-Zuniga.jpg",
       experienceYears: "ENTRE_5_10",
     },
     {
@@ -122,6 +138,8 @@ async function main() {
       codeNode: "E07",
       specializationAreas: ["GESTION_COSTERA"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Darlin-Serrano-Vergara.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -137,6 +155,8 @@ async function main() {
         "TURISMO",
       ],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Dayana-Garcia-Ortiz.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -146,6 +166,8 @@ async function main() {
       codeNode: "EO7",
       specializationAreas: ["TURISMO", "OTROS"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Dick-All-Acuna-Herreira.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -155,6 +177,8 @@ async function main() {
       codeNode: "G49 ECUPAC",
       specializationAreas: ["INGENIERIA"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Dolores-Isabel-Astudillo-Brocel.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -164,6 +188,7 @@ async function main() {
       codeNode: "E07",
       specializationAreas: ["OCEANOGRAFIA"],
       studyLevel: "SECONDARIA_O_UNIVERSIDAD",
+      image: "",
       experienceYears: "MENOS_5",
     },
     {
@@ -173,6 +198,8 @@ async function main() {
       codeNode: "E-27",
       specializationAreas: ["GESTION_COSTERA"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Duvan-Esteban-Cardenas-Sepulveda.jpg",
       experienceYears: "ENTRE_16_20",
     },
     {
@@ -183,6 +210,8 @@ async function main() {
       codeNode: "E07",
       specializationAreas: ["GESTION_COSTERA", "GEOGRAFIA"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Elier-Alexander-Cordova-Garcia.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -193,6 +222,8 @@ async function main() {
       codeNode: "E-27",
       specializationAreas: ["GESTION_COSTERA", "GEOGRAFIA"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Felix-Aleixi-Correa-Alvarez.jpg",
       experienceYears: "ENTRE_5_10",
     },
     {
@@ -202,6 +233,8 @@ async function main() {
       codeNode: "A30",
       specializationAreas: ["GESTION_COSTERA", "TURISMO", "OTROS"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Francisco-Alcocer-Y-Lozano.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -211,6 +244,8 @@ async function main() {
       codeNode: "Costatenas",
       specializationAreas: ["TURISMO"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Frank-Huerta-Lopez.jpg",
       experienceYears: "ENTRE_16_20",
     },
     {
@@ -220,6 +255,8 @@ async function main() {
       codeNode: "Nodo Local 02 PROPLAYAS Riviera Maya",
       specializationAreas: ["OTROS"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Gladys-Perez-De-La-Fuente.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -229,6 +266,8 @@ async function main() {
       codeNode: "Colombia",
       specializationAreas: ["BIOLOGIA_ECOLOGIA", "TURISMO"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Gleini-Gallardo.jpg",
       experienceYears: "ENTRE_16_20",
     },
     {
@@ -238,6 +277,8 @@ async function main() {
       codeNode: "GRUPO GIMA C 06",
       specializationAreas: ["OTROS"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Gustavo-Eugenio-Echeverri-Jaramillo.jpg",
       experienceYears: "ENTRE_5_10",
     },
     {
@@ -252,6 +293,8 @@ async function main() {
         "TURISMO",
       ],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Hugo-Hidalgo-Colindres.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -267,6 +310,8 @@ async function main() {
         "TURISMO",
       ],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Idania-Hernandez-Ramos.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -276,6 +321,8 @@ async function main() {
       codeNode: "E67 ICONOPLAYA",
       specializationAreas: ["OTROS"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Jaiser-Jose-Cardona-Gonzalez.jpg",
       experienceYears: "ENTRE_5_10",
     },
     {
@@ -290,6 +337,8 @@ async function main() {
         "TURISMO",
       ],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/John-Edson-Usuga-Jaramillo.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -299,6 +348,8 @@ async function main() {
       codeNode: "Nodo 14 COSTATENAS",
       specializationAreas: ["GEOGRAFIA"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Juan-Alfredo-Cabrera-Hernandez.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -308,6 +359,8 @@ async function main() {
       codeNode: "Costatenas-ofiplaya (matanzas-cuba)",
       specializationAreas: ["GESTION_COSTERA", "OTROS"],
       studyLevel: "SECONDARIA_O_UNIVERSIDAD",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Liliam-Rojas-Lopez.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -317,6 +370,8 @@ async function main() {
       codeNode: "E67 iconoplaya",
       specializationAreas: ["GESTION_COSTERA"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Luis-Cesar-Herrera.jpg",
       experienceYears: "ENTRE_5_10",
     },
     {
@@ -326,6 +381,8 @@ async function main() {
       codeNode: "E-27",
       specializationAreas: ["GEOGRAFIA"],
       studyLevel: "ESPECIALIZACION",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Manuel-Garcia-Castro.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -335,6 +392,8 @@ async function main() {
       codeNode: "E-07",
       specializationAreas: ["OCEANOGRAFIA"],
       studyLevel: "SECONDARIA_O_UNIVERSIDAD",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Manuela-Rendon-Osorio.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -344,6 +403,8 @@ async function main() {
       codeNode: "C49 ECUPAC",
       specializationAreas: ["BIOLOGIA_ECOLOGIA", "GESTION_COSTERA"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Mario-Alberto-Palacios-Moreno.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -354,6 +415,8 @@ async function main() {
       codeNode: "25",
       specializationAreas: ["GEOLOGIA"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Maritza-Barreto.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -363,6 +426,8 @@ async function main() {
       codeNode: "A61 IEMAR",
       specializationAreas: ["GESTION_COSTERA", "TURISMO", "OTROS"],
       studyLevel: "ESPECIALIZACION",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Paloma-Arias-Ordiales.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -372,6 +437,8 @@ async function main() {
       codeNode: "A79 Reciclando Dunas",
       specializationAreas: ["BIOLOGIA_ECOLOGIA", "CIENCIAS_NATURALES"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Patricia-Perelman.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -381,6 +448,8 @@ async function main() {
       codeNode: "E07",
       specializationAreas: ["CIENCIAS_NATURALES", "INGENIERIA"],
       studyLevel: "SECONDARIA_O_UNIVERSIDAD",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Sofia-Isabel-Torres-Diaz.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -390,6 +459,8 @@ async function main() {
       codeNode: "C49 Ecupac",
       specializationAreas: ["OCEANOGRAFIA", "GEOGRAFIA"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Teresa-Vera-San-Martin.jpg",
       experienceYears: "ENTRE_5_10",
     },
     {
@@ -400,6 +471,8 @@ async function main() {
       codeNode: "C44- CEMZOC-UO",
       specializationAreas: ["BIOLOGIA_ECOLOGIA"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Yunior-Ramon-Velazquez-Labrada.jpg",
       experienceYears: "ENTRE_11_15",
     },
     {
@@ -410,6 +483,8 @@ async function main() {
       codeNode: "E07",
       specializationAreas: ["GESTION_COSTERA", "OTROS"],
       studyLevel: "MASTER",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Zulema-Mir-Frutos.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -419,6 +494,8 @@ async function main() {
       codeNode: "Nodo C34 - Paranoá",
       specializationAreas: ["GEOGRAFIA"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Danilo-Souza-Santana.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -428,6 +505,8 @@ async function main() {
       codeNode: "C33 Geografia Marinha",
       specializationAreas: ["GEOGRAFIA"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Flavia-Moraes-Lins-De-Barros.jpg",
       experienceYears: "ENTRE_16_20",
     },
     {
@@ -437,6 +516,8 @@ async function main() {
       codeNode: "C33 GEOGRAFIA",
       specializationAreas: ["GEOGRAFIA"],
       studyLevel: "SECONDARIA_O_UNIVERSIDAD",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Hugo-Diniz-Brandao.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -446,6 +527,8 @@ async function main() {
       codeNode: "C34 - Paranoá",
       specializationAreas: ["GESTION_COSTERA"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Jose-Rodrigues-Sousa-Filho.jpg",
       experienceYears: "MAS_20",
     },
     {
@@ -455,6 +538,8 @@ async function main() {
       codeNode: "Red Proplayas Nodo C34 - Paranoá",
       specializationAreas: ["GEOGRAFIA"],
       studyLevel: "GRADUADO_UNIVERSITARIO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Julia-Moura-Macedo-Costa.jpg",
       experienceYears: "MENOS_5",
     },
     {
@@ -464,6 +549,8 @@ async function main() {
       codeNode: "C34 - Paranoá",
       specializationAreas: ["GEOLOGIA"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Junia-Kacenelenbogen-Guimaraes.jpg",
       experienceYears: "ENTRE_16_20",
     },
     {
@@ -473,6 +560,8 @@ async function main() {
       codeNode: "E07",
       specializationAreas: ["GESTION_COSTERA"],
       studyLevel: "DOCTORADO",
+      image:
+        "https://rankingmejoresplayas.com/wp-content/uploads/2024/06/Livia-Garcia-Prado.jpg",
       experienceYears: "MENOS_5",
     },
   ];
@@ -489,6 +578,7 @@ async function main() {
         codeNode: expertData.codeNode,
         specializationAreas: expertData.specializationAreas as any, // Asegúrate de que estos valores coincidan con tu enum en Prisma
         studyLevel: expertData.studyLevel,
+        image: expertData.image,
         experienceYears: expertData.experienceYears,
       },
     });
@@ -502,7 +592,13 @@ async function main() {
     city: string;
     state: string;
     country: string;
-    region: "CARIBE" | "ATLANTICO_SUR" | "PACIFICO_NORTE" | "PACIFICO_SUR" | "MEDITERRANEO" | "ATLANTICO_NORTE";
+    region:
+      | "CARIBE"
+      | "ATLANTICO_SUR"
+      | "PACIFICO_NORTE"
+      | "PACIFICO_SUR"
+      | "MEDITERRANEO"
+      | "ATLANTICO_NORTE";
     beachType: "URBANA" | "DE_POBLADO" | "RURAL" | "NATURAL";
     BQV: number;
   }
