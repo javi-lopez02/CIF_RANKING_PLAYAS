@@ -70,7 +70,7 @@ export function BeachPicture({ images }: BeachPictureProps) {
           />
 
           {/* Botón de lupa */}
-          <button className="absolute top-2 right-2 bg-cyan-500 hover:bg-navy p-1 sm:p-2 rounded-md">
+          <button className="absolute top-2 right-2 bg-sky-300 hover:bg-navy-500 p-1 sm:p-2 rounded-md">
             <BiSearch className="text-white" size={16} />
           </button>
 
@@ -106,7 +106,7 @@ export function BeachPicture({ images }: BeachPictureProps) {
                     key={actualIndex}
                     className={`w-10 h-8 xs:w-12 xs:h-9 sm:w-16 sm:h-12 cursor-pointer flex-shrink-0 rounded-sm overflow-hidden transition-all ${
                       currentIndex === actualIndex
-                        ? "ring-2 ring-cyan-500"
+                        ? "ring-2 ring-sky-300"
                         : "opacity-80 hover:opacity-100"
                     }`}
                     onClick={() => goToImage(actualIndex)}
@@ -126,7 +126,7 @@ export function BeachPicture({ images }: BeachPictureProps) {
         <div className="hidden md:flex justify-center items-center mt-2 text-sm text-gray-600">
           <button
             onClick={prevImage}
-            className="bg-gray-200 hover:bg-gold px-2 py-1 rounded-l flex items-center"
+            className="bg-gray-200 hover:bg-gold-500 px-2 py-1 rounded-l flex items-center"
           >
             <BiLeftArrowAlt size={16} />
           </button>
@@ -137,7 +137,7 @@ export function BeachPicture({ images }: BeachPictureProps) {
 
           <button
             onClick={nextImage}
-            className="bg-gray-200 hover:bg-gold px-2 py-1 rounded-r flex items-center"
+            className="bg-gray-200 hover:bg-gold-500 px-2 py-1 rounded-r flex items-center"
           >
             <BiRightArrowAlt size={16} />
           </button>

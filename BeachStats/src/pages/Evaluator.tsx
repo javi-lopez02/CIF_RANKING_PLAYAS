@@ -23,7 +23,7 @@ export default function Evaluator() {
       {/* Contenido principal */}
       <div className="w-full md:w-4/5 px-4 flex flex-col items-center">
         <div className="flex flex-col p-4 gap-4 w-full">
-          <h2 className="py-4 text-center font-sans font-bold text-dark text-5xl">
+          <h2 className="py-4 text-center font-sans font-bold text-dark-700 text-5xl">
             Nuestros Evaluadores
           </h2>
 
@@ -53,7 +53,7 @@ export default function Evaluator() {
                     placeholder="Escribe el nombre del evaluador..."
                     value={searchName}
                     onChange={(e) => setSearchName(e.target.value)}
-                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                   />
                 </div>
 
@@ -69,7 +69,7 @@ export default function Evaluator() {
                     id="countrySelect"
                     value={selectedCountry}
                     onChange={(e) => setSelectedCountry(e.target.value)}
-                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                   >
                     <option value="">Todos los países</option>
                     {countries.map((country) => (
@@ -107,7 +107,7 @@ export default function Evaluator() {
                       </span>{" "}
                       evaluadores
                       {(searchName || selectedCountry) && (
-                        <span className="ml-2 text-blue-600 font-medium">
+                        <span className="ml-2 text-sky-600 font-medium">
                           (filtros aplicados)
                         </span>
                       )}

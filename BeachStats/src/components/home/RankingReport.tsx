@@ -35,8 +35,8 @@ export default function RankingReport() {
               onClick={() => setActiveReport(year)}
               className={`px-4 py-1 border text-xs uppercase rounded-sm ${
                 activeReport === year 
-                  ? 'bg-navy text-white border-navy' 
-                  : 'bg-white text-navy border-navy hover:bg-gray-100'
+                  ? 'bg-navy-500 text-white border-navy-500' 
+                  : 'bg-white text-navy-500 border-navy-500 hover:bg-gray-100'
               }`}
             >
               Reporte {year}

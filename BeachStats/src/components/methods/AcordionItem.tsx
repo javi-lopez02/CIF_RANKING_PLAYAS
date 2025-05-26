@@ -1,9 +1,11 @@
+import { useMemo } from "react";
 import { BiDownArrowAlt, BiUpArrowAlt } from "react-icons/bi";
 
 type AccordionItem = {
   id: string | number;
   title: string;
   content: React.ReactNode;
+  preview: string;
 };
 
 interface AccordionItemComponentProps {
@@ -17,26 +19,76 @@ export const AccordionItem = ({
   isOpen,
   onClick,
 }: AccordionItemComponentProps) => {
+  // Memoizar el contenido del preview para evitar re-renders innecesarios
+  const previewContent = useMemo(
+    () => (
+      <div className="flex-1">
+        {/* Header con título */}
+        <h3 className="font-bold text-dark-700 text-xl leading-tight mb-3">
+          {item.title}
+        </h3>
+
+        {/* Preview del contenido */}
+        {!isOpen && (
+          <p className="text-gray-600 text-sm leading-relaxed pr-4 mb-2">
+            {item.preview}
+          </p>
+        )}
+
+        {/* Indicador de "ver más" cuando está cerrado */}
+        {!isOpen && (
+          <span className="inline-block text-xs text-sky-600 font-medium">
+            Ver detalles completos →
+          </span>
+        )}
+      </div>
+    ),
+    [item.title, item.preview, isOpen]
+  );
+
+  // Memoizar el icono para evitar re-renders
+  const arrowIcon = useMemo(
+    () => (
+      <div
+        className={`ml-4 flex-shrink-0 ${
+          isOpen ? "text-white" : "text-gray-500"
+        }`}
+      >
+        {isOpen ? <BiUpArrowAlt size={24} /> : <BiDownArrowAlt size={24} />}
+      </div>
+    ),
+    [isOpen]
+  );
+
   return (
-    <div className="border-b border-gray-200 last:border-b-0">
+    <div className="border-b border-gray-200 rounded-xl bg-white hover:bg-gray-50 last:border-b-0 border-l-4 border-l-sky-500 transition-all duration-200">
+      {/* Botón principal del acordeón */}
       <button
-        className={`flex justify-between items-center w-full px-4 py-4 text-left transition-colors ${
-          isOpen ? "bg-blue-50" : "hover:bg-gray-50"
+        className={`flex justify-between items-start w-full px-6 py-5 text-left transition-colors ${
+          isOpen
+            ? "bg-gradient-to-r from-sky-500 via-sky-50 to-gold-300"
+            : "hover:bg-gray-50"
         }`}
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <h3 className="py-2 text-center font-sans font-bold text-dark text-3xl">{item.title}</h3>
-        <div className="text-gray-600">
-          {isOpen ? <BiUpArrowAlt size={20} /> : <BiDownArrowAlt size={20} />}
-        </div>
+        {previewContent}
+        {arrowIcon}
       </button>
+
+      {/* Contenido expandible */}
       <div
         className={`overflow-scroll scrollbar-hide transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="p-4 bg-white text-gray-700">{item.content}</div>
+        <div className="px-6 pb-5 bg-white">
+          <div className="border-t border-gold-500 pt-4">
+            <div className="prose prose-sm max-w-none text-gray-700">
+              {item.content}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

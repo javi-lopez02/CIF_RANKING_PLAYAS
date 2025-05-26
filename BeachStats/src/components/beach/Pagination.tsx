@@ -49,7 +49,7 @@ export default function Pagination({
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center justify-center p-2 rounded-lg bg-gray-100 hover:bg-blue-500 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 disabled:hover:text-gray-500 transition-all"
+        className="flex items-center justify-center p-2 rounded-lg bg-gray-100 hover:bg-sky-500 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 disabled:hover:text-gray-500 transition-all"
       >
         <BiLeftArrowAlt size={20} />
       </button>
@@ -61,10 +61,10 @@ export default function Pagination({
           disabled={page === "..."}
           className={`px-4 py-2 rounded-lg transition-all ${
             currentPage === page
-              ? "bg-blue-500 text-white"
+              ? "bg-sky-500 text-white"
               : page === "..."
               ? "cursor-default"
-              : "bg-gray-100 hover:bg-blue-500 hover:text-white"
+              : "bg-gray-100 hover:bg-sky-500 hover:text-white"
           }`}
         >
           {page}
@@ -74,7 +74,7 @@ export default function Pagination({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center justify-center p-2 rounded-lg bg-gray-100 hover:bg-blue-500 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 disabled:hover:text-gray-500 transition-all"
+        className="flex items-center justify-center p-2 rounded-lg bg-gray-100 hover:bg-sky-500 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 disabled:hover:text-gray-500 transition-all"
       >
         <BiRightArrowAlt size={20} />
       </button>

@@ -10,7 +10,7 @@ export default function BestBeachesCard({
 
   return (
     <div
-      className="relative flex flex-col rounded-lg overflow-hidden shadow-md cursor-pointer transform transition-all duration-300 hover:shadow-xl hover:scale-105"
+      className="relative flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-sky-300 cursor-pointer transform transition-all duration-300 hover:shadow-xl hover:scale-105"
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -21,7 +21,7 @@ export default function BestBeachesCard({
         {/* Overlay effect on hover */}
         {isHovered && (
           <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-            <span className="text-white font-bold font-lato px-3 py-1 rounded-full bg-sky hover:bg-gold hover:text-dark text-sm">
+            <span className="text-white font-bold font-lato px-3 py-1 rounded-full bg-sky-500 hover:bg-gold-500 hover:text-dark-700 text-sm">
               Ver más
             </span>
           </div>

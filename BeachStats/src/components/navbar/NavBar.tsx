@@ -45,7 +45,7 @@ const Navbar = () => {
   // Calculate navbar properties based on scroll and current page
   const navbarBgOpacity = isHomePage ? Math.min(1, scrollPosition / 100) : 1;
   const textColorClass =
-    isHomePage && scrollPosition <= 50 ? "text-white" : "text-dark";
+    isHomePage && scrollPosition <= 50 ? "text-white" : "text-dark-700";
   const navbarHeight = isHomePage && scrollPosition <= 50 ? "h-24" : "h-16";
 
   return (
@@ -64,19 +64,19 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/evaluator"
-              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl transition-colors duration-300`}
+              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold-500 hover:text-gold-500 text-xl transition-colors duration-300`}
             >
               Evaluadores
             </Link>
             <Link
               to="/beach"
-              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl transition-colors duration-300`}
+              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold-500 hover:text-gold-500 text-xl transition-colors duration-300`}
             >
               Playas
             </Link>
             <Link
               to="/scientific-advisory"
-              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl transition-colors duration-300`}
+              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold-500 hover:text-gold-500 text-xl transition-colors duration-300`}
             >
               Consejo Cientifico
             </Link>
@@ -112,19 +112,19 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/method"
-              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl transition-colors duration-300`}
+              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold-500 hover:text-gold-500 text-xl transition-colors duration-300`}
             >
               Metodos
             </Link>
             <Link
               to="/school"
-              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl transition-colors duration-300`}
+              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold-500 hover:text-gold-500 text-xl transition-colors duration-300`}
             >
               Escuela
             </Link>
             <Link
               to="/contacto"
-              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold hover:text-gold text-xl transition-colors duration-300`}
+              className={`${textColorClass} font-medium font-sans hover:border-b-2 hover:border-gold-500 hover:text-gold-500 text-xl transition-colors duration-300`}
             >
               Contacto
             </Link>
@@ -133,7 +133,7 @@ const Navbar = () => {
           {/* Hamburger menu button - visible on mobile */}
           <button
             onClick={toggleMenu}
-            className={`md:hidden p-2 hover:bg-gold rounded-full transition-colors duration-300 ${textColorClass}`}
+            className={`md:hidden p-2 hover:bg-gold-500 rounded-full transition-colors duration-300 ${textColorClass}`}
           >
             {isMenuOpen ? <BiX size={24} /> : <BiMenu size={24} />}
           </button>
@@ -145,28 +145,28 @@ const Navbar = () => {
             <div className="flex flex-col">
               <Link
                 to="/evaluator"
-                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-sans hover:bg-gold"
+                className="py-4 px-6 border-b border-gray-100 text-dark-700 font-medium font-sans hover:bg-gold-500"
                 onClick={toggleMenu}
               >
                 Evaluadores
               </Link>
               <Link
                 to="/beach"
-                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-sans hover:bg-gold"
+                className="py-4 px-6 border-b border-gray-100 text-dark-700 font-medium font-sans hover:bg-gold-500"
                 onClick={toggleMenu}
               >
                 Playas
               </Link>
               <Link
                 to="/method"
-                className="py-4 px-6 border-b border-gray-100 text-dark font-medium font-sans hover:bg-gold"
+                className="py-4 px-6 border-b border-gray-100 text-dark-700 font-medium font-sans hover:bg-gold-500"
                 onClick={toggleMenu}
               >
                 Metodos
               </Link>
               <Link
                 to="/contacto"
-                className="py-4 px-6 text-dark font-medium font-sans hover:bg-gold"
+                className="py-4 px-6 text-dark-700 font-medium font-sans hover:bg-gold-500"
                 onClick={toggleMenu}
               >
                 Contacto

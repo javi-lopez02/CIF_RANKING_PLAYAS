@@ -1,6 +1,6 @@
 export default function MathExample() {
     return (
-      <div className="min-h-screen max-w-6xl mx-auto w-full font-sans">
+      <div className="max-h-screen max-w-6xl mx-auto w-full font-sans text-sm">
         {/* Main content */}
         <div className="flex gap-8">
           <div className="w-full text-justify">

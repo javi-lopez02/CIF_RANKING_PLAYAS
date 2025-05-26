@@ -85,7 +85,7 @@ export default function EvaluatorCard({
 
   return (
     <div
-      className="relative w-full h-96 rounded-lg overflow-hidden shadow-xl bg-gradient-to-t from-gold via-sky to-sky transition-all duration-300 cursor-pointer transform hover:scale-105 group"
+      className="relative w-full h-96 rounded-lg overflow-hidden shadow-md hover:shadow-sky-400 bg-gradient-to-t from-gold-500 via-sky-500 to-sky-500 transition-all duration-300 cursor-pointer transform hover:scale-105 group"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -103,7 +103,7 @@ export default function EvaluatorCard({
 
       {/* Nombre siempre visible */}
       <div className="absolute inset-x-0 bottom-0 p-6 z-20">
-        <h2 className={`text-xl font-bold ${isHovering ? "text-white" : "text-black"}  drop-shadow-lg text-center`}>
+        <h2 className={`text-xl font-bold ${isHovering ? "text-white" : "text-black"}  drop-shadow-2xl text-center`}>
           {name.toUpperCase()}
         </h2>
       </div>

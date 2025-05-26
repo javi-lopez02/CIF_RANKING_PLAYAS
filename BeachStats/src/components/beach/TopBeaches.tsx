@@ -57,11 +57,7 @@ export default function TopBeaches() {
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 text-gray-900">
-          Explora las Playas del Mundo
-        </h1>
-
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <FiltersSection
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
@@ -87,7 +83,7 @@ export default function TopBeaches() {
             selectedType !== "Todos") && (
             <button
               onClick={resetFilters}
-              className="text-blue-600 hover:text-blue-800 font-medium transition-colors"
+              className="text-sky-600 hover:text-sky-800 font-medium transition-colors"
             >
               Limpiar filtros
             </button>
@@ -127,7 +123,7 @@ export default function TopBeaches() {
                 </p>
                 <button
                   onClick={resetFilters}
-                  className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                  className="bg-sky-500 text-white px-6 py-2 rounded-lg hover:bg-sky-600 transition-colors"
                 >
                   Limpiar filtros
                 </button>

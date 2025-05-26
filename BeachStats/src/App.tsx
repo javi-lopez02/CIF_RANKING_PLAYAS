@@ -18,6 +18,7 @@ import AtlanticoSur from "./pages/Top_Ten/AtlanticoSur";
 import PacificoNorte from "./pages/Top_Ten/PacificoNorte";
 import PacificoSur from "./pages/Top_Ten/PacificoSur";
 import Urbanas from "./pages/Top_Ten/Urbanas";
+import TeamDirectory from "./pages/TeamDirectory";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/evaluator" element={<Evaluator />} />
             <Route path="/method" element={<Method />} />
             <Route path="/details" element={<BeachDetails />} />
+            <Route path="/scientific-advisory" element={<TeamDirectory />} />
 
             <Route path="/atlantic-north" element={<AtlanticoNorte />} />
             <Route path="/atlantic-south" element={<AtlanticoSur />} />

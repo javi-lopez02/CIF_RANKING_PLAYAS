@@ -4,6 +4,7 @@ import ExpertCarrusel from "../components/home/ExpertCarrusel";
 import HowToBeExpert from "../components/home/How_ToBe_Expert";
 import MediaCoverage from "../components/home/MediaCoverage";
 import RankingReport from "../components/home/RankingReport";
+import AutoTranslator from "../components/AutoTranslator";
 
 export const beachType = [
   {
@@ -130,6 +131,7 @@ export default function Home() {
 
       {/* Sección de Google Anuncios */}
       <div className="w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 flex items-center justify-center">
+        <AutoTranslator></AutoTranslator>
         <div className="w-full h-32 md:h-auto border border-gray-300 rounded flex items-center justify-center text-center p-4 text-gray-500">
           Este es el sitio donde van los anuncios de Google
         </div>

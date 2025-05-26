@@ -46,7 +46,7 @@ export default function FiltersSection({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-dark-500 p-4 sm:p-6 mb-6">
       {/* Primera fila: Búsqueda y Ordenamiento */}
       <div className="flex flex-col sm:flex-row gap-4 mb-4">
         {/* Barra de búsqueda */}
@@ -55,7 +55,7 @@ export default function FiltersSection({
           <input
             type="text"
             placeholder="Buscar playa..."
-            className="font-sans pl-10 pr-4 py-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="font-sans pl-10 pr-4 py-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -64,7 +64,7 @@ export default function FiltersSection({
         {/* Selector de ordenamiento */}
         <div className="w-full sm:w-72">
           <select
-            className="w-full border font-sans border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white"
+            className="w-full border font-sans border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
           >
@@ -84,7 +84,7 @@ export default function FiltersSection({
             Región
           </label>
           <select
-            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white"
+            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
             value={selectedRegion}
             onChange={(e) => handleRegionChange(e.target.value)}
           >
@@ -102,7 +102,7 @@ export default function FiltersSection({
             Tipo de Playa
           </label>
           <select
-            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white"
+            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
             value={selectedType}
             onChange={(e) => handleTypeChange(e.target.value)}
           >

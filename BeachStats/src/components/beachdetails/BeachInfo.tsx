@@ -27,32 +27,32 @@ export function BeachInfo({
       <div className="p-4 border border-gray-200">
         <div className="space-y-3">
           <div>
-            <strong className="text-dark font-lato">Ciudad: </strong>
+            <strong className="text-dark-700 font-lato">Ciudad: </strong>
             <span className="font-lato">{city}</span>
           </div>
 
           <div>
-            <strong className="text-dark font-lato">País: </strong>
+            <strong className="text-dark-700 font-lato">País: </strong>
             <span className="font-lato">{country}</span>
           </div>
 
           <div>
-            <strong className="text-dark font-lato">Región: </strong>
+            <strong className="text-dark-700 font-lato">Región: </strong>
             <span className="font-lato">{region}</span>
           </div>
 
           <div>
-            <strong className="text-dark font-lato">Coordenadas: </strong>
+            <strong className="text-dark-700 font-lato">Coordenadas: </strong>
             <span className="font-lato">{coordinates}</span>
           </div>
 
           <div>
-            <strong className="text-dark font-lato">Tipo de playa: </strong>
+            <strong className="text-dark-700 font-lato">Tipo de playa: </strong>
             <span className="font-lato">{type}</span>
           </div>
 
           <div>
-            <strong className="text-dark font-lato">Evaluador(es): </strong>
+            <strong className="text-dark-700 font-lato">Evaluador(es): </strong>
             <span className="font-lato">
               {/* {evaluators.map((evaluator) => (
                 <li className="text-xs">

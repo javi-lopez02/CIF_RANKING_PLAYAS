@@ -69,15 +69,15 @@ export default function MediaCoverage() {
     <div className="w-full py-4 px-4">
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-xl">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-light text-dark mb-2">MEDIA COVERAGE</h2>
-          <div className="h-0.5 bg-sky mx-auto"></div>
+          <h2 className="text-2xl font-light text-dark-700 mb-2">MEDIA COVERAGE</h2>
+          <div className="h-0.5 bg-sky-500 mx-auto"></div>
         </div>
 
         {/* Carrusel */}
         <div className="relative">
           {/* Flecha izquierda */}
           <button
-            className="absolute top-1/2 left-4 -ml-4 -translate-y-1/2 bg-white hover:bg-gold rounded-full p-1 shadow-md hover:shadow-lg transition-shadow z-10"
+            className="absolute top-1/2 left-4 -ml-4 -translate-y-1/2 bg-white hover:bg-gold-500 rounded-full p-1 shadow-md hover:shadow-lg hover:shadow-sky-300 transition-shadow z-10"
             onClick={prevSlide}
             aria-label="Previous slide"
           >
@@ -114,7 +114,7 @@ export default function MediaCoverage() {
 
           {/* Flecha derecha */}
           <button
-            className="absolute top-1/2 right-4 -mr-4 -translate-y-1/2 bg-white hover:bg-gold rounded-full p-1 shadow-md hover:shadow-lg transition-shadow z-10"
+            className="absolute top-1/2 right-4 -mr-4 -translate-y-1/2 bg-white hover:bg-gold-500 rounded-full p-1 shadow-md hover:shadow-lg hover:shadow-sky-300 transition-shadow z-10"
             onClick={nextSlide}
             aria-label="Next slide"
           >
@@ -130,8 +130,8 @@ export default function MediaCoverage() {
               aria-label={`Go to slide ${index + 1}`}
               className={`mx-1 rounded-full transition-all duration-300 focus:outline-none ${
                 activeSlide === index
-                  ? "w-8 h-2 bg-gold"
-                  : "w-2 h-2 bg-sky hover:bg-navy"
+                  ? "w-8 h-2 bg-gold-500"
+                  : "w-2 h-2 bg-sky-500 hover:bg-navy-500"
               }`}
               onClick={() => goToSlide(index)}
             />

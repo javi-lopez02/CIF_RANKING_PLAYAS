@@ -80,7 +80,7 @@ export default function ExpertCarrusel() {
           className="absolute left-4 z-10 bg-white bg-opacity-40 p-2 rounded-full hover:bg-opacity-60 transition-all"
           aria-label="Experto anterior"
         >
-          <MdOutlineNavigateBefore className="h-6 w-6 text-dark" />
+          <MdOutlineNavigateBefore className="h-6 w-6 text-dark-700" />
         </button>
 
         <div
@@ -161,7 +161,7 @@ export default function ExpertCarrusel() {
           className="absolute right-4 z-10 bg-white bg-opacity-40 p-2 rounded-full hover:bg-opacity-60 transition-all"
           aria-label="Siguiente experto"
         >
-          <MdOutlineNavigateNext className="h-6 w-6 text-dark" />
+          <MdOutlineNavigateNext className="h-6 w-6 text-dark-700" />
         </button>
       </div>
 

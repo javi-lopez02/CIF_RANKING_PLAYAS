@@ -37,7 +37,7 @@ export default function Page404() {
         </p>
         <button
           onClick={handleClick}
-          className="w-full lg:w-auto my-4 border rounded-md px-1 sm:px-16 py-5 bg-blue-500 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50"
+          className="w-full lg:w-auto my-4 border rounded-md px-1 sm:px-16 py-5 bg-sky-500 text-white hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-opacity-50"
         >
           Regresar al Inicio
         </button>

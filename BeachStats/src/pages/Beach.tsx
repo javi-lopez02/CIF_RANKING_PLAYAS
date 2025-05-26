@@ -6,6 +6,9 @@ export default function Beach() {
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100 w-full">
       <div className="w-full md:w-4/5 flex flex-col px-2 sm:px-4 md:px-6">
         <div className="flex flex-col w-full gap-4 lg:gap-8 py-4">
+          <h1 className="py-4 text-center font-sans font-bold text-dark-700 text-5xl">
+            Explora las Playas del Mundo
+          </h1>
           {/* Sección izquierda con galería */}
           <TopBeaches></TopBeaches>
         </div>

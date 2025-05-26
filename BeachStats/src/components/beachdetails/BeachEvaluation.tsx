@@ -31,7 +31,7 @@ export default function BeachEvaluation() {
           <h3 className="text-gray-700 font-medium text-lg">Varadero</h3>
           <h4 className="text-sm text-gray-500">(Hotel Internacional)</h4>
         </div>
-        <div className="flex items-center justify-center bg-sky border-2 border-gold rounded-full w-20 h-20">
+        <div className="flex items-center justify-center bg-sky-500 border-2 border-gold-500 rounded-full w-20 h-20">
           <span className="text-3xl font-bold text-white">{rating}</span>
         </div>
       </div>
