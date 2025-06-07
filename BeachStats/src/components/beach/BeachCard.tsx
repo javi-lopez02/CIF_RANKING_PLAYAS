@@ -1,15 +1,8 @@
+import { Beach } from "../../types";
+
 interface BeachCardProps {
   beach: Beach;
   onClick: (beachId: string | number) => void;
-}
-
-interface Beach {
-  id: string | number;
-  name: string;
-  region: string;
-  beachType: string;
-  BQV: number;
-  image?: string;
 }
 
 // Componente de Tarjeta de Playa
@@ -21,7 +14,7 @@ export default function BeachCard({ beach, onClick }: BeachCardProps) {
     >
       <div className="h-48 overflow-hidden bg-gray-200">
         <img
-          src={beach.image || ""}
+          src={beach.imageBeach || ""}
           alt={beach.name}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
           onError={(e) => {
@@ -39,7 +32,7 @@ export default function BeachCard({ beach, onClick }: BeachCardProps) {
         </p>
         <div className="flex justify-center">
           <span className="bg-sky-100 text-sky-800 font-medium px-3 py-1 rounded-full text-sm">
-            BQV {beach.BQV}
+            BQV {beach.bqvScore}
           </span>
         </div>
       </div>

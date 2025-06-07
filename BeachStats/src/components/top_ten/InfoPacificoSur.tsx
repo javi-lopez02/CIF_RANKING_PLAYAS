@@ -2,13 +2,18 @@ export default function InfoPacificoSur() {
   return (
     <div className="max-w-4xl mx-auto p-6 font-sans">
       {/* Título principal */}
-      <h1 className="text-4xl font-light text-sky-500 mb-6">Playas del Pacifico Sur</h1>
+      <h1 className="text-4xl font-light text-sky-500 mb-6">
+        Playas del Pacifico Sur
+      </h1>
 
       {/* Línea punteada decorativa */}
       <div className="w-full flex justify-center mb-8">
         <div className="w-full h-0.5 flex items-center">
           {[...Array(100)].map((_, i) => (
-            <div key={i} className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"></div>
+            <div
+              key={i}
+              className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"
+            ></div>
           ))}
         </div>
       </div>
@@ -21,20 +26,19 @@ export default function InfoPacificoSur() {
       {/* Párrafos informativos */}
       <div className="space-y-4 text-gray-600 text-sm md:text-base text-justify leading-relaxed">
         <p>
-          El Pacífico Sur, una vasta extensión oceánica que se extiende desde el
-          trópico de Capricornio hasta las heladas costas de la Antártida,
-          presenta un escenario desafiante para la gestión sostenible de playas
-          en un mosaico de países como Perú, Colombia, Chile, Ecuador.
+          Las playas del Pacífico Sur Americano son un encuentro con la fuerza
+          natural: desde las costas de Panamá hasta la mística Patagonia
+          chilena. Son escenarios de recreación para el alma y la aventura,
+          donde el oleaje salvaje y los paisajes volcánicos despiertan el
+          asombro.
         </p>
 
         <p>
-          Desde Australia y Nueva Zelanda hasta las islas del Pacífico como
-          Fiyi, Samoa y Tonga, la gestión sostenible de playas en el Pacífico
-          Sur debe considerar las características únicas de cada país. La
-          erosión costera, la contaminación marina y el impacto del turismo son
-          algunos de los desafíos comunes que enfrentan las naciones de la
-          región, pero cada uno presenta sus propias complejidades y requiere
-          soluciones específicas.
+          Estas playas no solo ofrecen belleza y ocio; también son espacios donde
+          florecen esfuerzos para proteger dunas, recuperar hábitats y
+          garantizar la salud de los ecosistemas. Así, el Pacífico Sur Americano
+          nos enseña que disfrutar de las costas implica también cuidarlas con
+          respeto y compromiso.
         </p>
       </div>
 

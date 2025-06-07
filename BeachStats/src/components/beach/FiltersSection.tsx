@@ -9,9 +9,12 @@ interface FiltersSectionProps {
   setSelectedRegion: (value: string) => void;
   selectedType: string;
   setSelectedType: (value: string) => void;
+  selectedCountry: string;
+  setSelectedCountry: (value: string) => void;
   filterOptions: {
     regions: string[];
     types: string[];
+    countrys: string[];
   };
   onFilterChange: () => void;
 }
@@ -30,6 +33,8 @@ export default function FiltersSection({
   setSortBy,
   selectedRegion,
   setSelectedRegion,
+  selectedCountry,
+  setSelectedCountry,
   selectedType,
   setSelectedType,
   filterOptions,
@@ -45,10 +50,15 @@ export default function FiltersSection({
     onFilterChange();
   };
 
+  const handleCountryChange = (value: string) => {
+    setSelectedCountry(value);
+    onFilterChange();
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-dark-500 p-4 sm:p-6 mb-6">
+    <div className="rounded-lg shadow-md hover:shadow-dark-500 p-4 sm:p-6 mb-6 bg-gradient-to-tr from-gold-200 to-sky-200">
       {/* Primera fila: Búsqueda y Ordenamiento */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-4">
+      <div className="flex flex-col sm:flex-row gap-4 mb-4 ">
         {/* Barra de búsqueda */}
         <div className="relative flex-1">
           <BiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -60,11 +70,17 @@ export default function FiltersSection({
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
+      </div>
 
-        {/* Selector de ordenamiento */}
-        <div className="w-full sm:w-72">
+      {/* Segunda fila: Filtros por región y tipo */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+        {/* Filtro por región */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Ordena de:{" "}
+          </label>
           <select
-            className="w-full border font-sans border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
+            className="w-full border border-gray-300 bg-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
           >
@@ -74,17 +90,13 @@ export default function FiltersSection({
             <option value="Nombre-Descendente">Nombre (Z-A)</option>
           </select>
         </div>
-      </div>
 
-      {/* Segunda fila: Filtros por región y tipo */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Filtro por región */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Región
           </label>
           <select
-            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
+            className="w-full border border-gray-300 bg-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
             value={selectedRegion}
             onChange={(e) => handleRegionChange(e.target.value)}
           >
@@ -102,13 +114,30 @@ export default function FiltersSection({
             Tipo de Playa
           </label>
           <select
-            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
+            className="w-full border border-gray-300 bg-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all "
             value={selectedType}
             onChange={(e) => handleTypeChange(e.target.value)}
           >
             {filterOptions.types.map((type) => (
               <option key={type} value={type}>
                 {type === "Todos" ? "Todos los Tipos" : type}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Pais
+          </label>
+          <select
+            className="w-full border border-gray-300 bg-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all "
+            value={selectedCountry}
+            onChange={(e) => handleCountryChange(e.target.value)}
+          >
+            {filterOptions.countrys.map((region) => (
+              <option key={region} value={region}>
+                {region === "Todos" ? "Todas los Paises" : region}
               </option>
             ))}
           </select>

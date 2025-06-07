@@ -2,13 +2,18 @@ export default function InfoCaribe() {
   return (
     <div className="max-w-4xl mx-auto p-6 font-sans">
       {/* Título principal */}
-      <h1 className="text-4xl font-light text-sky-500 mb-6">Playas del Caribe</h1>
+      <h1 className="text-4xl font-light text-sky-500 mb-6">
+        Playas del Caribe
+      </h1>
 
       {/* Línea punteada decorativa */}
       <div className="w-full flex justify-center mb-8">
         <div className="w-full h-0.5 flex items-center">
           {[...Array(100)].map((_, i) => (
-            <div key={i} className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"></div>
+            <div
+              key={i}
+              className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"
+            ></div>
           ))}
         </div>
       </div>
@@ -21,23 +26,19 @@ export default function InfoCaribe() {
       {/* Párrafos informativos */}
       <div className="space-y-4 text-gray-600 text-sm md:text-base text-justify leading-relaxed">
         <p>
-          El Caribe, se extiende desde el sureste del Golfo de México hasta el
-          norte de Sudamérica. Esta región enmarcada por el océano Atlántico y
-          el Mar Caribe, comprende un mosaico de naciones y territorios
-          insulares con una rica historia y cultura.
+          Las playas del Caribe son un refugio de color y vida: arenas blancas
+          que acarician los pies, aguas cristalinas que susurran canciones
+          antiguas y palmeras que danzan con la brisa. Cada una ofrece un portal
+          para sumergirse en la naturaleza y la cultura, conjugando momentos de
+          recreación inolvidables con la promesa de descanso absoluto.
         </p>
 
         <p>
-          Las Antillas que conforman el corazón del Caribe tiene entre sus islas
-          mayores a Cuba, La Española, Jamaica y Puerto Rico, mientras que las
-          Antillas Menores, como Barbados, Trinidad y Tobago y las Islas
-          Vírgenes.
-        </p>
-
-        <p>
-          El Caribe continental, por su parte, abraza las costas de países como
-          Colombia, Venezuela, Panamá, Costa Rica, Nicaragua, Honduras, Belice y
-          México por el Atlántico.
+          En estas costas, el equilibrio entre lo recreativo, lo ecosistémico,
+          la protección costera y la salud ambiental es esencial. Las playas del
+          Caribe se convierten en escenarios donde la biodiversidad y el
+          bienestar humano se entrelazan, mostrando al mundo que es posible
+          disfrutar y conservar a la vez.
         </p>
       </div>
 

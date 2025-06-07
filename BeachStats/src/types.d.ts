@@ -22,12 +22,16 @@ type SPECIALITATION_AREA = {
 export interface Beach {
   id: string;
   name: string;
-  city: string;
-  state: string;
+  municipality: string;
+  province: string;
   country: string;
-  coordinates: string;
-  beachType: "URBANA" | "DE_POBLADO" | "RURAL" | "NATURAL";
-  BQV: number;
+  beachType: "URBANA" | "DE_POBLADO" | "RURAL" | "NATURAL" | "ENCLAVE";
+  bqvScore: number;
+  bqvImage: string;
+  additionalImages: string[];
+  imageBeach: string;
+  length: number;
+  latitude: number;
   region:
     | "ATLANTICO_NORTE"
     | "ATLANTICO_SUR"
@@ -37,33 +41,16 @@ export interface Beach {
     | "CARIBE";
   evaluations: {
     beachDescription: string;
-    beachImages: string[];
-    expert: Expert[];
-  };
-}
-
-export interface BeachData {
-  id: string;
-  name: string;
-  city: string;
-  state: string;
-  country: string;
-  coordinates: string;
-  beachType: "URBANA" | "DE_POBLADO" | "RURAL" | "NATURAL";
-  BQV: number;
-  region:
-    | "ATLANTICO_NORTE"
-    | "ATLANTICO_SUR"
-    | "PACIFICO_NORTE"
-    | "PACIFICO_SUR"
-    | "MEDITERRANEO"
-    | "CARIBE";
+    expert: Expert;
+    creditibilyIndex: number;
+  }[];
 }
 
 export interface Expert {
   id: string;
   name: string;
   email: string;
+  country: string;
   institution: string;
   image: string;
   codeNode: string;
@@ -82,6 +69,22 @@ export interface Expert {
   graduatedDate: string?;
   specializationAreas: SPECIALITATION_AREA[];
   evaluations: {
+    beach: Beach;
     creditibilyIndex: number;
-  };
+  }[];
+}
+
+export interface Scientifics {
+  id: string;
+  name: string;
+  image: string;
+  country: string;
+  schoolLevel: string;
+  areaExperiencia: string;
+}
+
+export interface School {
+  id: string;
+  name: string;
+  country: string;
 }

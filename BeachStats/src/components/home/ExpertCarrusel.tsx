@@ -4,7 +4,7 @@ import useExpert from "../../customHooks/useExperts";
 import { toast } from "sonner";
 
 export default function ExpertCarrusel() {
-  const [currentIndex, setCurrentIndex] = useState(0); // Cambio: iniciar en 0
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const carouselRef = useRef(null);
 
@@ -19,14 +19,14 @@ export default function ExpertCarrusel() {
   }, [experts]);
 
   const nextSlide = () => {
-    if (!experts || experts.length === 0) return; // Validación
+    if (!experts || experts.length === 0) return;
     setCurrentIndex((prevIndex) =>
       prevIndex === experts.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
-    if (!experts || experts.length === 0) return; // Validación
+    if (!experts || experts.length === 0) return;
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? experts.length - 1 : prevIndex - 1
     );
@@ -34,7 +34,7 @@ export default function ExpertCarrusel() {
 
   // Para obtener el índice circular (maneja el ciclo del carrusel)
   const getCircularIndex = (index: number) => {
-    if (!experts || experts.length === 0) return 0; // Validación
+    if (!experts || experts.length === 0) return 0;
     const length = experts.length;
     return ((index % length) + length) % length;
   };
@@ -100,7 +100,7 @@ export default function ExpertCarrusel() {
 
             return (
               <div
-                key={`${evaluador.id}-${index}`} // Clave más única
+                key={`${evaluador.id}-${index}`}
                 className={`relative transition-all duration-500 ease-in-out ${
                   isCentered
                     ? "h-80 w-64 z-20"
@@ -135,18 +135,37 @@ export default function ExpertCarrusel() {
                   {/* Contenido para la tarjeta central cuando se hace hover */}
                   {isCentered && isHovered && (
                     <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-300">
-                      <h3 className="text-2xl font-bold font-sunbone text-center mb-1">
+                      <h3 className="text-2xl font-bold font-sunbone text-center mb-2">
                         {evaluador.name || "Nombre no disponible"}
                       </h3>
-                      <p className="text-sm font-medium font-lato text-gray-300 text-center mb-4">
-                        ANOS DE EXPERIENCIA: <br />{" "}
-                        {evaluador.experienceYears
-                          .replace("_", " ")
-                          .replace("_", " y ") || "NO DISPONIBLE"}
+
+                      <p className="text-sm font-medium font-lato text-gray-300 text-center mb-2">
+                        <span className="font-semibold">PAÍS:</span>
+                        <br />
+                        {evaluador.country || "No disponible"}
                       </p>
-                      <p className="text-sm font-lato text-center">
-                        {evaluador.studyLevel ||
-                          "Nivel de estudios no disponible"}
+
+                      <p className="text-sm font-medium font-lato text-gray-300 text-center mb-2">
+                        <span className="font-semibold">INSTITUCIÓN:</span>
+                        <br />
+                        {evaluador.institution || "No disponible"}
+                      </p>
+
+                      <p className="text-xs font-lato text-center text-gray-400">
+                        {evaluador.evaluations?.length || 0} evaluación(es)
+                        realizadas
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Información básica siempre visible en la parte inferior */}
+                  {!isHovered && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                      <h3 className="text-white text-lg font-bold font-sunbone text-center">
+                        {evaluador.name || "Nombre no disponible"}
+                      </h3>
+                      <p className="text-white/80 text-sm font-lato text-center">
+                        {evaluador.country || "País no disponible"}
                       </p>
                     </div>
                   )}
@@ -165,20 +184,55 @@ export default function ExpertCarrusel() {
         </button>
       </div>
 
-      {/* Indicadores de posición */}
+      {/* Indicadores de posición - paginación de 10 */}
       <div className="flex justify-center mt-6 space-x-2">
-        {experts.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-1 rounded-full transition-all cursor-pointer ${
-              index === currentIndex
-                ? "w-6 bg-black"
-                : "w-2 bg-gray-300 hover:bg-gray-400"
-            }`}
-            aria-label={`Ir al experto ${index + 1}`}
-          />
-        ))}
+        {(() => {
+          const totalExperts = experts.length;
+
+          if (totalExperts <= 10) {
+            // Si hay 10 o menos expertos, mostrar todos
+            return experts.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-1 rounded-full transition-all cursor-pointer ${
+                  index === currentIndex
+                    ? "w-6 bg-black"
+                    : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Ir al experto ${index + 1}`}
+              />
+            ));
+          } else {
+            // Si hay más de 10, mostrar ventana deslizante de 10 indicadores
+            const halfWindow = 5;
+            let startIndex = Math.max(0, currentIndex - halfWindow);
+            const endIndex = Math.min(totalExperts - 1, startIndex + 9);
+
+            // Ajustar si estamos cerca del final
+            if (endIndex - startIndex < 9) {
+              startIndex = Math.max(0, endIndex - 9);
+            }
+
+            const indicesToShow = [];
+            for (let i = startIndex; i <= endIndex; i++) {
+              indicesToShow.push(i);
+            }
+
+            return indicesToShow.map((expertIndex) => (
+              <button
+                key={expertIndex}
+                onClick={() => setCurrentIndex(expertIndex)}
+                className={`h-1 rounded-full transition-all cursor-pointer ${
+                  expertIndex === currentIndex
+                    ? "w-6 bg-black"
+                    : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Ir al experto ${expertIndex + 1}`}
+              />
+            ));
+          }
+        })()}
       </div>
       {error && toast.error("Error al cargar los expertos")}
     </div>

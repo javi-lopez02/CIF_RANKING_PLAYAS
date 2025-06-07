@@ -10,7 +10,9 @@
     "studio": "npx prisma studio",
     "add-indicators": "ts-node-dev src/Data/addCategoryIndicators.ts",
     "add-media": "ts-node-dev src/Data/addMediaLogos.ts",
-    "add-playas": "ts-node-dev src/Data/addPlayas.ts"
+    "add-school": "ts-node-dev src/Data/addSchool.ts",
+    "add-scientific": "ts-node-dev src/Data/addScientific.ts",
+    "add-playas": "ts-node-dev src/Data/add2025.ts"
   },
   "keywords": [],
   "author": "",
@@ -40,6 +42,7 @@
     "morgan": "^1.10.0",
     "nodemailer": "^6.10.1",
     "nodemon": "^3.0.3",
-    "ts-node-dev": "^2.0.0"
+    "ts-node-dev": "^2.0.0",
+    "xlsx": "^0.18.5"
   }
 }

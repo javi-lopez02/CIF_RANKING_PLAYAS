@@ -17,16 +17,21 @@ export const getRegionBeaches = async (req: Request, res: Response) => {
       where: { region },
       select: {
         name: true,
-        city: true,
-        state: true,
+        municipality: true,
+        province: true,
         country: true,
-        coordinates: true,
+        length: true,
+        latitude: true,
+        additionalImages: true,
+        imageBeach: true,
+        bqvImage: true,
+        bqvScore: true,
         beachType: true,
-        BQV: true,
+        region: true,
         id: true,
       },
       orderBy: {
-        BQV: "desc", // Order by BQV in descending order
+        bqvScore: "desc", // Order by BQV in descending order
       },
       take: 10, // Limit to the top 10 beaches
     });
@@ -44,27 +49,32 @@ export const getRegionBeaches = async (req: Request, res: Response) => {
 
 export const getBeachTypeBeaches = async (req: Request, res: Response) => {
   const beachType = req.query.p as
-    | "DE_POBLADO"
+    | "POBLADO"
     | "NATURAL"
     | "URBANA"
-    | "RURAL";
+    | "RURAL"
+    | "ENCLAVE";
 
   try {
     const beaches = await prisma.beach.findMany({
       where: { beachType },
       select: {
         name: true,
-        city: true,
-        state: true,
+        municipality: true,
+        province: true,
         country: true,
-        coordinates: true,
+        length: true,
+        latitude: true,
+        additionalImages: true,
+        imageBeach: true,
+        bqvImage: true,
+        bqvScore: true,
         beachType: true,
         region: true,
-        BQV: true,
         id: true,
       },
       orderBy: {
-        BQV: "desc", // Order by BQV in descending order
+        bqvScore: "desc", // Order by BQV in descending order
       },
       take: 10, // Limit to the top 10 beaches
     });

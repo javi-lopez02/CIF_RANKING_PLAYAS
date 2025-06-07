@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { BeachData } from "../types";
+import { Beach } from "../types";
 import { getBeachTypeRequest } from "../services/topTen";
 
 function useTopTypes(query: string) {
-  const [beaches, setBeaches] = useState<BeachData[] | []>([]);
+  const [beaches, setBeaches] = useState<Beach[] | []>([]);
   const [error, setError] = useState<Array<string>>();
   const [loading, setLoading] = useState(false);
 

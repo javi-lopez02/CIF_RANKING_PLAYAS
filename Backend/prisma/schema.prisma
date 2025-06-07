@@ -11,8 +11,9 @@ datasource db {
 enum BEACH_TYPE {
   RURAL
   NATURAL
-  DE_POBLADO
+  POBLADO
   URBANA
+  ENCLAVE
 }
 
 enum STUDY_LEVEL {
@@ -56,15 +57,20 @@ enum REGION {
 // Modelos
 
 model Beach {
-  id          String       @id @default(uuid())
-  name        String
-  beachType   BEACH_TYPE
-  city        String
-  state       String
-  country     String
-  region      REGION
-  coordinates String?
-  evaluations Evaluation[]
+  id               String       @id @default(uuid())
+  name             String
+  beachType        BEACH_TYPE
+  municipality     String
+  province         String
+  country          String
+  region           REGION
+  length           Float
+  latitude         Float
+  bqvImage         String
+  imageBeach       String
+  additionalImages String[]
+  bqvScore         Float
+  evaluations      Evaluation[]
 
   //Tipo de playa
   residentialOccupation Int?
@@ -75,28 +81,22 @@ model Beach {
   services              Int?
   landscape             Int?
   vehicularAccess       Int?
-
-  //Beach Quality Values
-  recreation   Float?
-  protection   Float?
-  conservation Float?
-  sanitary     Float?
-  BQV          Float
 }
 
 model Expert {
   id                  String                @id @default(uuid())
   name                String
   institution         String
-  codeNode            String
-  studyLevel          STUDY_LEVEL
-  experienceYears     EXPERIENCE_YEARS
+  codeNode            String?
+  country             String
+  studyLevel          STUDY_LEVEL?
+  experienceYears     EXPERIENCE_YEARS?
   graduatedDate       String?
-  specializationAreas SPECIALITATION_AREA[]
+  specializationAreas SPECIALITATION_AREA[] @default([])
   evaluations         Evaluation[]
 
   //user-auth
-  email     String   @unique
+  email     String?  @unique
   username  String?  @unique
   password  String?
   image     String?
@@ -147,7 +147,7 @@ model EvaluationImage {
   id           String     @id @default(uuid())
   evaluation   Evaluation @relation(fields: [evaluationId], references: [id])
   evaluationId String
-  url          String
+  url          String[]
   author       String
 }
 
@@ -164,4 +164,19 @@ model MediaCoverage {
   url   String
   image String
   year  Int
+}
+
+model Scientific {
+  id              String @id @default(uuid())
+  image           String
+  name            String
+  schoolLevel     String
+  areaExperiencia String
+  country         String
+}
+
+model School {
+  id      String @id @default(uuid())
+  name    String
+  country String
 }

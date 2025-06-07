@@ -4,7 +4,8 @@ import ExpertCarrusel from "../components/home/ExpertCarrusel";
 import HowToBeExpert from "../components/home/How_ToBe_Expert";
 import MediaCoverage from "../components/home/MediaCoverage";
 import RankingReport from "../components/home/RankingReport";
-import AutoTranslator from "../components/AutoTranslator";
+import BeMap from "../components/home/BeMaps";
+import SidebarAds from "../components/home/BannerLateral";
 
 export const beachType = [
   {
@@ -34,6 +35,13 @@ export const beachType = [
     title: "Mejores Playas Naturales",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYoNRIoZVYvvhtaJMUjuKEt7QUY9cSL1E9Q&s",
+  },
+  {
+    id: 5,
+    link: "/enclave",
+    title: "Mejores Playas Enclave",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUdvMVI3msEsv__d19tyVS35FKqkrNmNxNvw&s",
   },
 ];
 
@@ -66,13 +74,13 @@ export const beachZone = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx4LGe9MRjoZpAMXT7zpd1EUtJ1-txOOlYzA&s",
   },
-  {
-    id: 5,
-    link: "/mediterraneo",
-    title: "Mejores Playas Mediterraneo",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3xHmW-3Wp9Vd6Guo_hQPIdcmlIrKwWKMPcQ&s",
-  },
+  // {
+  //   id: 5,
+  //   link: "/mediterraneo",
+  //   title: "Mejores Playas Mediterraneo",
+  //   image:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3xHmW-3Wp9Vd6Guo_hQPIdcmlIrKwWKMPcQ&s",
+  // },
   {
     id: 6,
     link: "/caribean",
@@ -99,7 +107,7 @@ export default function Home() {
           </h2>
 
           {/* Tipos de playa */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 content-center">
             {beachType.map((type) => (
               <BestBeachesCard
                 key={type.id}
@@ -122,7 +130,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-
+        <BeMap></BeMap>
         <MediaCoverage />
         <RankingReport />
         <ExpertCarrusel />
@@ -130,11 +138,8 @@ export default function Home() {
       </div>
 
       {/* Sección de Google Anuncios */}
-      <div className="w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 flex items-center justify-center">
-        <AutoTranslator></AutoTranslator>
-        <div className="w-full h-32 md:h-auto border border-gray-300 rounded flex items-center justify-center text-center p-4 text-gray-500">
-          Este es el sitio donde van los anuncios de Google
-        </div>
+      <div className="hidden w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 md:flex items-center justify-center">
+        <SidebarAds></SidebarAds>
       </div>
     </div>
   );

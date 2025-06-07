@@ -44,7 +44,7 @@ const accordionItems: AccordionItem[] = [
   },
   {
     id: 4,
-    title: "Metodología",
+    title: "Marco de Priorizacion",
     content: <Methodologic></Methodologic>,
     preview:
       "Conoce la metodología detrás de nuestro sistema de ranking y cómo se implementa en la práctica.",

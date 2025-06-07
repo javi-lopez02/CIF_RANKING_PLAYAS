@@ -1,11 +1,11 @@
 import { BiInfoCircle } from "react-icons/bi";
-import { BeachData } from "../../types";
+import { Beach } from "../../types";
 import { Spinner } from "@heroui/spinner";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
-  beach: BeachData[];
+  beach: Beach[];
   loading: boolean;
   error: string[] | undefined;
 }
@@ -55,7 +55,7 @@ export default function Best10Beaches({ beach, loading, error }: Props) {
               >
                 <div className="relative h-40">
                   <img
-                    src={"/default-beach.jpg"}
+                    src={beach.imageBeach}
                     alt={beach.name}
                     className="w-full h-full object-cover"
                   />
@@ -69,12 +69,12 @@ export default function Best10Beaches({ beach, loading, error }: Props) {
                     {beach.name}
                   </h3>
                   <p className="text-gray-600 text-sm font-lato text-center mb-3">
-                    {beach.city}, {beach.state}, {beach.country}
+                    {beach.municipality}, {beach.province}, {beach.country}
                   </p>
 
                   <div className="flex justify-center mb-3">
                     <div className="bg-sky-100 text-sky-800 font-medium font-sans px-2.5 py-0.5 rounded text-sm inline-flex items-center">
-                      <span>BQV:{beach.BQV}</span>
+                      <span>BQV:{beach.bqvScore}</span>
                     </div>
                   </div>
 

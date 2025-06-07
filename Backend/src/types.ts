@@ -28,3 +28,31 @@ export interface SortItem {
   field: "createdAt" | "price" | "ratingAverage"; // Los campos permitidos
   order: "asc" | "desc"; // Los valores permitidos
 }
+
+export interface Evaluator {
+  name: string;
+  score: number | null;
+}
+
+export interface BeachEntry {
+  name: string;
+  municipality: string;
+  province: string;
+  country: string;
+  region: string;
+  type: string;
+  length: number | null;
+  latitude: number | null;
+  bqvImage: string | null;
+  urlPlaya: string | null;
+  additionalImages: string[];
+  evaluators: Evaluator[];
+  bqvScore: number | null;
+}
+
+export interface EvaluatorType {
+  name: string;
+  institution: string | null;
+  country: string | null;
+  photoUrl: string | null;
+}

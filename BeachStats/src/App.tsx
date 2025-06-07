@@ -19,6 +19,11 @@ import PacificoNorte from "./pages/Top_Ten/PacificoNorte";
 import PacificoSur from "./pages/Top_Ten/PacificoSur";
 import Urbanas from "./pages/Top_Ten/Urbanas";
 import TeamDirectory from "./pages/TeamDirectory";
+import PressRoom from "./pages/PressRoom";
+import Enclave from "./pages/Top_Ten/Enclave";
+import School from "./pages/School";
+import ContactUs from "./pages/ContactUs";
+import SidebarAds from "./components/home/BannerLateral";
 
 function App() {
   return (
@@ -34,6 +39,9 @@ function App() {
             <Route path="/method" element={<Method />} />
             <Route path="/details" element={<BeachDetails />} />
             <Route path="/scientific-advisory" element={<TeamDirectory />} />
+            <Route path="/pressroom" element={<PressRoom />} />
+            <Route path="/school" element={<School />} />
+            <Route path="/contacto" element={<ContactUs />} />
 
             <Route path="/atlantic-north" element={<AtlanticoNorte />} />
             <Route path="/atlantic-south" element={<AtlanticoSur />} />
@@ -45,7 +53,9 @@ function App() {
             <Route path="/rural" element={<Rural />} />
             <Route path="/urban" element={<Urbanas />} />
             <Route path="/natural" element={<Natural />} />
+            <Route path="/enclave" element={<Enclave />} />
           </Route>
+          <Route element={<SidebarAds/>}></Route>
         </Routes>
       </BrowserRouter>
     </HeroUIProvider>

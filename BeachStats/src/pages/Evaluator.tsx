@@ -30,7 +30,7 @@ export default function Evaluator() {
           {/* Texto de introducción */}
           <EvaluatorIntroduction />
 
-          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 w-full max-w-5xl mx-auto">
+          <div className="bg-gradient-to-tr from-gold-200 to-sky-200 rounded-lg shadow-md p-4 sm:p-6 w-full max-w-5xl mx-auto">
             <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-4">
               Filtrar Evaluadores
             </h3>
@@ -127,18 +127,9 @@ export default function Evaluator() {
           {!loading && (
             <>
               {filteredExperts.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center w-full p-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center w-full p-6">
                   {filteredExperts.map((expert: Expert) => (
-                    <EvaluatorCard
-                      key={expert.id}
-                      name={expert.name}
-                      codeNode={expert.codeNode}
-                      institution={expert.institution}
-                      studyLevel={expert.studyLevel}
-                      image={expert.image}
-                      experienceYears={expert.experienceYears}
-                      specializationAreas={expert.specializationAreas}
-                    />
+                    <EvaluatorCard key={expert.id} evaluator={expert} />
                   ))}
                 </div>
               ) : (

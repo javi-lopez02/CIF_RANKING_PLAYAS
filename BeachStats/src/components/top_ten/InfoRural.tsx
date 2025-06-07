@@ -8,7 +8,10 @@ export default function InfoRural() {
       <div className="w-full flex justify-center mb-8">
         <div className="w-full h-0.5 flex items-center">
           {[...Array(100)].map((_, i) => (
-            <div key={i} className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"></div>
+            <div
+              key={i}
+              className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"
+            ></div>
           ))}
         </div>
       </div>
@@ -21,11 +24,19 @@ export default function InfoRural() {
       {/* Párrafos informativos */}
       <div className="space-y-4 text-gray-600 text-sm md:text-base text-justify leading-relaxed">
         <p>
-          Situada fuera del entorno urbano/poblado; No es fácilmente accesible
-          en transporte público y prácticamente no tiene instalaciones; tienen
-          poco o ningún desarrollo frente a la playa, pero pueden tener algunas
-          viviendas residenciales; los usuarios de las playas las valoran por su
-          tranquilidad y sus cualidades naturales.
+          En las playas rurales se respira la tranquilidad de lo auténtico:
+          arenas casi vírgenes, paisajes agrícolas cercanos y una atmósfera
+          donde el ritmo de la naturaleza es el protagonista. Son espacios menos
+          urbanizados y con poca infraestructura, lo que permite a los
+          visitantes una conexión más íntima con el entorno.
+        </p>
+        <p>
+          El Ranking de Mejores Playas clasifica cuidadosamente estas playas,
+          considerando su fragilidad y la necesidad de proteger su esencia. Al
+          visitarlas, la responsabilidad es aún mayor: viajar con bajo impacto,
+          llevar consigo lo que se trae y respetar los sonidos y silencios del
+          lugar. Cada acción consciente mantiene viva la magia de estas costas
+          rurales.
         </p>
       </div>
 

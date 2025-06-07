@@ -30,9 +30,9 @@ export default function BeachDetails() {
             {/* Sección izquierda con galería */}
             {beach && (
               <div className="flex flex-col w-full lg:w-3/5 gap-6">
-                {/* <BeachPicture images={beach.evaluations.beachImages} /> */}
+                <BeachPicture beach={beach} />
                 <BeachDescription
-                  description={beach.evaluations.beachDescription}
+                  evaluations={beach.evaluations}
                   icon={BiPencil}
                 ></BeachDescription>
               </div>
@@ -41,15 +41,11 @@ export default function BeachDetails() {
             {beach && (
               <div className="w-full lg:w-2/5 mt-4 lg:mt-0 flex flex-col gap-6">
                 <BeachInfo
-                  type={beach.beachType}
-                  city={beach.city}
-                  country={beach.country}
-                  region={beach.region}
-                  coordinates={beach.coordinates}
+                  beach={beach}
                   // evaluators={beach.evaluations.expert}
                   icon={BiMapPin}
                 />
-                <BeachEvaluation></BeachEvaluation>
+                <BeachEvaluation beach={beach}></BeachEvaluation>
               </div>
             )}
           </div>

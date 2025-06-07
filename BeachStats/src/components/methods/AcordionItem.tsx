@@ -22,7 +22,9 @@ export const AccordionItem = ({
   // Memoizar el contenido del preview para evitar re-renders innecesarios
   const previewContent = useMemo(
     () => (
-      <div className="flex-1">
+      <div
+        className="flex-1"
+      >
         {/* Header con título */}
         <h3 className="font-bold text-dark-700 text-xl leading-tight mb-3">
           {item.title}
@@ -66,7 +68,7 @@ export const AccordionItem = ({
       <button
         className={`flex justify-between items-start w-full px-6 py-5 text-left transition-colors ${
           isOpen
-            ? "bg-gradient-to-r from-sky-500 via-sky-50 to-gold-300"
+            ? "bg-sky-500"
             : "hover:bg-gray-50"
         }`}
         onClick={onClick}
@@ -82,7 +84,7 @@ export const AccordionItem = ({
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-6 pb-5 bg-white">
+        <div className="px-6 pb-5 bg-white hover:bg-gray-50 ">
           <div className="border-t border-gold-500 pt-4">
             <div className="prose prose-sm max-w-none text-gray-700">
               {item.content}

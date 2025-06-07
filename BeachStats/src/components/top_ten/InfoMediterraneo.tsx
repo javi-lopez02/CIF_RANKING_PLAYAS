@@ -10,7 +10,10 @@ export default function InfoMediterraneo() {
       <div className="w-full flex justify-center mb-8">
         <div className="w-full h-0.5 flex items-center">
           {[...Array(100)].map((_, i) => (
-            <div key={i} className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"></div>
+            <div
+              key={i}
+              className="h-1 w-1 rounded-full bg-gold-500 mx-0.5"
+            ></div>
           ))}
         </div>
       </div>
@@ -23,23 +26,20 @@ export default function InfoMediterraneo() {
       {/* Párrafos informativos */}
       <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
         <p>
-          El Caribe, se extiende desde el sureste del Golfo de México hasta el
-          norte de Sudamérica. Esta región enmarcada por el océano Atlántico y
-          el Mar Caribe, comprende un mosaico de naciones y territorios
-          insulares con una rica historia y cultura.
+          Las playas del Mediterráneo guardan la memoria de civilizaciones
+          antiguas y la frescura de los días de verano. Sus arenas doradas y
+          aguas tranquilas atraen a quienes buscan relajación, mientras que sus
+          calas y acantilados ofrecen espacios únicos para la contemplación y la
+          aventura.
         </p>
 
         <p>
-          Las Antillas que conforman el corazón del Caribe tiene entre sus islas
-          mayores a Cuba, La Española, Jamaica y Puerto Rico, mientras que las
-          Antillas Menores, como Barbados, Trinidad y Tobago y las Islas
-          Vírgenes.
-        </p>
-
-        <p>
-          El Caribe continental, por su parte, abaza las costas de países como
-          Colombia, Venezuela, Panamá, Costa Rica, Nicaragua, Honduras, Belice y
-          México por el Atlántico.
+          Estas costas también son testigos de un compromiso creciente con los
+          cuatro dominios del ranking: recreación segura y consciente,
+          protección de ecosistemas marinos y costeros, resiliencia ante la
+          erosión y calidad sanitaria impecable. Así, las playas mediterráneas
+          no solo son belleza, sino un ejemplo de equilibrio entre el turismo y
+          el cuidado de la naturaleza.
         </p>
       </div>
 

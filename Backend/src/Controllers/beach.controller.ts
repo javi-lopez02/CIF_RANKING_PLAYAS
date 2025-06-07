@@ -8,19 +8,22 @@ export const getBeaches = async (req: Request, res: Response) => {
     const beaches = await prisma.beach.findMany({
       select: {
         name: true,
-        city: true,
-        state: true,
+        municipality: true,
+        province: true,
         country: true,
-        coordinates: true,
+        length: true,
+        latitude: true,
+        additionalImages: true,
+        imageBeach: true,
+        bqvImage: true,
+        bqvScore: true,
         beachType: true,
-        BQV: true,
         region: true,
         id: true,
         evaluations: {
           select: {
             creditibilyIndex: true,
             beachDescription: true,
-            beachImages: true,
             expert: true,
           },
         },
@@ -39,7 +42,6 @@ export const getBeaches = async (req: Request, res: Response) => {
 };
 
 export const getBeachId = async (req: Request, res: Response) => {
-
   const beachID = (req.query.p || "") as string;
 
   try {
@@ -47,18 +49,23 @@ export const getBeachId = async (req: Request, res: Response) => {
       where: { id: beachID },
       select: {
         name: true,
-        city: true,
-        state: true,
+        municipality: true,
+        province: true,
         country: true,
-        region: true,
-        BQV: true,
-        coordinates: true,
+        length: true,
+        latitude: true,
+        additionalImages: true,
+        imageBeach: true,
+        bqvImage: true,
+        bqvScore: true,
         beachType: true,
+        region: true,
+        id: true,
         evaluations: {
           select: {
             creditibilyIndex: true,
             beachDescription: true,
-            beachImages: true,
+            expert: true,
           },
         },
       },

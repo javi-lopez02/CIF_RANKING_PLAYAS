@@ -24,6 +24,8 @@ export default function TopBeaches() {
     setSelectedRegion,
     selectedType,
     setSelectedType,
+    selectedCountry,
+    setSelectedCountry,
     filterOptions,
     filteredAndSortedBeaches,
     resetFilters,
@@ -67,6 +69,8 @@ export default function TopBeaches() {
           setSelectedRegion={setSelectedRegion}
           selectedType={selectedType}
           setSelectedType={setSelectedType}
+          selectedCountry={selectedCountry}
+          setSelectedCountry={setSelectedCountry}
           filterOptions={filterOptions}
           onFilterChange={handleFilterChange}
         />

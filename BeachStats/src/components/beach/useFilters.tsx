@@ -12,12 +12,14 @@ export function useFilters(beaches: Beach[]) {
   const [sortBy, setSortBy] = useState<SortOption>("BQV-Descendente");
   const [selectedRegion, setSelectedRegion] = useState<string>("Todos");
   const [selectedType, setSelectedType] = useState<string>("Todos");
+  const [selectedCountry, setSelectedCountry] = useState<string>("Todos");
 
   // Obtener opciones únicas para los filtros
   const filterOptions = useMemo(
     () => ({
       regions: ["Todos", ...new Set(beaches.map((beach) => beach.region))],
       types: ["Todos", ...new Set(beaches.map((beach) => beach.beachType))],
+      countrys: ["Todos", ...new Set(beaches.map((beach) => beach.country))],
     }),
     [beaches]
   );
@@ -33,16 +35,18 @@ export function useFilters(beaches: Beach[]) {
         selectedRegion === "Todos" || beach.region === selectedRegion;
       const matchesType =
         selectedType === "Todos" || beach.beachType === selectedType;
-      return matchesSearch && matchesRegion && matchesType;
+      const matchesCountry =
+        selectedCountry === "Todos" || beach.country === selectedCountry;
+      return matchesSearch && matchesRegion && matchesType && matchesCountry;
     });
 
     // Ordenar
     return [...filtered].sort((a, b) => {
       switch (sortBy) {
         case "BQV-Descendente":
-          return b.BQV - a.BQV;
+          return b.bqvScore - a.bqvScore;
         case "BQV-Ascendente":
-          return a.BQV - b.BQV;
+          return a.bqvScore - b.bqvScore;
         case "Nombre-Ascendente":
           return a.name.localeCompare(b.name);
         case "Nombre-Descendente":
@@ -51,7 +55,14 @@ export function useFilters(beaches: Beach[]) {
           return 0;
       }
     });
-  }, [beaches, searchTerm, selectedRegion, selectedType, sortBy]);
+  }, [
+    beaches,
+    searchTerm,
+    selectedRegion,
+    selectedType,
+    sortBy,
+    selectedCountry,
+  ]);
 
   const resetFilters = useCallback(() => {
     setSearchTerm("");
@@ -69,6 +80,8 @@ export function useFilters(beaches: Beach[]) {
     setSelectedRegion,
     selectedType,
     setSelectedType,
+    selectedCountry,
+    setSelectedCountry,
     filterOptions,
     filteredAndSortedBeaches,
     resetFilters,

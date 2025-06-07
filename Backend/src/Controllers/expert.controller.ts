@@ -11,6 +11,7 @@ export const getExperts = async (req: Request, res: Response) => {
         name: true,
         email: true,
         institution: true,
+        country: true,
         experienceYears: true,
         graduatedDate: true,
         studyLevel: true,
