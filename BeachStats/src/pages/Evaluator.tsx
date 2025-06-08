@@ -5,6 +5,8 @@ import { Expert } from "../types";
 import { Spinner } from "@heroui/spinner";
 import { useEvaluatorFilters } from "../components/evaluator/useEvaluatorFilters";
 import EvaluatorIntroduction from "../components/evaluator/EvaluatorIntroduction";
+import SidebarAds from "../components/home/BannerLateral";
+import How_ToBe_Expert from "../components/home/How_ToBe_Expert";
 
 export default function Evaluator() {
   const { experts, error, loading } = useExpert();
@@ -21,7 +23,7 @@ export default function Evaluator() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
       {/* Contenido principal */}
-      <div className="w-full md:w-4/5 px-4 flex flex-col items-center">
+      <div className="w-full md:w-4/5 flex flex-col items-center">
         <div className="flex flex-col p-4 gap-4 w-full">
           <h2 className="py-4 text-center font-sans font-bold text-dark-700 text-5xl">
             Nuestros Evaluadores
@@ -145,14 +147,14 @@ export default function Evaluator() {
             </>
           )}
         </div>
+        <How_ToBe_Expert></How_ToBe_Expert>
+
         {error && toast.error("Error al cargar los expertos")}
       </div>
 
       {/* Sección de Google Anuncios */}
-      <div className="w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 flex items-center justify-center">
-        <div className="w-full h-32 md:h-auto border border-gray-300 rounded flex items-center justify-center text-center p-4 text-gray-500">
-          Este es el sitio donde van los anuncios de Google
-        </div>
+      <div className="hidden w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 md:flex items-center justify-center">
+        <SidebarAds></SidebarAds>
       </div>
     </div>
   );

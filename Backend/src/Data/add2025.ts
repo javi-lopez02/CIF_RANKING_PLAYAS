@@ -5269,7 +5269,7 @@ async function main() {
       institution: "Universidad Del Pacífico - Ecuador",
       country: "Ecuador",
       photoUrl:
-        "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/Mario-Palacios.jpg",
+        "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/Mario-Palacios-1.jpg",
     },
     {
       name: "Migdalia María Arcia de Gigante",

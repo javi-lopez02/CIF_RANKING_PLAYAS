@@ -1,7 +1,18 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function RankingReport() {
-  const [activeReport, setActiveReport] = useState('2023');
+  const [activeReport, setActiveReport] = useState('Anteriores');
+  const navigate = useNavigate()
+
+  const handleNavigate = (year: string) => {
+    setActiveReport(year)
+
+    if(year === "Anteriores"){
+      navigate("/report")
+    }
+    else navigate(`/report-${year}`)
+  }
   
   return (
     <div className="flex flex-col lg:flex-row border border-gray-300 rounded-lg overflow-hidden max-w-6xl mx-auto">
@@ -29,17 +40,17 @@ export default function RankingReport() {
         </div>
         
         <div className="flex space-x-2 font-lato mt-6">
-          {['2023', '2024', '2025'].map((year) => (
+          {['Anteriores', '2025'].map((year) => (
             <button
               key={year}
-              onClick={() => setActiveReport(year)}
+              onClick={() => handleNavigate(year)}
               className={`px-4 py-1 border text-xs uppercase rounded-sm ${
                 activeReport === year 
                   ? 'bg-navy-500 text-white border-navy-500' 
                   : 'bg-white text-navy-500 border-navy-500 hover:bg-gray-100'
               }`}
             >
-              Reporte {year}
+              Reportes {year}
             </button>
           ))}
         </div>

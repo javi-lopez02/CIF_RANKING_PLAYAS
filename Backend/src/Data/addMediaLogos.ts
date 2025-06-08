@@ -158,13 +158,6 @@ async function main() {
     },
     {
       year: 2025,
-      url: "https://bandeiraazul.org.br/cuatro-playas-brasileñas-con-a-bandera-azul-estáo-entre-como-10-mejores-da-América-latina-mi-península-ibérica/",
-      name: "Badeira Azul",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvySs4ZI_E9MM1NgVyHj5nCiw-3mBq8HUoJQ&s",
-    },
-    {
-      year: 2025,
       url: "https://giron.cu/2024/06/12/varadero-mejores-playas-2024-según-la-ciencia/",
       name: "Periodico Giron",
       image:

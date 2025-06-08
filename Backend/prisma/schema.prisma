@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL_SQL")
 }
 
 // Enumeraciones
@@ -68,7 +68,7 @@ model Beach {
   latitude         Float
   bqvImage         String
   imageBeach       String
-  additionalImages String[]
+  additionalImages Json
   bqvScore         Float
   evaluations      Evaluation[]
 
@@ -92,7 +92,7 @@ model Expert {
   studyLevel          STUDY_LEVEL?
   experienceYears     EXPERIENCE_YEARS?
   graduatedDate       String?
-  specializationAreas SPECIALITATION_AREA[] @default([])
+  // specializationAreas SPECIALITATION_AREA[] @default([])
   evaluations         Evaluation[]
 
   //user-auth
@@ -147,7 +147,7 @@ model EvaluationImage {
   id           String     @id @default(uuid())
   evaluation   Evaluation @relation(fields: [evaluationId], references: [id])
   evaluationId String
-  url          String[]
+  // url          String[]
   author       String
 }
 

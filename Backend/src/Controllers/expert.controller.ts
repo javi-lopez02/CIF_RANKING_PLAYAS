@@ -20,7 +20,7 @@ export const getExperts = async (req: Request, res: Response) => {
         evaluations: {
           select: { creditibilyIndex: true, beach: true },
         },
-        specializationAreas: true,
+        // specializationAreas: true,
       },
       orderBy:{
         name: "asc",
@@ -55,7 +55,7 @@ export const getExpertsId = async (req: Request, res: Response) => {
         codeNode: true,
         image: true,
         evaluations: true,
-        specializationAreas: true,
+        // specializationAreas: true,
       },
     });
 
@@ -92,7 +92,7 @@ export const updateExpert = async (req: Request, res: Response) => {
         studyLevel,
         experienceYears,
         graduatedDate,
-        specializationAreas,
+        // specializationAreas,
       },
     });
 

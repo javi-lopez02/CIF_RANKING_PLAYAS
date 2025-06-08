@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
-import { BiGlobe, BiMailSend, BiMapPin, BiMessage, BiPhone, BiSend } from 'react-icons/bi';
-import { FaClock, FaUsers } from 'react-icons/fa6';
+import React, { useState } from "react";
+import {
+  BiGlobe,
+  BiMailSend,
+  BiMapPin,
+  BiMessage,
+  BiPhone,
+  BiSend,
+} from "react-icons/bi";
+import { FaClock, FaUsers } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import How_ToBe_Expert from "../components/home/How_ToBe_Expert";
 
 interface FormData {
   name: string;
@@ -14,6 +23,7 @@ interface ContactInfo {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   info: string;
+  info2: string;
   description: string;
 }
 
@@ -24,21 +34,26 @@ interface Category {
 
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    category: 'general'
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    category: "general",
   });
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const navigate = useNavigate();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -46,23 +61,21 @@ const ContactUs: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    
-    
     // Simular envío
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
     setIsSubmitting(false);
     setSubmitted(true);
-    
+
     // Reset form después de 3 segundos
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        category: 'general'
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        category: "general",
       });
     }, 3000);
   };
@@ -71,48 +84,55 @@ const ContactUs: React.FC = () => {
     {
       icon: BiMailSend,
       title: "Email",
-      info: "info@rankingsmejoresplayas.org",
-      description: "Respuesta en 24-48 horas"
+      info: "coordinacion",
+      info2: "@rankingsmejoresplayas.org",
+      description: "Respuesta en 24-48 horas",
     },
     {
       icon: BiPhone,
       title: "Teléfono",
-      info: "+34 900 123 456",
-      description: "Lun-Vie 9:00-18:00 CET"
+      info: "+57 322 937 2107",
+      info2: "+56 988 190 531",
+      description: "Lun-Vie 9:00-18:00 CET",
     },
     {
       icon: BiMapPin,
       title: "Ubicación",
-      info: "Barcelona, España",
-      description: "Oficinas principales"
+      info: "Necoclí, Colombia",
+      info2: "Retiro,  Chile",
+      description: "Oficinas principales",
     },
     {
       icon: BiGlobe,
       title: "Red Global",
-      info: "25+ países",
-      description: "Evaluadores internacionales"
-    }
+      info: "12+ países",
+      info2: "Contactenos",
+      description: "Evaluadores internacionales",
+    },
   ];
 
   const categories: Category[] = [
-    { value: 'general', label: 'Consulta General' },
-    { value: 'eiep', label: 'Escuela EIEP' },
-    { value: 'consejo', label: 'Consejo Científico' },
-    { value: 'evaluacion', label: 'Proceso de Evaluación' },
-    { value: 'colaboracion', label: 'Colaboración' },
-    { value: 'prensa', label: 'Medios de Comunicación' }
+    { value: "general", label: "Consulta General" },
+    { value: "eiep", label: "Escuela EIEP" },
+    { value: "consejo", label: "Consejo Científico" },
+    { value: "evaluacion", label: "Proceso de Evaluación" },
+    { value: "colaboracion", label: "Colaboración" },
+    { value: "prensa", label: "Medios de Comunicación" },
   ];
 
   if (submitted) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-sky-50 to-navy-50 flex items-center justify-center p-6">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <BiSend className="w-8 h-8 text-green-600" />
+          <div className="w-16 h-16 bg-conservation-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <BiSend className="w-8 h-8 text-conservation-600" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-800 mb-2">¡Mensaje Enviado!</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            ¡Mensaje Enviado!
+          </h3>
           <p className="text-gray-600 mb-4">
-            Gracias por contactarnos. Responderemos a tu consulta en las próximas 24-48 horas.
+            Gracias por contactarnos. Responderemos a tu consulta en las
+            próximas 24-48 horas.
           </p>
           <div className="animate-pulse text-sky-600 text-sm">
             Redirigiendo al formulario...
@@ -123,7 +143,7 @@ const ContactUs: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-navy-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-navy-50 pt-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -132,8 +152,8 @@ const ContactUs: React.FC = () => {
           </div>
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Contáctanos</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            ¿Tienes preguntas sobre nuestro ranking, la Escuela EIEP o el Consejo Científico? 
-            Estamos aquí para ayudarte.
+            ¿Tienes preguntas sobre nuestro ranking, la Escuela EIEP o el
+            Consejo Científico? Estamos aquí para ayudarte.
           </p>
         </div>
 
@@ -141,7 +161,9 @@ const ContactUs: React.FC = () => {
           {/* Información de contacto */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Información de Contacto</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-6">
+                Información de Contacto
+              </h3>
               <div className="space-y-6">
                 {contactInfo.map((item: ContactInfo, index: number) => {
                   const IconComponent = item.icon;
@@ -151,9 +173,14 @@ const ContactUs: React.FC = () => {
                         <IconComponent className="w-5 h-5 text-sky-600" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">{item.title}</h4>
+                        <h4 className="font-semibold text-gray-800">
+                          {item.title}
+                        </h4>
                         <p className="text-sky-600 font-medium">{item.info}</p>
-                        <p className="text-gray-500 text-sm">{item.description}</p>
+                        <p className="text-sky-600 font-medium">{item.info2}</p>
+                        <p className="text-gray-500 text-sm">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   );
@@ -181,17 +208,17 @@ const ContactUs: React.FC = () => {
                   <span>Cerrado</span>
                 </div>
               </div>
-              <p className="text-sky-100 text-sm mt-4">
-                * Horario Central Europeo (CET)
-              </p>
+              <p className="text-sky-100 text-sm mt-4">* Horario (UTC-4)</p>
             </div>
           </div>
 
           {/* Formulario */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h3>
-              
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                Envíanos un Mensaje
+              </h3>
+
               <div className="space-y-6">
                 {/* Nombre y Email */}
                 <div className="grid md:grid-cols-2 gap-6">
@@ -278,9 +305,7 @@ const ContactUs: React.FC = () => {
 
                 {/* Botón de envío */}
                 <div className="flex items-center justify-between pt-4">
-                  <p className="text-gray-500 text-sm">
-                    * Campos obligatorios
-                  </p>
+                  <p className="text-gray-500 text-sm">* Campos obligatorios</p>
                   <button
                     onClick={handleSubmit}
                     disabled={isSubmitting}
@@ -309,26 +334,38 @@ const ContactUs: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-4">
               <FaUsers className="w-8 h-8 text-sky-600 mr-2" />
-              <h3 className="text-2xl font-bold text-gray-800">¿Interesado en Colaborar?</h3>
+              <h3 className="text-2xl font-bold text-gray-800">
+                ¿Interesado en Colaborar?
+              </h3>
             </div>
             <p className="text-gray-600 mb-6 text-lg">
-              Si eres investigador, universidad o institución y quieres formar parte de nuestra red global, 
-              contáctanos para conocer las oportunidades de colaboración.
+              Si eres investigador, universidad o institución y quieres formar
+              parte de nuestra red global, contáctanos para conocer las
+              oportunidades de colaboración.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-sky-50 text-sky-700 px-4 py-2 rounded-full text-sm font-medium">
+              <button
+                onClick={() => navigate("")}
+                className="bg-sky-50 text-sky-700 px-4 py-2 rounded-full text-sm font-medium"
+              >
                 Únete a EIEP
-              </div>
-              <div className="bg-conservation-50 text-conservation-700 px-4 py-2 rounded-full text-sm font-medium">
+              </button>
+              <button className="bg-conservation-50 text-conservation-700 px-4 py-2 rounded-full text-sm font-medium">
                 Consejo Científico
-              </div>
-              <div className="bg-protection-50 text-protection-700 px-4 py-2 rounded-full text-sm font-medium">
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://cifplayas.org/cmep/", "_blank")
+                }
+                className="bg-protection-50 text-protection-700 px-4 py-2 rounded-full text-sm font-medium"
+              >
                 Evaluador Internacional
-              </div>
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <How_ToBe_Expert></How_ToBe_Expert>
     </div>
   );
 };

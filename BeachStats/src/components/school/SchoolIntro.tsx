@@ -2,7 +2,7 @@ import { BiAward, BiBookOpen, BiCalendar, BiGlobe, BiSolidGraduation } from "rea
 
 export default function SchoolIntro() {
   return (
-    <div className="bg-gradient-to-br from-sky-50 to-cyan-50 p-8 rounded-2xl shadow-lg border border-sky-100">
+    <div className="bg-gradient-to-br from-sky-50 to-sky-50 p-8 rounded-2xl shadow-lg border border-sky-100">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -53,9 +53,9 @@ export default function SchoolIntro() {
             </p>
           </div>
 
-          <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-green-500">
+          <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-recreation-500">
             <div className="flex items-center mb-2">
-              <BiGlobe className="w-5 h-5 text-green-600 mr-2" />
+              <BiGlobe className="w-5 h-5 text-recreation-600 mr-2" />
               <h3 className="font-semibold text-gray-800">Visión Global</h3>
             </div>
             <p className="text-gray-600 text-sm">
@@ -64,9 +64,9 @@ export default function SchoolIntro() {
             </p>
           </div>
 
-          <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-purple-500">
+          <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-protection-500">
             <div className="flex items-center mb-2">
-              <BiAward className="w-5 h-5 text-purple-600 mr-2" />
+              <BiAward className="w-5 h-5 text-protection-600 mr-2" />
               <h3 className="font-semibold text-gray-800">Sostenibilidad</h3>
             </div>
             <p className="text-gray-600 text-sm">

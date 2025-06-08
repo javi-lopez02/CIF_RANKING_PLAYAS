@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useBeachDetails } from "../customHooks/useBeachDetails";
 import { toast } from "sonner";
 import { Spinner } from "@heroui/spinner";
+import SidebarAds from "../components/home/BannerLateral";
 
 export default function BeachDetails() {
   const [query] = useState(() => {
@@ -25,8 +26,8 @@ export default function BeachDetails() {
         </div>
       )}
       {!loading && (
-        <div className="w-full md:w-4/5 flex flex-col px-2 sm:px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-8 py-4">
+        <div className="w-full md:w-4/5 flex flex-col">
+          <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-8 py-4 px-6">
             {/* Sección izquierda con galería */}
             {beach && (
               <div className="flex flex-col w-full lg:w-3/5 gap-6">
@@ -49,16 +50,25 @@ export default function BeachDetails() {
               </div>
             )}
           </div>
+          <div className="w-3/4 font-light text-gray-500 flex flex-col self-center text-justify text-xs">
+            <h1>
+              El uso de imágenes y cumplimiento de derechos de autor de las
+              mismas, es de exclusiva responsabilidad de cada evaluador. Para
+              más información al respecto por favor escribir a{" "}
+              <span className="text-sky-400">
+                coordinacion@rankingmejoresplayas.com
+              </span>
+            </h1>
+          </div>
+
           <HowToBeExpert></HowToBeExpert>
           {error && toast.error(error)}
         </div>
       )}
 
       {/* Sección de Google Anuncios */}
-      <div className="w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 flex items-center justify-center">
-        <div className="w-full h-32 md:h-auto border border-gray-300 rounded flex items-center justify-center text-center p-4 text-gray-500">
-          Este es el sitio donde van los anuncios de Google
-        </div>
+      <div className="hidden w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 md:flex items-center justify-center">
+        <SidebarAds></SidebarAds>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import * as dotenv from "dotenv";
 import path from "path";
 
-import auth from "./Routes/auth.routes";
+// import auth from "./Routes/auth.routes";
 import media from "./Routes/media.routes";
 import beach from "./Routes/beach.routes";
 import experts from "./Routes/expert.routes";

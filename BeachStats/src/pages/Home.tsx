@@ -13,35 +13,42 @@ export const beachType = [
     link: "/urban",
     title: "Mejores Playas Urbanas",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_pcq9v3qkEgL4znwhDm7bILDVfIhAf8vHDQ&s",
+      "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/Jurere-Marcus-Polette.jpg",
   },
   {
     id: 2,
     link: "/poblado",
     title: "Mejores Playas de Poblado",
     image:
-      "https://a.travel-assets.com/findyours-php/viewfinder/images/res40/200000/200422.jpg",
+      "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/00-Ranking2025-COL_SMR_PlayaBlanca01-Camilo-M.-Botero.jpg",
   },
   {
     id: 3,
     link: "/rural",
     title: "Mejores Playas Rurales",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHKhxSlHbV00fT8sZcj7Qq1lMnXmFjE92e1g&s",
+      "https://files.lafm.com.co/assets/public/styles/img_node_706x392/public/2024-11/playa.jpg.webp?VersionId=3LJayzAEQcpzVLtUyG6DGDwadyXxyOrC&itok=dRipianA",
   },
   {
     id: 4,
     link: "/natural",
     title: "Mejores Playas Naturales",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYoNRIoZVYvvhtaJMUjuKEt7QUY9cSL1E9Q&s",
+      "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/Praia_Mocambique_Brasil_Fabricio_Martinez.jpg",
   },
   {
     id: 5,
+    link: "#",
+    title: "Ranking Mejores Playas",
+    image:
+      "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/ranking_mejores_playas.png",
+  },
+  {
+    id: 6,
     link: "/enclave",
     title: "Mejores Playas Enclave",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUdvMVI3msEsv__d19tyVS35FKqkrNmNxNvw&s",
+      "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/Playa-enclave.jpg",
   },
 ];
 
@@ -82,6 +89,13 @@ export const beachZone = [
   //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3xHmW-3Wp9Vd6Guo_hQPIdcmlIrKwWKMPcQ&s",
   // },
   {
+    id: 5,
+    link: "#",
+    title: "CIF Playas",
+    image:
+      "https://rankingmejoresplayas.com/wp-content/uploads/2025/06/cifplayas.png",
+  },
+  {
     id: 6,
     link: "/caribean",
     title: "Mejores Playas Caribe",
@@ -100,7 +114,7 @@ export default function Home() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
       {/* Contenido principal */}
-      <div className="w-full md:w-4/5 px-4 flex flex-col items-center">
+      <div className="w-full md:w-4/5 flex flex-col items-center">
         <div className="flex flex-col p-4 gap-8">
           <h2 className="py-4 text-center font-sunbone font-bold text-lg">
             MEJORES PLAYAS
@@ -130,10 +144,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <BeMap></BeMap>
-        <MediaCoverage />
-        <RankingReport />
-        <ExpertCarrusel />
+        <div className="px-8 flex flex-col gap-8 w-full">
+          <BeMap></BeMap>
+          <MediaCoverage />
+          <RankingReport />
+          <ExpertCarrusel />
+        </div>
         <HowToBeExpert />
       </div>
 

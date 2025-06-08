@@ -1,3 +1,5 @@
+import SidebarAds from "../components/home/BannerLateral";
+import How_ToBe_Expert from "../components/home/How_ToBe_Expert";
 import { Accordion } from "../components/methods/Acordion";
 import ComunicationMarc from "../components/methods/ComunicationMarc";
 import CreditibilyIndex from "../components/methods/CredibilityIndex";
@@ -20,7 +22,8 @@ const accordionItems: AccordionItem[] = [
     title: "Metodo de Evaluacion",
     content: <EvaluationMethod></EvaluationMethod>,
     preview:
-      "Conoce el método de evaluación utilizado para calificar las playas y su impacto en el ranking.",},
+      "Conoce el método de evaluación utilizado para calificar las playas y su impacto en el ranking.",
+  },
   {
     id: 1,
     title: "Proceso de Evaluacion",
@@ -69,14 +72,16 @@ export default function Method() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
       {/* Contenido principal */}
-      <div className="w-full md:w-4/5 py-8">
-        <Accordion items={accordionItems} />
-      </div>
-      {/* Sección de Google Anuncios */}
-      <div className="w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 flex items-center justify-center">
-        <div className="w-full h-32 md:h-auto border border-gray-300 rounded flex items-center justify-center text-center p-4 text-gray-500">
-          Este es el sitio donde van los anuncios de Google
+      <div className="w-full md:w-4/5">
+        <div className="w-full  py-8">
+          <Accordion items={accordionItems} />
         </div>
+        <How_ToBe_Expert></How_ToBe_Expert>
+      </div>
+
+      {/* Sección de Google Anuncios */}
+      <div className="hidden w-full md:w-1/5 md:min-h-screen p-4 bg-white border-t-2 md:border-t-0 md:border-l-2 border-gray-200 mt-4 md:mt-0 md:flex items-center justify-center">
+        <SidebarAds></SidebarAds>
       </div>
     </div>
   );

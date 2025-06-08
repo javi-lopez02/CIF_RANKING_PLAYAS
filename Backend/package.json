@@ -2,9 +2,11 @@
   "name": "ranking-playas-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
     "migrate": "npx prisma migrate dev",
     "init": "npx prisma generate && npx prisma migrate dev",
     "studio": "npx prisma studio",

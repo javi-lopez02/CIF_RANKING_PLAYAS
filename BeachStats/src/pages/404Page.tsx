@@ -25,15 +25,10 @@ export default function Page404() {
       </div>
       <div className="w-full lg:w-1/2">
         <h1 className="py-4 text-3xl lg:text-4xl font-extrabold text-gray-800">
-          Parece que has encontrado la puerta a la gran nada.
+          Parece que has naufragado.
         </h1>
-        <p className="py-4 text-base text-gray-800">
-          El contenido que estás buscando no existe. O bien lo eliminaron o bien
-          escribiste mal el enlace.
-        </p>
         <p className="py-2 text-base text-gray-800">
-          ¡Lo sentimos! Visita nuestra página de inicio para llegar a donde
-          necesitas ir.
+          Si quieres regrasar a la orilla de la playa
         </p>
         <button
           onClick={handleClick}
